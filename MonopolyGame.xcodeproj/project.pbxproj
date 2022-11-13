@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0000BA6729202B4A00B99039 /* GameViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000BA6629202B4A00B99039 /* GameViewController+Ext.swift */; };
+		0000BA692920330000B99039 /* MonopolyMusic2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0000BA682920330000B99039 /* MonopolyMusic2.mp3 */; };
+		0000BA6B292033C100B99039 /* MonopolyMusic3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0000BA6A292033C100B99039 /* MonopolyMusic3.mp3 */; };
+		0000BA7029203B8900B99039 /* BoardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0000BA6F29203B8900B99039 /* BoardScene.swift */; };
 		0006FC75291F7C470023DBAE /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0006FC74291F7C470023DBAE /* Play.swift */; };
 		0006FC7B291F81850023DBAE /* dice_collision2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0006FC76291F81850023DBAE /* dice_collision2.wav */; };
-		0006FC7C291F81850023DBAE /* 177208__joanneneedsthesound__dice-rolling-dungeon-and-dragons.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0006FC77291F81850023DBAE /* 177208__joanneneedsthesound__dice-rolling-dungeon-and-dragons.wav */; };
 		0006FC7D291F81850023DBAE /* dice_collision4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0006FC78291F81850023DBAE /* dice_collision4.wav */; };
 		0006FC7E291F81850023DBAE /* dice_collision3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0006FC79291F81850023DBAE /* dice_collision3.wav */; };
 		0006FC7F291F81850023DBAE /* dice_collision1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0006FC7A291F81850023DBAE /* dice_collision1.wav */; };
@@ -37,13 +39,17 @@
 		003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003A26D42919F4B300821AAA /* LaunchScreen.storyboard */; };
 		004D3D6B291F04D00050D396 /* BoardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 004D3D6A291F04D00050D396 /* BoardScene.sks */; };
 		004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */; };
+		008A556B292112C90001AEBB /* move.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008A556A292112C90001AEBB /* move.mp3 */; };
+		008A556D292115950001AEBB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A556C292115950001AEBB /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0000BA6629202B4A00B99039 /* GameViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+Ext.swift"; sourceTree = "<group>"; };
+		0000BA682920330000B99039 /* MonopolyMusic2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonopolyMusic2.mp3; sourceTree = "<group>"; };
+		0000BA6A292033C100B99039 /* MonopolyMusic3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonopolyMusic3.mp3; sourceTree = "<group>"; };
+		0000BA6F29203B8900B99039 /* BoardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardScene.swift; sourceTree = "<group>"; };
 		0006FC74291F7C470023DBAE /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
 		0006FC76291F81850023DBAE /* dice_collision2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_collision2.wav; sourceTree = "<group>"; };
-		0006FC77291F81850023DBAE /* 177208__joanneneedsthesound__dice-rolling-dungeon-and-dragons.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "177208__joanneneedsthesound__dice-rolling-dungeon-and-dragons.wav"; sourceTree = "<group>"; };
 		0006FC78291F81850023DBAE /* dice_collision4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_collision4.wav; sourceTree = "<group>"; };
 		0006FC79291F81850023DBAE /* dice_collision3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_collision3.wav; sourceTree = "<group>"; };
 		0006FC7A291F81850023DBAE /* dice_collision1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dice_collision1.wav; sourceTree = "<group>"; };
@@ -74,6 +80,8 @@
 		003A26D52919F4B300821AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004D3D6A291F04D00050D396 /* BoardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoardScene.sks; sourceTree = "<group>"; };
 		004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonopolyMusic.mp3; sourceTree = "<group>"; };
+		008A556A292112C90001AEBB /* move.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = move.mp3; sourceTree = "<group>"; };
+		008A556C292115950001AEBB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0000BA6C29203B5C00B99039 /* GameScenes */ = {
+			isa = PBXGroup;
+			children = (
+				0000BA6F29203B8900B99039 /* BoardScene.swift */,
+			);
+			path = GameScenes;
+			sourceTree = "<group>";
+		};
 		0006FC73291F7C2A0023DBAE /* PlayerNameDialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +125,7 @@
 		0006FC85291F85C20023DBAE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				008A556C292115950001AEBB /* AudioManager.swift */,
 				0006FC86291F85CC0023DBAE /* SoundAndHapticController.swift */,
 			);
 			path = Managers;
@@ -198,6 +215,7 @@
 		003A26C42919F4B200821AAA /* MonopolyGame */ = {
 			isa = PBXGroup;
 			children = (
+				0000BA6C29203B5C00B99039 /* GameScenes */,
 				0006FC9D291FC0720023DBAE /* Extentions */,
 				0006FC98291FBB190023DBAE /* Cells */,
 				0006FC95291FB8EB0023DBAE /* ViewControllers */,
@@ -221,7 +239,9 @@
 		004D3D6C291F121B0050D396 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				0006FC77291F81850023DBAE /* 177208__joanneneedsthesound__dice-rolling-dungeon-and-dragons.wav */,
+				0000BA6A292033C100B99039 /* MonopolyMusic3.mp3 */,
+				0000BA682920330000B99039 /* MonopolyMusic2.mp3 */,
+				008A556A292112C90001AEBB /* move.mp3 */,
 				0006FC7A291F81850023DBAE /* dice_collision1.wav */,
 				0006FC76291F81850023DBAE /* dice_collision2.wav */,
 				0006FC79291F81850023DBAE /* dice_collision3.wav */,
@@ -294,13 +314,15 @@
 				0006FC9C291FBB440023DBAE /* PlayerSetupCell.xib in Resources */,
 				0006FC7D291F81850023DBAE /* dice_collision4.wav in Resources */,
 				003A26D32919F4B300821AAA /* Assets.xcassets in Resources */,
+				0000BA6B292033C100B99039 /* MonopolyMusic3.mp3 in Resources */,
 				0006FC7B291F81850023DBAE /* dice_collision2.wav in Resources */,
 				0006FC7E291F81850023DBAE /* dice_collision3.wav in Resources */,
 				004D3D6B291F04D00050D396 /* BoardScene.sks in Resources */,
 				004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */,
 				0006FCA7291FE60D0023DBAE /* PlayerCell.xib in Resources */,
-				0006FC7C291F81850023DBAE /* 177208__joanneneedsthesound__dice-rolling-dungeon-and-dragons.wav in Resources */,
+				008A556B292112C90001AEBB /* move.mp3 in Resources */,
 				003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */,
+				0000BA692920330000B99039 /* MonopolyMusic2.mp3 in Resources */,
 				003A26CA2919F4B200821AAA /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +336,7 @@
 			files = (
 				0006FC97291FB9050023DBAE /* LandingVc.swift in Sources */,
 				0006FCA1291FDB200023DBAE /* Alerts.swift in Sources */,
+				008A556D292115950001AEBB /* AudioManager.swift in Sources */,
 				0006FC8E291F88D20023DBAE /* Property.swift in Sources */,
 				0006FC90291FAF940023DBAE /* Constants.swift in Sources */,
 				003A26CC2919F4B200821AAA /* GameScene.swift in Sources */,
@@ -327,6 +350,7 @@
 				0006FC87291F85CC0023DBAE /* SoundAndHapticController.swift in Sources */,
 				0006FC8D291F88D20023DBAE /* Player.swift in Sources */,
 				0006FC9F291FC0830023DBAE /* All.swift in Sources */,
+				0000BA7029203B8900B99039 /* BoardScene.swift in Sources */,
 				0006FC75291F7C470023DBAE /* Play.swift in Sources */,
 				0006FC9B291FBB440023DBAE /* PlayerSetupCell.swift in Sources */,
 			);
@@ -479,8 +503,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -508,8 +533,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

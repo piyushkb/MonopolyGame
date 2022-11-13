@@ -9,7 +9,7 @@ class LandingVc: UIViewController {
     @IBOutlet weak var soundSwitch: UISwitch!
     @IBOutlet weak var moneyStepper: UIStepper!
     @IBOutlet weak var playerSegment: UISegmentedControl!
-    let images = ["horse" , "dog","hat", "car"]
+    let images =  Const.dices
     
       var  players : [Player] = [] {
         didSet {
@@ -25,9 +25,9 @@ class LandingVc: UIViewController {
         self.tableView.backgroundColor = .clear
         self.tableView.registerCells([PlayerSetupCell.self])
         
-        players.append(Player(playerImage: images[0], playerId: 1, totalMoney: 0, playerName: "", playerPosition: 0))
+        players.append(Player(playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: 0))
         
-        players.append(Player(playerImage: images[1], playerId: 2, totalMoney: 0, playerName: "", playerPosition: 0))
+        players.append(Player(playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: 0))
     
     }
     
@@ -67,11 +67,11 @@ class LandingVc: UIViewController {
       
         
         if(segmentIndex == 1) {
-            players.append(Player(playerImage: images[2], playerId: 3, totalMoney: 0, playerName: "", playerPosition: 0))
+            players.append(Player(playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: 0))
         }
 
         if(segmentIndex == 2) {
-            players.append(Player(playerImage: images[3], playerId: 4, totalMoney: 0, playerName: "", playerPosition: 0))
+            players.append(Player(playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: 0))
         }
         
         self.removePlayers()

@@ -26,8 +26,9 @@ struct Const {
     
     static let DiceRollSoundFileNames = ["dice_collision1", "dice_collision2", "dice_collision3", "dice_collision4"]
     static let SoundFileType = "wav"
-    static let MusicFiles: [String] = ["MonopolyMusic"]
+    static let MusicFiles: [String] = ["MonopolyMusic" , "MonopolyMusic2" , "MonopolyMusic3"]
     static let MusicFileType = "mp3"
+    static let dices = ["redDisk" , "blueDisk","greenDisk", "yellowDisk"]
 
     // Game
     

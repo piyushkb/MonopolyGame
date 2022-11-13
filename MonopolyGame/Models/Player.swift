@@ -12,13 +12,13 @@ class Player {
     private(set) var playerPosition = 0
     private(set) var dice1: Int?
     private(set) var dice2: Int?
-    private(set) var playerId: Int
+    private(set) var playerId: String
     private(set) var inJail = false
     private(set) var doubleDice: [Int]?
     
   
     
-    init(playerImage:String,playerId:Int,totalMoney:Int,playerName: String, playerPosition: Int) {
+    init(playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: Int) {
         self.playerName = playerName
         self.playerPosition = playerPosition
         self.totalMoney = totalMoney
@@ -74,7 +74,7 @@ class Player {
 extension  Player
 {
    
-    func getPlayerId() -> Int
+    func getPlayerId() -> String
     {
         return self.playerId
     }

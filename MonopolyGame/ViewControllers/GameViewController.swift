@@ -5,8 +5,7 @@ import SpriteKit
 import GameplayKit
  
 class GameViewController: UIViewController {
-
-    @IBOutlet private weak var RollButton: UIButton!
+    
     @IBOutlet weak var DiceAnimationView: UIView!
     public var dice1ImageView: UIImageView!
     public var dice2ImageView: UIImageView!
@@ -27,13 +26,16 @@ class GameViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view?.isMultipleTouchEnabled = false
-
+        self.setupGame()
+        
         if let view = self.gameBoardScene   {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "BoardScene") {
+            if let scene = SKScene(fileNamed: "BoardScene") as? BoardScene {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .fill
                 self.boardScene = scene
+                scene.vc = self
+                scene.players = self.players
                 // Present the scene
                 view.presentScene(scene)
             }
@@ -46,7 +48,7 @@ class GameViewController: UIViewController {
         }
         
         self.tableView.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        self.setupGame()
+       
     }
 
     override var shouldAutorotate: Bool {
@@ -78,18 +80,18 @@ extension GameViewController {
        
         SoundAndHapticController.cacheSounds(soundNames: Const.DiceRollSoundFileNames, fileType: Const.SoundFileType)
         
-        let images = ["horse" , "dog","hat", "car"]
+        let images = Const.dices
         
-        players.append(Player(playerImage: images[0], playerId: 1, totalMoney: 1500, playerName: "Ashok", playerPosition: 0))
+        players.append(Player(playerImage: images[0], playerId: 1.description, totalMoney: 1500, playerName: "Ashok", playerPosition: 0))
         
-        players.append(Player(playerImage: images[1], playerId: 2, totalMoney: 1500, playerName: "Mohan", playerPosition: 0))
+        players.append(Player(playerImage: images[1], playerId: 2.description, totalMoney: 1500, playerName: "Mohan", playerPosition: 0))
         
         
-        players.append(Player(playerImage: images[2], playerId: 3, totalMoney: 1500, playerName: "Rajeev", playerPosition: 0))
+        players.append(Player(playerImage: images[2], playerId: 3.description, totalMoney: 1500, playerName: "Rajeev", playerPosition: 0))
         
-        players.append(Player(playerImage: images[3], playerId: 4, totalMoney: 1500, playerName: "Suresh", playerPosition: 0))
+        players.append(Player(playerImage: images[3], playerId: 4.description, totalMoney: 1500, playerName: "Suresh", playerPosition: 0))
         
-        self.playSound()
+        //self.playSound()
     }
     
     func playSound() {
@@ -132,14 +134,14 @@ extension GameViewController : UITableViewDelegate,UITableViewDataSource {
 extension GameViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-         
-      let node = self.getTappedNode(touches, scene: boardScene, name: "rollButton")
-        
-        if(node.2) {
-            print("Roll Button Tapped")
-            roll()
-            //node.0!.texture = SKTexture(imageNamed: "hat")
-        }
+//
+//      let node = self.getTappedNode(touches, scene: boardScene, name: "rollButton")
+//
+//        if(node.2) {
+//            print("Roll Button Tapped")
+//            roll()
+//            //node.0!.texture = SKTexture(imageNamed: "hat")
+//        }
     
   }
 }
@@ -174,8 +176,6 @@ extension GameViewController{
         handleRollResult(dice1, dice2)
         
     }
-    
-    
   
 }
 

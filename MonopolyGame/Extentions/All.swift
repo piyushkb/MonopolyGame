@@ -105,6 +105,54 @@ extension UICollectionView {
 }
 
 
+extension SKScene {
+    
+    func getTappedNode(_ touches: Set<UITouch> , scene:SKScene,name :String) -> (SKSpriteNode?,String?,Bool) {
+        
+        let tappedNodes = scene.nodes(at: touches.first!.location(in: scene))
+
+        var sKSpriteNode : SKSpriteNode?  = nil
+        
+        for node in tappedNodes{
+
+            if let tappedCard = node as? SKSpriteNode {
+                if tappedCard.name == name {
+                    sKSpriteNode = tappedCard
+                    break
+                }
+            }
+        }
+        
+            if let  sKSpriteNode = sKSpriteNode {
+                return (sKSpriteNode, sKSpriteNode.name!,true)
+            }else {
+                return (nil, nil,false)
+            }
+            
+    }
+     
+}
+
+
+extension SKSpriteNode {
+
+    func aspectFillToSize(fillSize: CGSize) {
+
+        if texture != nil {
+            self.size = texture!.size()
+
+            let verticalRatio = fillSize.height / self.texture!.size().height
+            let horizontalRatio = fillSize.width /  self.texture!.size().width
+
+            let scaleRatio = horizontalRatio > verticalRatio ? horizontalRatio : verticalRatio
+
+            self.setScale(scaleRatio)
+        }
+    }
+
+}
+
+
 extension UIViewController {
     
     func getTappedNode(_ touches: Set<UITouch> , scene:SKScene,name :String) -> (SKSpriteNode?,String?,Bool) {
@@ -130,7 +178,5 @@ extension UIViewController {
             }
             
     }
-   
-       
      
 }
