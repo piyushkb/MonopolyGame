@@ -5,7 +5,9 @@ import SpriteKit
 import GameplayKit
  
 class GameViewController: UIViewController {
-    
+   
+   
+    @IBOutlet weak var bottomSpaceDiceView: NSLayoutConstraint!
     @IBOutlet weak var DiceAnimationView: UIView!
     public var dice1ImageView: UIImageView!
     public var dice2ImageView: UIImageView!
@@ -26,8 +28,13 @@ class GameViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.view?.isMultipleTouchEnabled = false
+        if(isiPad()) {
+            self.bottomSpaceDiceView.constant = 100
+        }else {
+            self.bottomSpaceDiceView.constant = 50
+        }
         self.setupGame()
-        
+       
         if let view = self.gameBoardScene   {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "BoardScene") as? BoardScene {
@@ -47,10 +54,12 @@ class GameViewController: UIViewController {
             view.isMultipleTouchEnabled = false
         }
         
+        
         self.tableView.backgroundColor = UIColor(white: 1, alpha: 0.5)
        
     }
 
+   
     override var shouldAutorotate: Bool {
         return true
     }
@@ -76,22 +85,23 @@ extension GameViewController {
         configDiceImageView(&dice1ImageView)
         configDiceImageView(&dice2ImageView)
         configAnimation()
+     
         
-       
-        SoundAndHapticController.cacheSounds(soundNames: Const.DiceRollSoundFileNames, fileType: Const.SoundFileType)
+        
+         SoundAndHapticController.cacheSounds(soundNames: Const.DiceRollSoundFileNames, fileType: Const.SoundFileType)
         
         let images = Const.dices
         
-        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 1500, playerName: "Ashok", playerPosition: Const.INITIAL_POSITION_PLAYER))
+//        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 1500, playerName: "Ashok", playerPosition: Const.INITIAL_POSITION_PLAYER))
+//
+//        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 1500, playerName: "Mohan", playerPosition: Const.INITIAL_POSITION_PLAYER))
+//
+//
+//        players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 1500, playerName: "Rajeev", playerPosition: Const.INITIAL_POSITION_PLAYER))
+//
+//        players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 1500, playerName: "Suresh", playerPosition: Const.INITIAL_POSITION_PLAYER))
         
-        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 1500, playerName: "Mohan", playerPosition: Const.INITIAL_POSITION_PLAYER))
-        
-        
-        players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 1500, playerName: "Rajeev", playerPosition: Const.INITIAL_POSITION_PLAYER))
-        
-        players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 1500, playerName: "Suresh", playerPosition: Const.INITIAL_POSITION_PLAYER))
-        
-        //self.playSound()
+        self.playSound()
     }
     
     func playSound() {
@@ -154,31 +164,57 @@ extension GameViewController{
         return player!
     }
     
-   
-     
-     func roll() {
-        
-        let player = getActivePlayer()
-        
-        player.rollDice()
-        
-        if let dice1 = player.dice1 {
-            DiceAnimationView.addSubview(dice1ImageView)
-            animateDiceImageView(dice1ImageView, diceFace: dice1)
-        }
-        
-        if let dice2 = player.dice2 {
-            DiceAnimationView.addSubview(dice2ImageView)
-            animateDiceImageView(dice2ImageView, diceFace: dice2)
-        }
-        
-//        guard let dice1 = player.dice1, let dice2 = player.dice2 else { return }
-//        updateUI()
-        
-    }
-  
+    
 }
 
  
 
  
+
+
+extension GameViewController {
+   
+   func roll() {
+      
+      let player = getActivePlayer()
+      
+      player.rollDice()
+      
+      if let dice1 = player.dice1 {
+          DiceAnimationView.addSubview(dice1ImageView)
+         animateDiceImageView(dice1ImageView, diceFace: dice1)
+      }
+      
+      if let dice2 = player.dice2 {
+          DiceAnimationView.addSubview(dice2ImageView)
+          animateDiceImageView(dice2ImageView, diceFace: dice2)
+      }
+      
+  }
+}
+
+
+extension GameViewController {
+    
+    @IBAction func onExit(_ sender: Any) {
+        
+//        showConfirmationAlertGlobal(message: "Are you sure want to exit?") { value in
+//            
+//            if(value){
+//                self.players.removeAll()
+//                landingVc.players.removeAll()
+//                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                    self.dismiss(animated: true)
+//                    SoundAndHapticController.stopMusic()
+//                }
+//               
+//            }
+//        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+//        self.players.removeAll()
+//        landingVc.players.removeAll()
+    }
+}

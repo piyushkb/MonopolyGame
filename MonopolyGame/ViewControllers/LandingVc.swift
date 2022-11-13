@@ -1,6 +1,8 @@
  
 import UIKit
 
+var landingVc : LandingVc!
+
 class LandingVc: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -20,17 +22,20 @@ class LandingVc: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        landingVc = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.backgroundColor = .clear
         self.tableView.registerCells([PlayerSetupCell.self])
-        
-        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: Const.ACCEPTABLE_CHARACTERS))
-        
-        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
     
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+        
+        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+    }
     
     
     
@@ -71,7 +76,16 @@ class LandingVc: UIViewController {
         }
 
         if(segmentIndex == 2) {
-            players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+            
+            if(players.count == 2) {
+                players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+                
+                players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+                
+            }else{
+                players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+            }
+          
         }
         
         self.removePlayers()
@@ -98,6 +112,10 @@ extension LandingVc : UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerSetupCell" ) as! PlayerSetupCell
         cell.setCell(player: players[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     
@@ -131,7 +149,9 @@ extension LandingVc {
             }
             
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            vc.modalPresentationStyle = .fullScreen
             vc.players = players
+        
             self.present(vc, animated: true)
         }
     }

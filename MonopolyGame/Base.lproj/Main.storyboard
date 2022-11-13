@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TtJ-QW-cqs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -171,27 +171,30 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Exit"/>
+                                <connections>
+                                    <action selector="onExit:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hvf-pb-kQJ"/>
+                                </connections>
                             </button>
                             <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kic-Gt-IhR">
-                                <rect key="frame" x="50" y="114" width="312" height="157"/>
+                                <rect key="frame" x="77" y="53" width="435" height="262"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Kic-Gt-IhR" secondAttribute="bottom" constant="70" id="23V-Li-oeT"/>
                             <constraint firstItem="QWL-ql-HD6" firstAttribute="leading" secondItem="YoJ-TS-NNz" secondAttribute="leading" id="AJj-RB-AMq"/>
                             <constraint firstItem="YoJ-TS-NNz" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailing" id="F9H-bb-BjX"/>
                             <constraint firstItem="QWL-ql-HD6" firstAttribute="trailing" secondItem="YoJ-TS-NNz" secondAttribute="trailing" id="IGW-X6-3dC"/>
-                            <constraint firstItem="Kic-Gt-IhR" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="70" id="RZk-Pf-K8n"/>
+                            <constraint firstItem="Kic-Gt-IhR" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="77" id="NhT-Zm-uIJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Kic-Gt-IhR" secondAttribute="bottom" constant="60" id="SyO-zX-afw"/>
                             <constraint firstItem="QWL-ql-HD6" firstAttribute="bottom" secondItem="3se-qz-xqx" secondAttribute="bottom" id="UdB-gL-qmK"/>
-                            <constraint firstItem="YoJ-TS-NNz" firstAttribute="leading" secondItem="Kic-Gt-IhR" secondAttribute="trailing" constant="230" id="b2x-qC-OSA"/>
+                            <constraint firstItem="Kic-Gt-IhR" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="53" id="cs3-oy-ziY"/>
                             <constraint firstItem="dX2-6n-BcJ" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="eHN-YH-KPS"/>
                             <constraint firstItem="r9v-iC-doT" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="eMM-kY-VEs"/>
+                            <constraint firstItem="YoJ-TS-NNz" firstAttribute="leading" secondItem="Kic-Gt-IhR" secondAttribute="trailing" constant="80" id="gSn-hf-xVl"/>
                             <constraint firstItem="r9v-iC-doT" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="h0H-mx-bfX"/>
                             <constraint firstItem="YoJ-TS-NNz" firstAttribute="leading" secondItem="r9v-iC-doT" secondAttribute="trailing" id="mEg-sJ-DNu"/>
-                            <constraint firstItem="Kic-Gt-IhR" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="50" id="nN2-Wk-sdr"/>
                             <constraint firstAttribute="bottom" secondItem="dX2-6n-BcJ" secondAttribute="bottom" id="nY6-z9-XWS"/>
                             <constraint firstItem="dX2-6n-BcJ" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="nzM-td-NaZ"/>
                             <constraint firstAttribute="bottom" secondItem="r9v-iC-doT" secondAttribute="bottom" id="uYh-RI-pY7"/>
@@ -203,13 +206,14 @@
                     <size key="freeformSize" width="812" height="375"/>
                     <connections>
                         <outlet property="DiceAnimationView" destination="Kic-Gt-IhR" id="FLZ-Do-6te"/>
+                        <outlet property="bottomSpaceDiceView" destination="SyO-zX-afw" id="EON-Ra-vWC"/>
                         <outlet property="gameBoardScene" destination="r9v-iC-doT" id="P8u-mo-eWO"/>
                         <outlet property="tableView" destination="YoJ-TS-NNz" id="9dA-b2-Ky4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936" y="-20"/>
+            <point key="canvasLocation" x="934.78260869565224" y="-20.424107142857142"/>
         </scene>
     </scenes>
     <resources>
