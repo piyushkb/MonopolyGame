@@ -82,14 +82,14 @@ extension GameViewController {
         
         let images = Const.dices
         
-        players.append(Player(playerImage: images[0], playerId: 1.description, totalMoney: 1500, playerName: "Ashok", playerPosition: 0))
+        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 1500, playerName: "Ashok", playerPosition: Const.INITIAL_POSITION_PLAYER))
         
-        players.append(Player(playerImage: images[1], playerId: 2.description, totalMoney: 1500, playerName: "Mohan", playerPosition: 0))
+        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 1500, playerName: "Mohan", playerPosition: Const.INITIAL_POSITION_PLAYER))
         
         
-        players.append(Player(playerImage: images[2], playerId: 3.description, totalMoney: 1500, playerName: "Rajeev", playerPosition: 0))
+        players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 1500, playerName: "Rajeev", playerPosition: Const.INITIAL_POSITION_PLAYER))
         
-        players.append(Player(playerImage: images[3], playerId: 4.description, totalMoney: 1500, playerName: "Suresh", playerPosition: 0))
+        players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 1500, playerName: "Suresh", playerPosition: Const.INITIAL_POSITION_PLAYER))
         
         //self.playSound()
     }
@@ -149,31 +149,31 @@ extension GameViewController {
  
 extension GameViewController{
     
-  
-    func handleRollResult(_ dice1: Int, _ dice2: Int) {
-        print(dice1)
-        print(dice2)
+    func getActivePlayer() -> Player {
+        let player = self.players.filter{$0.isActive}.first
+        return player!
     }
     
+   
+     
      func roll() {
         
-        let player = players.first
+        let player = getActivePlayer()
         
-        player!.rollDice()
+        player.rollDice()
         
-        if let dice1 = player?.dice1 {
+        if let dice1 = player.dice1 {
             DiceAnimationView.addSubview(dice1ImageView)
             animateDiceImageView(dice1ImageView, diceFace: dice1)
         }
         
-        if let dice2 = player?.dice2 {
+        if let dice2 = player.dice2 {
             DiceAnimationView.addSubview(dice2ImageView)
             animateDiceImageView(dice2ImageView, diceFace: dice2)
         }
         
-        guard let dice1 = player?.dice1, let dice2 = player?.dice2 else { return }
-        updateUI()
-        handleRollResult(dice1, dice2)
+//        guard let dice1 = player.dice1, let dice2 = player.dice2 else { return }
+//        updateUI()
         
     }
   

@@ -43,6 +43,7 @@ struct Const {
     static var DefaultIsMusicEnabled = true
     static let DefaultIsVibrationEnabled = false
     static let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    static let INITIAL_POSITION_PLAYER = "A0"
 
 }
 

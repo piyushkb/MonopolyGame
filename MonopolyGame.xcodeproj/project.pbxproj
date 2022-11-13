@@ -32,7 +32,6 @@
 		0006FCA7291FE60D0023DBAE /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0006FCA5291FE60D0023DBAE /* PlayerCell.xib */; };
 		003A26C62919F4B200821AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A26C52919F4B200821AAA /* AppDelegate.swift */; };
 		003A26CA2919F4B200821AAA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 003A26C92919F4B200821AAA /* Actions.sks */; };
-		003A26CC2919F4B200821AAA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A26CB2919F4B200821AAA /* GameScene.swift */; };
 		003A26CE2919F4B200821AAA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003A26CD2919F4B200821AAA /* GameViewController.swift */; };
 		003A26D12919F4B200821AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003A26CF2919F4B200821AAA /* Main.storyboard */; };
 		003A26D32919F4B300821AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003A26D22919F4B300821AAA /* Assets.xcassets */; };
@@ -73,7 +72,6 @@
 		003A26C22919F4B200821AAA /* MonopolyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonopolyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003A26C52919F4B200821AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		003A26C92919F4B200821AAA /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		003A26CB2919F4B200821AAA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		003A26CD2919F4B200821AAA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		003A26D02919F4B200821AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003A26D22919F4B300821AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,6 +194,14 @@
 			path = PlayerCell;
 			sourceTree = "<group>";
 		};
+		002D999E29216D3400ED80CE /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				003A26C92919F4B200821AAA /* Actions.sks */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		003A26B92919F4B200821AAA = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +221,7 @@
 		003A26C42919F4B200821AAA /* MonopolyGame */ = {
 			isa = PBXGroup;
 			children = (
+				002D999E29216D3400ED80CE /* Others */,
 				0000BA6C29203B5C00B99039 /* GameScenes */,
 				0006FC9D291FC0720023DBAE /* Extentions */,
 				0006FC98291FBB190023DBAE /* Cells */,
@@ -226,8 +233,6 @@
 				0006FC73291F7C2A0023DBAE /* PlayerNameDialog */,
 				004D3D6C291F121B0050D396 /* Sounds */,
 				003A26C52919F4B200821AAA /* AppDelegate.swift */,
-				003A26C92919F4B200821AAA /* Actions.sks */,
-				003A26CB2919F4B200821AAA /* GameScene.swift */,
 				003A26CF2919F4B200821AAA /* Main.storyboard */,
 				003A26D22919F4B300821AAA /* Assets.xcassets */,
 				003A26D42919F4B300821AAA /* LaunchScreen.storyboard */,
@@ -339,7 +344,6 @@
 				008A556D292115950001AEBB /* AudioManager.swift in Sources */,
 				0006FC8E291F88D20023DBAE /* Property.swift in Sources */,
 				0006FC90291FAF940023DBAE /* Constants.swift in Sources */,
-				003A26CC2919F4B200821AAA /* GameScene.swift in Sources */,
 				003A26CE2919F4B200821AAA /* GameViewController.swift in Sources */,
 				0000BA6729202B4A00B99039 /* GameViewController+Ext.swift in Sources */,
 				0006FC84291F81EF0023DBAE /* makeNSMutableAttributedString.swift in Sources */,

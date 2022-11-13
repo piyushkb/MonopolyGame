@@ -180,3 +180,13 @@ extension UIViewController {
     }
      
 }
+
+extension String {
+    func toInt() -> Int {
+        if let n = Int(self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)) {
+            return n
+        } else {
+            return 0
+        }
+    }
+}

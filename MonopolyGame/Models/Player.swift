@@ -6,24 +6,25 @@ class Player {
     var turnsInJail = 0
     var playerImage: String
     var moneySymbol = "$"
-     
     private(set) var totalMoney = 0
     private(set) var playerName: String
-    private(set) var playerPosition = 0
+    private(set) var playerPosition = Const.INITIAL_POSITION_PLAYER
     private(set) var dice1: Int?
     private(set) var dice2: Int?
     private(set) var playerId: String
     private(set) var inJail = false
-    private(set) var doubleDice: [Int]?
+    private(set) var isActive = false
+    private(set) var doubleDice = [Int]()
     
   
     
-    init(playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: Int) {
+    init(isActive:Bool,playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: String) {
         self.playerName = playerName
         self.playerPosition = playerPosition
         self.totalMoney = totalMoney
         self.playerId = playerId
         self.playerImage = playerImage
+        self.isActive = isActive
     }
     
     
@@ -35,10 +36,10 @@ class Player {
         let total = dice1! + dice2!
         
         if(dice1 == dice2){
-            doubleDice?.append(total)
+            doubleDice.append(total)
         }else {
-            doubleDice?.removeAll()
-            doubleDice?.append(total)
+            doubleDice.removeAll()
+            doubleDice.append(total)
         }
     }
      
@@ -74,13 +75,33 @@ class Player {
 extension  Player
 {
    
+    func isPlayerActive() -> Bool
+    {
+        return self.isActive
+    }
+    
+    func setPlayerDeActive()
+    {
+       self.isActive = false
+    }
+    
+    func setPlayerActive()
+    {
+       self.isActive = true
+    }
+    
     func getPlayerId() -> String
     {
         return self.playerId
     }
-    func getPlayerPosition() -> Int
+    func getPlayerPosition() -> String
     {
         return self.playerPosition
+    }
+    
+    func setPlayerPosition(position:String)
+    {
+        self.playerPosition = position
     }
     
     func setName(name:String) 

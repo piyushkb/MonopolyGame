@@ -25,9 +25,9 @@ class LandingVc: UIViewController {
         self.tableView.backgroundColor = .clear
         self.tableView.registerCells([PlayerSetupCell.self])
         
-        players.append(Player(playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: 0))
+        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: Const.ACCEPTABLE_CHARACTERS))
         
-        players.append(Player(playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: 0))
+        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
     
     }
     
@@ -67,11 +67,11 @@ class LandingVc: UIViewController {
       
         
         if(segmentIndex == 1) {
-            players.append(Player(playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: 0))
+            players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
         }
 
         if(segmentIndex == 2) {
-            players.append(Player(playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: 0))
+            players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
         }
         
         self.removePlayers()
