@@ -8,17 +8,16 @@ class Player {
     var moneySymbol = "$"
     private(set) var totalMoney = 0
     private(set) var playerName: String
-    private(set) var playerPosition = Const.INITIAL_POSITION_PLAYER
+    private(set) var playerPosition:PlayerSpace = .GO
     private(set) var dice1: Int?
     private(set) var dice2: Int?
     private(set) var playerId: String
     private(set) var inJail = false
     private(set) var isActive = false
     private(set) var doubleDice = [Int]()
-    
   
     
-    init(isActive:Bool,playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: String) {
+    init(isActive:Bool,playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: PlayerSpace) {
         self.playerName = playerName
         self.playerPosition = playerPosition
         self.totalMoney = totalMoney
@@ -94,13 +93,14 @@ extension  Player
     {
         return self.playerId
     }
-    func getPlayerPosition() -> String
+    func getPlayerPosition() -> PlayerSpace
     {
         return self.playerPosition
     }
     
-    func setPlayerPosition(position:String)
+    func setPlayerPosition(position:PlayerSpace)
     {
+    
         self.playerPosition = position
     }
     

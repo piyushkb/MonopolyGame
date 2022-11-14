@@ -32,9 +32,9 @@ class LandingVc: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: .GO))
         
-        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: .GO))
     }
     
     
@@ -72,18 +72,18 @@ class LandingVc: UIViewController {
       
         
         if(segmentIndex == 1) {
-            players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+            players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: .GO))
         }
 
         if(segmentIndex == 2) {
             
             if(players.count == 2) {
-                players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+                players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 0, playerName: "", playerPosition: .GO))
                 
-                players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+                players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: .GO))
                 
             }else{
-                players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: Const.INITIAL_POSITION_PLAYER))
+                players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 0, playerName: "", playerPosition: .GO))
             }
           
         }

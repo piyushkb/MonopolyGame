@@ -30,7 +30,6 @@ extension GameViewController  {
             diceImageView.alpha = 1.0
             self.DiceAnimationView.layoutIfNeeded()
             self.addBehaviours(to: diceImageView)
-            print("ENDD")
             self.bouncingBehavior.addAngularVelocity(CGFloat.random(in: -20...20), for: diceImageView)
         }
     }
@@ -98,9 +97,7 @@ extension GameViewController: UICollisionBehaviorDelegate {
         beganContactFor item: UIDynamicItem,
         withBoundaryIdentifier identifier: NSCopying?, at p: CGPoint
     ) {
-        print(p.y)
-        print(UIScreen.main.bounds.size.height)
-       
+        
         // Play vibration
         if Const.DefaultIsVibrationEnabled {
            // SoundAndHapticController.playHaptic()

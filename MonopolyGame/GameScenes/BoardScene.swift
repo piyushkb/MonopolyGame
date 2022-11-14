@@ -64,7 +64,7 @@ class BoardScene: SKScene {
 
            let runAction:SKAction = SKAction.run {
 
-               player.0.setPlayerPosition(position: player.1) // move to next Position
+               player.0.setPlayerPosition(position: PlayerSpace(rawValue: player.1)!) // move to next Position
                
                self.movesRemaining = self.movesRemaining - 1
               
@@ -73,6 +73,7 @@ class BoardScene: SKScene {
                }
                
                if(self.movesRemaining == 0) {
+                   self.onReachAtPosition(player: player.0)
                    self.setNextPlayerActive()
                }
            }
@@ -87,7 +88,7 @@ class BoardScene: SKScene {
    func getActivePlayerAndNextPosition() -> (Player,String) {
        
        let currentPlayer = getActivePlayer()
-       let currentSpace:String = currentPlayer.playerPosition //A0
+       let currentSpace:String = currentPlayer.playerPosition.rawValue //A0
        var spaceNumber:String = currentSpace //
        let firstCharacter:Character = spaceNumber.remove(at: spaceNumber.startIndex)
 
@@ -97,7 +98,104 @@ class BoardScene: SKScene {
        return (currentPlayer,nextSpace)
    }
 
+    func onReachAtPosition(player:Player) {
+        
+        let playerSpace = player.playerPosition
+        
+        switch playerSpace {
+            
+        case .GO :
+            self.handelPosition(space: playerSpace, player: player)
+            break
+        case .MEDITER_RANEAN:
+            self.handelPosition(space: playerSpace, player: player)
+        case .COMMUNITY_CHEST:
+            self.handelPosition(space: playerSpace, player: player)
+        case .BALTIC_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .INCOM_TAX:
+            self.handelPosition(space: playerSpace, player: player)
+        case .READING_RAILROAD:
+            self.handelPosition(space: playerSpace, player: player)
+        case .ORIENTAL_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .CHANCE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .VERMONT_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .CONNECTICUT_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .JAIL_VISITING:
+            self.handelPosition(space: playerSpace, player: player)
+        case .ST_CHARLES:
+            self.handelPosition(space: playerSpace, player: player)
+        case .ELECTRICITY:
+            self.handelPosition(space: playerSpace, player: player)
+        case .STATUS_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .VIRGINIA_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .PENNSYLVANIA_RAILROAD:
+            self.handelPosition(space: playerSpace, player: player)
+        case .ST_JAMES_PLACE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .COMMUNITY_CHEST2:
+            self.handelPosition(space: playerSpace, player: player)
+        case .TENNESSEE_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .NEW_YOURK_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .FREE_PARKING:
+            self.handelPosition(space: playerSpace, player: player)
+        case .KENTUCKY_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .CHANCE2:
+            self.handelPosition(space: playerSpace, player: player)
+        case .INDIANA_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .ILLINOIS_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .B_O_RAILROAD:
+            self.handelPosition(space: playerSpace, player: player)
+        case .ATLANTIC_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .VENTINOR_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .WATER_WORKS:
+            self.handelPosition(space: playerSpace, player: player)
+        case .MARVIN_GARDENS:
+            self.handelPosition(space: playerSpace, player: player)
+        case .GO_TO_JAIL:
+            self.handelPosition(space: playerSpace, player: player)
+        case .PACIFIC_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .NORTH_CAROLINA_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .COMMUNITY_CHEST3:
+            self.handelPosition(space: playerSpace, player: player)
+        case .PENNSYLVANIA_AVENUE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .SHORT_LINE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .CHANCE3:
+            self.handelPosition(space: playerSpace, player: player)
+        case .PARK_PLACE:
+            self.handelPosition(space: playerSpace, player: player)
+        case .LUXARY_TAX:
+            self.handelPosition(space: playerSpace, player: player)
+        case .BOARD_WALK:
+            self.handelPosition(space: playerSpace, player: player)
+        }
+    }
    
+    
+    func handelPosition(space:PlayerSpace,player:Player) {
+        print(space)
+        if(space == .CHANCE) {
+            print("chace")
+        }
+    }
+    
    func setNextPlayerActive() {
        
        let playerId = self.getActivePlayer().getPlayerId().toInt()
@@ -153,7 +251,7 @@ extension BoardScene {
    
    func addPeaces() {
        
-       let A0Node = getSkNode(name: Const.INITIAL_POSITION_PLAYER)
+       let A0Node = getSkNode(name: PlayerSpace.GO.rawValue)
        
        for (index,player) in self.players.enumerated() {
            
