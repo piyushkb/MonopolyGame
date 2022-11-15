@@ -20,9 +20,9 @@ class BoardScene: SKScene {
        let node = self.getTappedNode(touches, scene: self, name: "rollButton")
       
               if(node.2) {
+                  disableTouch(view: vc.view)
                   print("Roll Button Tapped")
                   vc.roll()
-                  
                   let player = getActivePlayerAndNextPosition()
                   let diceTotal =  player.0.doubleDice.first!
                 
@@ -190,10 +190,27 @@ class BoardScene: SKScene {
    
     
     func handelPosition(space:PlayerSpace,player:Player) {
+        
         print(space)
-        if(space == .CHANCE) {
-            print("chace")
+        if(space == .JAIL_VISITING || space == .GO_TO_JAIL) {
+            print("Jail")
+            vc.showLottieAnimation(json: AnimationJson.JAIL)
+            playSound(soundName: AnimationJson.JAIL)
         }
+        
+        if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
+            print("chest")
+            vc.showLottieAnimation(json: AnimationJson.Chest)
+            playSound(soundName: AnimationJson.Chest)
+        }
+        
+        if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
+            print("chance")
+            vc.showLottieAnimation(json: AnimationJson.Chance)
+            playSound(soundName: AnimationJson.Chance)
+        }
+        
+        enableTouch(view:  vc.view)
     }
     
    func setNextPlayerActive() {
@@ -266,26 +283,6 @@ extension BoardScene {
            
        }
        
-//        for player in self.players {
-//
-//            self.getTappedNode(<#T##touches: Set<UITouch>##Set<UITouch>#>, scene: <#T##SKScene#>, name: <#T##String#>)
-//
-//            let moveAction:SKAction = SKAction.move(to: node.position, duration: 0.5)
-//            moveAction.timingMode = .easeOut
-//            let wait:SKAction = SKAction.wait(forDuration: 0.2)
-//
-//            let runAction:SKAction = SKAction.run {
-//
-//                self.setThePlayerSpace(space: nextSpace, player:self.currentPlayer!)
-//                self.movesRemaining = self.movesRemaining - 1
-//
-//                //In the kit here we would do things like check the space for particular properties
-//                //i.e.   Do we draw a card, do we get money, do we win, do we lose a turn
-//
-//                self.movePiece()
-//
-//            }
-//        }
       
    }
    

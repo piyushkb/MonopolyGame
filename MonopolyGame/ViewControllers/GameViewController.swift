@@ -3,10 +3,12 @@
 import UIKit
 import SpriteKit
 import GameplayKit
- 
+import Lottie
+
 class GameViewController: UIViewController {
    
-   
+    @IBOutlet weak var lottieAnimationView: LottieAnimationView!
+    
     @IBOutlet weak var bottomSpaceDiceView: NSLayoutConstraint!
     @IBOutlet weak var DiceAnimationView: UIView!
     public var dice1ImageView: UIImageView!
@@ -24,6 +26,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+     
+        self.hideLottie()
         self.tableView.registerCells([PlayerCell.self])
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -58,7 +63,33 @@ class GameViewController: UIViewController {
         self.tableView.backgroundColor = UIColor(white: 1, alpha: 0.5)
        
     }
+    
+    override func viewDidLayoutSubviews() {
+        if(isiPad()) {
+            self.lottieAnimationView.frame.size = CGSize(width: 500,height: 500)
+            lottieAnimationView.center = self.gameBoardScene.center
+        }else {
+            self.lottieAnimationView.frame.size = CGSize(width: 250,height: 250)
+            lottieAnimationView.center = self.gameBoardScene.center
+        }
+    }
 
+    func showLottieAnimation(json:String) {
+        lottieAnimationView.animation = LottieAnimation.named(json)
+        lottieAnimationView.loopMode = .playOnce
+        lottieAnimationView.contentMode = .scaleAspectFit
+        self.showLottie()
+        lottieAnimationView.play { _ in
+            self.hideLottie()
+        }
+    }
+    
+    func hideLottie(){
+        lottieAnimationView.isHidden = true
+    }
+    func showLottie(){
+        lottieAnimationView.isHidden = false
+    }
    
     override var shouldAutorotate: Bool {
         return true
@@ -90,18 +121,8 @@ extension GameViewController {
         
          SoundAndHapticController.cacheSounds(soundNames: Const.DiceRollSoundFileNames, fileType: Const.SoundFileType)
         
-        let images = Const.dices
         
-//        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 1500, playerName: "Ashok", playerPosition: Const.INITIAL_POSITION_PLAYER))
-//
-//        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 1500, playerName: "Mohan", playerPosition: Const.INITIAL_POSITION_PLAYER))
-//
-//
-//        players.append(Player(isActive: false, playerImage: images[2], playerId: 3.description, totalMoney: 1500, playerName: "Rajeev", playerPosition: Const.INITIAL_POSITION_PLAYER))
-//
-//        players.append(Player(isActive: false, playerImage: images[3], playerId: 4.description, totalMoney: 1500, playerName: "Suresh", playerPosition: Const.INITIAL_POSITION_PLAYER))
-        
-        self.playSound()
+            //self.playSound()
     }
     
     func playSound() {

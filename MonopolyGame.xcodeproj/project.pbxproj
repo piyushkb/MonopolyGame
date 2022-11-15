@@ -61,8 +61,15 @@
 		003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003A26D42919F4B300821AAA /* LaunchScreen.storyboard */; };
 		004D3D6B291F04D00050D396 /* BoardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 004D3D6A291F04D00050D396 /* BoardScene.sks */; };
 		004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */; };
+		0056EA59292284610090EC72 /* jail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA58292284610090EC72 /* jail.json */; };
+		0056EA5B29228FC70090EC72 /* jail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5A29228FC70090EC72 /* jail.mp3 */; };
+		0056EA5D29229C740090EC72 /* chance.json in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5C29229C740090EC72 /* chance.json */; };
+		0056EA5F2922A2B50090EC72 /* chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5E2922A2B50090EC72 /* chance.mp3 */; };
 		008A556B292112C90001AEBB /* move.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008A556A292112C90001AEBB /* move.mp3 */; };
 		008A556D292115950001AEBB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A556C292115950001AEBB /* AudioManager.swift */; };
+		00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6D2922ABAA0042F5C2 /* chest.json */; };
+		00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6F2922ACC10042F5C2 /* chest.mp3 */; };
+		00D6EB1629226712006D4BEA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D6EB1529226712006D4BEA /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,8 +132,14 @@
 		003A26D52919F4B300821AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004D3D6A291F04D00050D396 /* BoardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoardScene.sks; sourceTree = "<group>"; };
 		004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonopolyMusic.mp3; sourceTree = "<group>"; };
+		0056EA58292284610090EC72 /* jail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jail.json; sourceTree = "<group>"; };
+		0056EA5A29228FC70090EC72 /* jail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jail.mp3; sourceTree = "<group>"; };
+		0056EA5C29229C740090EC72 /* chance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chance.json; sourceTree = "<group>"; };
+		0056EA5E2922A2B50090EC72 /* chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chance.mp3; sourceTree = "<group>"; };
 		008A556A292112C90001AEBB /* move.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = move.mp3; sourceTree = "<group>"; };
 		008A556C292115950001AEBB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		00C6FF6D2922ABAA0042F5C2 /* chest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest.json; sourceTree = "<group>"; };
+		00C6FF6F2922ACC10042F5C2 /* chest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chest.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D6EB1629226712006D4BEA /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +353,7 @@
 		003A26C42919F4B200821AAA /* MonopolyGame */ = {
 			isa = PBXGroup;
 			children = (
+				0056EA572922843F0090EC72 /* LottieAnimations */,
 				002D999F2921AAAB00ED80CE /* ThirdParty */,
 				002D999E29216D3400ED80CE /* Others */,
 				0000BA6C29203B5C00B99039 /* GameScenes */,
@@ -364,6 +379,9 @@
 			isa = PBXGroup;
 			children = (
 				0000BA6A292033C100B99039 /* MonopolyMusic3.mp3 */,
+				0056EA5E2922A2B50090EC72 /* chance.mp3 */,
+				00C6FF6F2922ACC10042F5C2 /* chest.mp3 */,
+				0056EA5A29228FC70090EC72 /* jail.mp3 */,
 				0000BA682920330000B99039 /* MonopolyMusic2.mp3 */,
 				008A556A292112C90001AEBB /* move.mp3 */,
 				0006FC7A291F81850023DBAE /* dice_collision1.wav */,
@@ -373,6 +391,16 @@
 				004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		0056EA572922843F0090EC72 /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				00C6FF6D2922ABAA0042F5C2 /* chest.json */,
+				0056EA5C29229C740090EC72 /* chance.json */,
+				0056EA58292284610090EC72 /* jail.json */,
+			);
+			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +419,9 @@
 			dependencies = (
 			);
 			name = MonopolyGame;
+			packageProductDependencies = (
+				00D6EB1529226712006D4BEA /* Lottie */,
+			);
 			productName = MonopolyGame;
 			productReference = 003A26C22919F4B200821AAA /* MonopolyGame.app */;
 			productType = "com.apple.product-type.application";
@@ -419,6 +450,9 @@
 				Base,
 			);
 			mainGroup = 003A26B92919F4B200821AAA;
+			packageReferences = (
+				00D6EB1429226712006D4BEA /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 003A26C32919F4B200821AAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -440,14 +474,20 @@
 				003A26D32919F4B300821AAA /* Assets.xcassets in Resources */,
 				0000BA6B292033C100B99039 /* MonopolyMusic3.mp3 in Resources */,
 				0006FC7B291F81850023DBAE /* dice_collision2.wav in Resources */,
+				0056EA5D29229C740090EC72 /* chance.json in Resources */,
+				0056EA5F2922A2B50090EC72 /* chance.mp3 in Resources */,
+				00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */,
+				00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */,
 				0006FC7E291F81850023DBAE /* dice_collision3.wav in Resources */,
 				004D3D6B291F04D00050D396 /* BoardScene.sks in Resources */,
+				0056EA59292284610090EC72 /* jail.json in Resources */,
 				004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */,
 				0006FCA7291FE60D0023DBAE /* PlayerCell.xib in Resources */,
 				008A556B292112C90001AEBB /* move.mp3 in Resources */,
 				003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */,
 				0000BA692920330000B99039 /* MonopolyMusic2.mp3 in Resources */,
 				003A26CA2919F4B200821AAA /* Actions.sks in Resources */,
+				0056EA5B29228FC70090EC72 /* jail.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +760,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00D6EB1429226712006D4BEA /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00D6EB1529226712006D4BEA /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00D6EB1429226712006D4BEA /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 003A26BA2919F4B200821AAA /* Project object */;
 }

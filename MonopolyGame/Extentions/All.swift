@@ -190,3 +190,12 @@ extension String {
         }
     }
 }
+
+
+func disableTouch(view:UIView) {
+    view.isUserInteractionEnabled = false
+}
+
+func enableTouch(view:UIView) {
+    view.isUserInteractionEnabled = true
+}

@@ -46,6 +46,18 @@ struct Const {
     static let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     
 }
+
+
+ 
+
+struct AnimationJson {
+    
+    static let JAIL =  "jail"
+    static let Chance =  "chance"
+    static let Chest =  "chest"
+    
+}
+
 //
 //let GO = "A0"
 //let MEDITER_RANEAN = "A1"
