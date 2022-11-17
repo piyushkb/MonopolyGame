@@ -30,6 +30,22 @@
 		0006FCA1291FDB200023DBAE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0006FCA0291FDB200023DBAE /* Alerts.swift */; };
 		0006FCA6291FE60D0023DBAE /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0006FCA4291FE60D0023DBAE /* PlayerCell.swift */; };
 		0006FCA7291FE60D0023DBAE /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0006FCA5291FE60D0023DBAE /* PlayerCell.xib */; };
+		001D087F2923FC680072FC77 /* tax.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D087E2923FC680072FC77 /* tax.json */; };
+		001D08812923FDB00072FC77 /* tax.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001D08802923FDB00072FC77 /* tax.mp3 */; };
+		001D08832924019C0072FC77 /* money_receive.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D08822924019C0072FC77 /* money_receive.json */; };
+		001D08852924022F0072FC77 /* rail.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D08842924022F0072FC77 /* rail.json */; };
+		001D0887292402F30072FC77 /* rail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001D0886292402F30072FC77 /* rail.mp3 */; };
+		001D0889292405190072FC77 /* light.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D0888292405190072FC77 /* light.json */; };
+		001D088B2924057A0072FC77 /* light.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001D088A2924057A0072FC77 /* light.mp3 */; };
+		001D088D2924060F0072FC77 /* parking.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D088C2924060F0072FC77 /* parking.json */; };
+		001D088F292406FD0072FC77 /* parking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001D088E292406FD0072FC77 /* parking.mp3 */; };
+		001D08912924091A0072FC77 /* water.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D08902924091A0072FC77 /* water.json */; };
+		001D089529240C0C0072FC77 /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001D089429240C0C0072FC77 /* water.mp3 */; };
+		001D089729241ABE0072FC77 /* ChanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D089629241ABE0072FC77 /* ChanceVC.swift */; };
+		001D089929241E8D0072FC77 /* BoardScene+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D089829241E8D0072FC77 /* BoardScene+Action.swift */; };
+		001D089B2924259D0072FC77 /* star.json in Resources */ = {isa = PBXBuildFile; fileRef = 001D089A2924259D0072FC77 /* star.json */; };
+		001D089D292429C20072FC77 /* PropertyCardVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D089C292429C20072FC77 /* PropertyCardVc.swift */; };
+		001D089F292431BD0072FC77 /* card.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 001D089E292431BD0072FC77 /* card.mp3 */; };
 		002D99BD2921AABA00ED80CE /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D99A22921AABA00ED80CE /* IQTextView.swift */; };
 		002D99BE2921AABA00ED80CE /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D99A32921AABA00ED80CE /* IQKeyboardManager+Internal.swift */; };
 		002D99BF2921AABA00ED80CE /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002D99A52921AABA00ED80CE /* IQPreviousNextView.swift */; };
@@ -59,6 +75,7 @@
 		003A26D12919F4B200821AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003A26CF2919F4B200821AAA /* Main.storyboard */; };
 		003A26D32919F4B300821AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003A26D22919F4B300821AAA /* Assets.xcassets */; };
 		003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003A26D42919F4B300821AAA /* LaunchScreen.storyboard */; };
+		0043A44E2926598400C1D2CC /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043A44D2926598400C1D2CC /* Assets.swift */; };
 		004D3D6B291F04D00050D396 /* BoardScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 004D3D6A291F04D00050D396 /* BoardScene.sks */; };
 		004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */; };
 		0056EA59292284610090EC72 /* jail.json in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA58292284610090EC72 /* jail.json */; };
@@ -99,6 +116,22 @@
 		0006FCA0291FDB200023DBAE /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		0006FCA4291FE60D0023DBAE /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		0006FCA5291FE60D0023DBAE /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
+		001D087E2923FC680072FC77 /* tax.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tax.json; sourceTree = "<group>"; };
+		001D08802923FDB00072FC77 /* tax.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tax.mp3; sourceTree = "<group>"; };
+		001D08822924019C0072FC77 /* money_receive.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = money_receive.json; sourceTree = "<group>"; };
+		001D08842924022F0072FC77 /* rail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rail.json; sourceTree = "<group>"; };
+		001D0886292402F30072FC77 /* rail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rail.mp3; sourceTree = "<group>"; };
+		001D0888292405190072FC77 /* light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = light.json; sourceTree = "<group>"; };
+		001D088A2924057A0072FC77 /* light.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = light.mp3; sourceTree = "<group>"; };
+		001D088C2924060F0072FC77 /* parking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parking.json; sourceTree = "<group>"; };
+		001D088E292406FD0072FC77 /* parking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = parking.mp3; sourceTree = "<group>"; };
+		001D08902924091A0072FC77 /* water.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = water.json; sourceTree = "<group>"; };
+		001D089429240C0C0072FC77 /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
+		001D089629241ABE0072FC77 /* ChanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChanceVC.swift; sourceTree = "<group>"; };
+		001D089829241E8D0072FC77 /* BoardScene+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BoardScene+Action.swift"; sourceTree = "<group>"; };
+		001D089A2924259D0072FC77 /* star.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = star.json; sourceTree = "<group>"; };
+		001D089C292429C20072FC77 /* PropertyCardVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCardVc.swift; sourceTree = "<group>"; };
+		001D089E292431BD0072FC77 /* card.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = card.mp3; sourceTree = "<group>"; };
 		002D99A22921AABA00ED80CE /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		002D99A32921AABA00ED80CE /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
 		002D99A52921AABA00ED80CE /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
@@ -130,6 +163,7 @@
 		003A26D02919F4B200821AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		003A26D22919F4B300821AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003A26D52919F4B300821AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0043A44D2926598400C1D2CC /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		004D3D6A291F04D00050D396 /* BoardScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BoardScene.sks; sourceTree = "<group>"; };
 		004D3D6D291F12280050D396 /* MonopolyMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonopolyMusic.mp3; sourceTree = "<group>"; };
 		0056EA58292284610090EC72 /* jail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jail.json; sourceTree = "<group>"; };
@@ -158,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				0000BA6F29203B8900B99039 /* BoardScene.swift */,
+				001D089829241E8D0072FC77 /* BoardScene+Action.swift */,
 			);
 			path = GameScenes;
 			sourceTree = "<group>";
@@ -194,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0006FC89291F88D20023DBAE /* Color.swift */,
+				0043A44D2926598400C1D2CC /* Assets.swift */,
 				0006FC8A291F88D20023DBAE /* Player.swift */,
 				0006FC8B291F88D20023DBAE /* Property.swift */,
 			);
@@ -216,6 +252,8 @@
 				003A26CD2919F4B200821AAA /* GameViewController.swift */,
 				0006FC96291FB9050023DBAE /* LandingVc.swift */,
 				0000BA6629202B4A00B99039 /* GameViewController+Ext.swift */,
+				001D089629241ABE0072FC77 /* ChanceVC.swift */,
+				001D089C292429C20072FC77 /* PropertyCardVc.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -380,6 +418,12 @@
 			children = (
 				0000BA6A292033C100B99039 /* MonopolyMusic3.mp3 */,
 				0056EA5E2922A2B50090EC72 /* chance.mp3 */,
+				001D088E292406FD0072FC77 /* parking.mp3 */,
+				001D088A2924057A0072FC77 /* light.mp3 */,
+				001D089429240C0C0072FC77 /* water.mp3 */,
+				001D089E292431BD0072FC77 /* card.mp3 */,
+				001D08802923FDB00072FC77 /* tax.mp3 */,
+				001D0886292402F30072FC77 /* rail.mp3 */,
 				00C6FF6F2922ACC10042F5C2 /* chest.mp3 */,
 				0056EA5A29228FC70090EC72 /* jail.mp3 */,
 				0000BA682920330000B99039 /* MonopolyMusic2.mp3 */,
@@ -396,6 +440,13 @@
 		0056EA572922843F0090EC72 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				001D0888292405190072FC77 /* light.json */,
+				001D08842924022F0072FC77 /* rail.json */,
+				001D089A2924259D0072FC77 /* star.json */,
+				001D088C2924060F0072FC77 /* parking.json */,
+				001D08902924091A0072FC77 /* water.json */,
+				001D087E2923FC680072FC77 /* tax.json */,
+				001D08822924019C0072FC77 /* money_receive.json */,
 				00C6FF6D2922ABAA0042F5C2 /* chest.json */,
 				0056EA5C29229C740090EC72 /* chance.json */,
 				0056EA58292284610090EC72 /* jail.json */,
@@ -470,23 +521,36 @@
 				003A26D12919F4B200821AAA /* Main.storyboard in Resources */,
 				0006FC7F291F81850023DBAE /* dice_collision1.wav in Resources */,
 				0006FC9C291FBB440023DBAE /* PlayerSetupCell.xib in Resources */,
+				001D088F292406FD0072FC77 /* parking.mp3 in Resources */,
 				0006FC7D291F81850023DBAE /* dice_collision4.wav in Resources */,
+				001D08912924091A0072FC77 /* water.json in Resources */,
 				003A26D32919F4B300821AAA /* Assets.xcassets in Resources */,
 				0000BA6B292033C100B99039 /* MonopolyMusic3.mp3 in Resources */,
 				0006FC7B291F81850023DBAE /* dice_collision2.wav in Resources */,
+				001D08812923FDB00072FC77 /* tax.mp3 in Resources */,
+				001D089529240C0C0072FC77 /* water.mp3 in Resources */,
 				0056EA5D29229C740090EC72 /* chance.json in Resources */,
 				0056EA5F2922A2B50090EC72 /* chance.mp3 in Resources */,
 				00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */,
+				001D0889292405190072FC77 /* light.json in Resources */,
 				00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */,
 				0006FC7E291F81850023DBAE /* dice_collision3.wav in Resources */,
 				004D3D6B291F04D00050D396 /* BoardScene.sks in Resources */,
+				001D08852924022F0072FC77 /* rail.json in Resources */,
+				001D087F2923FC680072FC77 /* tax.json in Resources */,
 				0056EA59292284610090EC72 /* jail.json in Resources */,
 				004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */,
+				001D0887292402F30072FC77 /* rail.mp3 in Resources */,
+				001D088D2924060F0072FC77 /* parking.json in Resources */,
 				0006FCA7291FE60D0023DBAE /* PlayerCell.xib in Resources */,
 				008A556B292112C90001AEBB /* move.mp3 in Resources */,
 				003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */,
+				001D088B2924057A0072FC77 /* light.mp3 in Resources */,
+				001D089F292431BD0072FC77 /* card.mp3 in Resources */,
+				001D08832924019C0072FC77 /* money_receive.json in Resources */,
 				0000BA692920330000B99039 /* MonopolyMusic2.mp3 in Resources */,
 				003A26CA2919F4B200821AAA /* Actions.sks in Resources */,
+				001D089B2924259D0072FC77 /* star.json in Resources */,
 				0056EA5B29228FC70090EC72 /* jail.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,8 +570,10 @@
 				002D99BF2921AABA00ED80CE /* IQPreviousNextView.swift in Sources */,
 				002D99C92921AABA00ED80CE /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				002D99D12921AABA00ED80CE /* IQUIView+Hierarchy.swift in Sources */,
+				0043A44E2926598400C1D2CC /* Assets.swift in Sources */,
 				002D99CC2921AABA00ED80CE /* IQKeyboardManager+OrientationNotification.swift in Sources */,
 				002D99D02921AABA00ED80CE /* IQUITextFieldView+Additions.swift in Sources */,
+				001D089929241E8D0072FC77 /* BoardScene+Action.swift in Sources */,
 				002D99CF2921AABA00ED80CE /* IQUIViewController+Additions.swift in Sources */,
 				002D99D32921AABA00ED80CE /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
 				002D99C02921AABA00ED80CE /* IQTitleBarButtonItem.swift in Sources */,
@@ -528,8 +594,10 @@
 				0006FC83291F81EF0023DBAE /* String+Extension.swift in Sources */,
 				0006FC8C291F88D20023DBAE /* Color.swift in Sources */,
 				0006FC87291F85CC0023DBAE /* SoundAndHapticController.swift in Sources */,
+				001D089D292429C20072FC77 /* PropertyCardVc.swift in Sources */,
 				0006FC8D291F88D20023DBAE /* Player.swift in Sources */,
 				0006FC9F291FC0830023DBAE /* All.swift in Sources */,
+				001D089729241ABE0072FC77 /* ChanceVC.swift in Sources */,
 				002D99CA2921AABA00ED80CE /* IQKeyboardManager.swift in Sources */,
 				0000BA7029203B8900B99039 /* BoardScene.swift in Sources */,
 				0006FC75291F7C470023DBAE /* Play.swift in Sources */,

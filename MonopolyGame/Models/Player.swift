@@ -6,6 +6,7 @@ class Player {
     var turnsInJail = 0
     var playerImage: String
     var moneySymbol = "$"
+    
     private(set) var totalMoney = 0
     private(set) var playerName: String
     private(set) var playerPosition:PlayerSpace = .GO
@@ -15,15 +16,18 @@ class Player {
     private(set) var inJail = false
     private(set) var isActive = false
     private(set) var doubleDice = [Int]()
-  
+    private(set) var assets: Assets
     
-    init(isActive:Bool,playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: PlayerSpace) {
+   
+
+    init(assets:Assets = Assets(type: .NONE, utilities: []), isActive:Bool,playerImage:String,playerId:String,totalMoney:Int,playerName: String, playerPosition: PlayerSpace) {
         self.playerName = playerName
         self.playerPosition = playerPosition
         self.totalMoney = totalMoney
         self.playerId = playerId
         self.playerImage = playerImage
         self.isActive = isActive
+        self.assets = assets
     }
     
     
@@ -38,7 +42,7 @@ class Player {
             doubleDice.append(total)
         }else {
             doubleDice.removeAll()
-            doubleDice.append(total)
+            doubleDice.append(12)
         }
     }
      
@@ -61,10 +65,21 @@ class Player {
     
     func spend(moneyToSpend: Int) {
         // spend money
+        totalMoney -= moneyToSpend
+        reloadTable()
+        playSound(soundName: AnimationJson.Tax)
     }
     
     func getPaid(amount: Int) {
         // Get paid (e.g. rent)
+        totalMoney += amount
+        reloadTable()
+        playSound(soundName: AnimationJson.Tax)
+    }
+    
+    func getRollValue()  -> Int{
+        // Get paid (e.g. rent)
+        return self.dice1! + self.dice2!
     }
     
 }

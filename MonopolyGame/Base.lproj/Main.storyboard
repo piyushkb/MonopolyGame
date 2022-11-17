@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </array>
@@ -226,12 +229,259 @@
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="-20.424107142857142"/>
         </scene>
+        <!--ChanceVC-->
+        <scene sceneID="CKQ-O1-zYD">
+            <objects>
+                <viewController storyboardIdentifier="ChanceVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dCM-NF-g1c" customClass="ChanceVC" customModule="MonopolyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KW2-14-tlo">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adx-58-iV3" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rwz-uB-abM">
+                                <rect key="frame" x="140" y="104" width="532" height="177"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chance_man" translatesAutoresizingMaskIntoConstraints="NO" id="t9B-tE-h4a">
+                                        <rect key="frame" x="382" y="10" width="150" height="167"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="jl8-B0-TbK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-ja-zEV">
+                                        <rect key="frame" x="212" y="24" width="108" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collect 2000$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXG-IS-UE1">
+                                        <rect key="frame" x="48" y="88" width="326" height="24"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-si-dq5">
+                                        <rect key="frame" x="-20" y="-20" width="50" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="4iT-aj-nwr">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbN-HQ-sTf">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                                <connections>
+                                                    <action selector="onClose:" destination="dCM-NF-g1c" eventType="touchUpInside" id="GDF-68-glG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pbN-HQ-sTf" secondAttribute="trailing" id="1gO-eF-AdD"/>
+                                            <constraint firstAttribute="bottom" secondItem="pbN-HQ-sTf" secondAttribute="bottom" id="5Fu-jv-ahM"/>
+                                            <constraint firstItem="4iT-aj-nwr" firstAttribute="leading" secondItem="Wuh-si-dq5" secondAttribute="leading" id="81M-Tj-Thn"/>
+                                            <constraint firstAttribute="height" constant="50" id="Hij-6i-fCU"/>
+                                            <constraint firstAttribute="trailing" secondItem="4iT-aj-nwr" secondAttribute="trailing" id="IzW-qv-ivt"/>
+                                            <constraint firstItem="pbN-HQ-sTf" firstAttribute="leading" secondItem="Wuh-si-dq5" secondAttribute="leading" id="OXA-4Z-AE0"/>
+                                            <constraint firstAttribute="width" constant="50" id="b1V-X7-MZ8"/>
+                                            <constraint firstItem="pbN-HQ-sTf" firstAttribute="top" secondItem="Wuh-si-dq5" secondAttribute="top" id="dTe-cq-EeY"/>
+                                            <constraint firstAttribute="trailing" secondItem="pbN-HQ-sTf" secondAttribute="trailing" id="j98-Ni-7yQ"/>
+                                            <constraint firstItem="pbN-HQ-sTf" firstAttribute="leading" secondItem="Wuh-si-dq5" secondAttribute="leading" id="wnN-Gn-4GN"/>
+                                            <constraint firstItem="pbN-HQ-sTf" firstAttribute="top" secondItem="Wuh-si-dq5" secondAttribute="top" id="wq5-bK-KPH"/>
+                                            <constraint firstItem="4iT-aj-nwr" firstAttribute="top" secondItem="Wuh-si-dq5" secondAttribute="top" id="xMw-Nm-MWD"/>
+                                            <constraint firstAttribute="bottom" secondItem="4iT-aj-nwr" secondAttribute="bottom" constant="-10" id="zNJ-uN-yjV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QXG-IS-UE1" firstAttribute="top" secondItem="P4O-ja-zEV" secondAttribute="bottom" constant="32.5" id="0LV-s3-bTE"/>
+                                    <constraint firstAttribute="width" constant="532" id="0WP-Gh-aMu"/>
+                                    <constraint firstAttribute="trailing" secondItem="t9B-tE-h4a" secondAttribute="trailing" id="91P-qt-6Yy"/>
+                                    <constraint firstItem="P4O-ja-zEV" firstAttribute="centerX" secondItem="Rwz-uB-abM" secondAttribute="centerX" id="MLa-wP-juO"/>
+                                    <constraint firstItem="QXG-IS-UE1" firstAttribute="leading" secondItem="Rwz-uB-abM" secondAttribute="leading" constant="48" id="OKf-VB-CcU"/>
+                                    <constraint firstItem="P4O-ja-zEV" firstAttribute="top" secondItem="Rwz-uB-abM" secondAttribute="top" constant="24" id="ZH1-Zy-Iqo"/>
+                                    <constraint firstItem="Wuh-si-dq5" firstAttribute="top" secondItem="Rwz-uB-abM" secondAttribute="top" constant="-20" id="Zkh-Pr-Ee7"/>
+                                    <constraint firstAttribute="height" constant="177" id="cOU-qH-Wvx"/>
+                                    <constraint firstItem="t9B-tE-h4a" firstAttribute="top" secondItem="Rwz-uB-abM" secondAttribute="top" constant="10" id="lwq-La-hZL"/>
+                                    <constraint firstItem="Wuh-si-dq5" firstAttribute="leading" secondItem="Rwz-uB-abM" secondAttribute="leading" constant="-20" id="oqR-L4-R9H"/>
+                                    <constraint firstItem="t9B-tE-h4a" firstAttribute="leading" secondItem="QXG-IS-UE1" secondAttribute="trailing" constant="8" symbolic="YES" id="rDy-Lf-7El"/>
+                                    <constraint firstAttribute="bottom" secondItem="t9B-tE-h4a" secondAttribute="bottom" id="wfD-qd-DiK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="L7A-cO-kMx"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Adx-58-iV3" firstAttribute="top" secondItem="KW2-14-tlo" secondAttribute="top" id="3um-xu-YgA"/>
+                            <constraint firstItem="Adx-58-iV3" firstAttribute="leading" secondItem="L7A-cO-kMx" secondAttribute="leading" id="YLw-MF-0NP"/>
+                            <constraint firstItem="Adx-58-iV3" firstAttribute="trailing" secondItem="L7A-cO-kMx" secondAttribute="trailing" id="aq1-di-hO8"/>
+                            <constraint firstAttribute="bottom" secondItem="Adx-58-iV3" secondAttribute="bottom" id="dlp-Z5-mMZ"/>
+                            <constraint firstItem="Rwz-uB-abM" firstAttribute="centerY" secondItem="L7A-cO-kMx" secondAttribute="centerY" id="q15-Nh-y8Z"/>
+                            <constraint firstItem="Rwz-uB-abM" firstAttribute="centerX" secondItem="L7A-cO-kMx" secondAttribute="centerX" id="vjW-UF-bxr"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="812" height="375"/>
+                    <connections>
+                        <outlet property="chanceLabel" destination="QXG-IS-UE1" id="HnX-kX-cJm"/>
+                        <outlet property="lottieAnimatoinView" destination="Adx-58-iV3" id="lcu-2b-ks3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVs-kJ-Mop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227.536231884058" y="-13.058035714285714"/>
+        </scene>
+        <!--Property Card Vc-->
+        <scene sceneID="gcj-jz-jFm">
+            <objects>
+                <viewController storyboardIdentifier="PropertyCardVc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zq0-U4-udI" customClass="PropertyCardVc" customModule="MonopolyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X1y-4m-ln6">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4j-9u-kqi" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-uW-bdf">
+                                <rect key="frame" x="256" y="26.5" width="300" height="332"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mumbai" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAV-F3-gPK">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="23"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chhatrapati Shivaji Maharaj International Airport" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvR-oI-Pi4">
+                                        <rect key="frame" x="0.0" y="23" width="300" height="46"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai3-SK-m8J">
+                                        <rect key="frame" x="0.0" y="69" width="300" height="269"/>
+                                        <string key="text">RENT $24.
+With 1 House
+$ 120.
+With 2 Houses
+360.
+With 3 Houses
+850.
+With 4 Houses
+1025.
+With HOTEL $1200.
+Mortgage Value $140.
+Houses cost $150. each
+Hotels, $150. plus 4 houses
+If a player owns ALL the Lots of any Color-Group, the
+rent is Doubled on Unimproved Lots in that</string>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eAV-F3-gPK" secondAttribute="trailing" id="1so-GZ-fF3"/>
+                                    <constraint firstItem="eAV-F3-gPK" firstAttribute="top" secondItem="IzH-uW-bdf" secondAttribute="top" id="2Nc-kE-QnV"/>
+                                    <constraint firstAttribute="width" constant="300" id="4By-Jf-eAc"/>
+                                    <constraint firstItem="HvR-oI-Pi4" firstAttribute="top" secondItem="eAV-F3-gPK" secondAttribute="bottom" id="7hk-WB-Szw"/>
+                                    <constraint firstItem="eAV-F3-gPK" firstAttribute="leading" secondItem="IzH-uW-bdf" secondAttribute="leading" id="GEY-bG-egr"/>
+                                    <constraint firstItem="eAV-F3-gPK" firstAttribute="leading" secondItem="IzH-uW-bdf" secondAttribute="leading" id="Hqh-xD-q4S"/>
+                                    <constraint firstAttribute="trailing" secondItem="ai3-SK-m8J" secondAttribute="trailing" id="O1b-OW-EAC"/>
+                                    <constraint firstItem="eAV-F3-gPK" firstAttribute="top" secondItem="IzH-uW-bdf" secondAttribute="top" id="Pcz-YC-GoM"/>
+                                    <constraint firstItem="ai3-SK-m8J" firstAttribute="leading" secondItem="IzH-uW-bdf" secondAttribute="leading" id="U8M-vM-voG"/>
+                                    <constraint firstItem="HvR-oI-Pi4" firstAttribute="leading" secondItem="IzH-uW-bdf" secondAttribute="leading" id="aAa-cz-MHD"/>
+                                    <constraint firstAttribute="trailing" secondItem="eAV-F3-gPK" secondAttribute="trailing" id="eJ8-AX-v94"/>
+                                    <constraint firstAttribute="height" constant="332" id="mjS-Ye-btb"/>
+                                    <constraint firstAttribute="trailing" secondItem="HvR-oI-Pi4" secondAttribute="trailing" id="svo-4p-I35"/>
+                                    <constraint firstItem="ai3-SK-m8J" firstAttribute="top" secondItem="HvR-oI-Pi4" secondAttribute="bottom" id="xBt-eG-IAX"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oNp-4e-Dh7">
+                                <rect key="frame" x="586" y="138.5" width="163" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cir-XT-aaN" userLabel="Roll Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="50"/>
+                                        <color key="backgroundColor" red="0.60268509390000002" green="0.1062916592" blue="0.11218477039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="163" id="o9X-Ky-isZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="qbU-Uw-szO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Buy" image="house" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onBuy:" destination="zq0-U4-udI" eventType="touchUpInside" id="Nee-Ya-oC3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJP-zd-ynO" userLabel="Roll Button">
+                                        <rect key="frame" x="0.0" y="58" width="163" height="50"/>
+                                        <color key="backgroundColor" red="0.60268509390000002" green="0.1062916592" blue="0.11218477039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="163" id="LZ0-H4-bVZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="Q4c-bw-8Gj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Exit" image="xmark" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onExit:" destination="zq0-U4-udI" eventType="touchUpInside" id="PqS-fk-Q1y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y2I-bx-VZS"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IzH-uW-bdf" firstAttribute="centerY" secondItem="Y2I-bx-VZS" secondAttribute="centerY" id="31E-OQ-APi"/>
+                            <constraint firstItem="oNp-4e-Dh7" firstAttribute="centerY" secondItem="IzH-uW-bdf" secondAttribute="centerY" id="8qc-Pz-H69"/>
+                            <constraint firstItem="b4j-9u-kqi" firstAttribute="leading" secondItem="Y2I-bx-VZS" secondAttribute="leading" id="96k-rJ-V8z"/>
+                            <constraint firstAttribute="bottom" secondItem="b4j-9u-kqi" secondAttribute="bottom" id="BdR-r0-Kmf"/>
+                            <constraint firstItem="b4j-9u-kqi" firstAttribute="top" secondItem="X1y-4m-ln6" secondAttribute="top" id="G49-Da-Bgb"/>
+                            <constraint firstItem="oNp-4e-Dh7" firstAttribute="leading" secondItem="IzH-uW-bdf" secondAttribute="trailing" constant="30" id="Gf4-lj-ltU"/>
+                            <constraint firstItem="IzH-uW-bdf" firstAttribute="leading" secondItem="b4j-9u-kqi" secondAttribute="trailing" id="JvZ-dD-Sdh"/>
+                            <constraint firstItem="IzH-uW-bdf" firstAttribute="centerX" secondItem="Y2I-bx-VZS" secondAttribute="centerX" id="Skd-yu-eaM"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="812" height="375"/>
+                    <connections>
+                        <outlet property="cardDescription" destination="ai3-SK-m8J" id="he0-16-QDt"/>
+                        <outlet property="cardSubTitle" destination="HvR-oI-Pi4" id="p1y-q9-onf"/>
+                        <outlet property="cardTitle" destination="eAV-F3-gPK" id="c3G-vS-pFo"/>
+                        <outlet property="lottieAnimatoinView" destination="b4j-9u-kqi" id="X9E-bP-Qtr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRf-w6-9RF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3471.0144927536235" y="-4.3526785714285712"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg" width="932" height="329"/>
+        <image name="chance_man" width="189" height="240"/>
+        <image name="close" width="128" height="128"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="play" catalog="system" width="120" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

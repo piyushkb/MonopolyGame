@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .fill
                 self.boardScene = scene
-                scene.vc = self
+                vc = self
                 scene.players = self.players
                 // Present the scene
                 view.presentScene(scene)
@@ -74,13 +74,14 @@ class GameViewController: UIViewController {
         }
     }
 
-    func showLottieAnimation(json:String) {
+    func showLottieAnimation(json:String,completion: @escaping ()->()) {
         lottieAnimationView.animation = LottieAnimation.named(json)
         lottieAnimationView.loopMode = .playOnce
         lottieAnimationView.contentMode = .scaleAspectFit
         self.showLottie()
         lottieAnimationView.play { _ in
             self.hideLottie()
+            completion() // sendCall back when animation complete
         }
     }
     
@@ -238,4 +239,24 @@ extension GameViewController {
 //        self.players.removeAll()
 //        landingVc.players.removeAll()
     }
+}
+
+
+extension GameViewController {
+    
+    func opneChanceVC() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChanceVC") as! ChanceVC
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true)
+    }
+    
+    
+    func opneCardVC() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PropertyCardVc") as! PropertyCardVc
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true)
+    }
+
 }

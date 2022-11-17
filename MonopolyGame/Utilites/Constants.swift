@@ -45,6 +45,26 @@ struct Const {
     static let DefaultIsVibrationEnabled = false
     static let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
     
+    
+}
+
+struct UtilityCard{
+    struct WATER_WORKS{
+        static let desc = "efergg"
+        static let amount = 12
+    }
+    
+    struct ELECTRICITY{
+        static let desc = "efergg"
+        static let amount = 12
+    }
+    
+    static func getSingleCardRent(rollValue:Int) -> Int{
+        return rollValue * 4
+    }
+    static func getBothCardRent(rollValue:Int) -> Int{
+        return rollValue * 10
+    }
 }
 
 
@@ -55,6 +75,12 @@ struct AnimationJson {
     static let JAIL =  "jail"
     static let Chance =  "chance"
     static let Chest =  "chest"
+    static let Tax =  "tax"
+    static let Rail =  "rail"
+    static let Parking =  "parking"
+    static let Light =  "light"
+    static let Water =  "water"
+    static let Star =  "star"
     
 }
 
@@ -121,7 +147,7 @@ func getSpaceFromPosition(position:String) -> PlayerSpace {
  
 }
 
-enum PlayerSpace: String, CaseIterable {
+enum PlayerSpace: String, CaseIterable { 
     
     case  GO = "A0"
 
@@ -213,6 +239,8 @@ func isiPad()->Bool{
          return false
     }
 }
+
+
 
 
 //extension String {

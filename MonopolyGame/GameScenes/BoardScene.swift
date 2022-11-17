@@ -2,11 +2,14 @@
 import SpriteKit
 
 
+var vc : GameViewController!
+
 class BoardScene: SKScene {
    var movesRemaining:Int = 0
    
-   var vc : GameViewController!
-   var players = [Player]()
+  
+    var players =  [Player]()
+
    
    override func didMove(to view: SKView) {
        
@@ -192,23 +195,78 @@ class BoardScene: SKScene {
     func handelPosition(space:PlayerSpace,player:Player) {
         
         print(space)
+        
+        if(space == .ORIENTAL_AVENUE) {
+            vc.opneCardVC()
+        }
+        
         if(space == .JAIL_VISITING || space == .GO_TO_JAIL) {
             print("Jail")
-            vc.showLottieAnimation(json: AnimationJson.JAIL)
+            vc.showLottieAnimation(json: AnimationJson.JAIL, completion: {
+                
+            })
             playSound(soundName: AnimationJson.JAIL)
         }
         
         if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
             print("chest")
-            vc.showLottieAnimation(json: AnimationJson.Chest)
+            vc.showLottieAnimation(json: AnimationJson.Chest, completion: {
+                
+            })
             playSound(soundName: AnimationJson.Chest)
         }
         
         if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
             print("chance")
-            vc.showLottieAnimation(json: AnimationJson.Chance)
+            vc.showLottieAnimation(json: AnimationJson.Chance, completion: {
+                self.finalAction(space: space, player: player)
+            })
             playSound(soundName: AnimationJson.Chance)
         }
+        
+        if(space == .INCOM_TAX || space == .LUXARY_TAX ) {
+            print("tax")
+            vc.showLottieAnimation(json: AnimationJson.Tax, completion: {
+                
+            })
+            playSound(soundName: AnimationJson.Tax)
+        }
+        
+        
+        if(space == .READING_RAILROAD || space == .PENNSYLVANIA_RAILROAD || space == .B_O_RAILROAD || space == .SHORT_LINE) {
+            print("Rail")
+            vc.showLottieAnimation(json: AnimationJson.Rail, completion: {
+                
+            })
+            playSound(soundName: AnimationJson.Rail)
+        }
+        
+        
+        if(space == .ELECTRICITY) {
+            print("electic")
+            vc.showLottieAnimation(json: AnimationJson.Light, completion: {
+                self.finalAction(space: space, player: player)
+            })
+            playSound(soundName: AnimationJson.Light)
+        }
+        
+        if(space == .WATER_WORKS) {
+            print("water")
+            vc.showLottieAnimation(json: AnimationJson.Water, completion: {
+                self.finalAction(space: space, player: player)
+            })
+            playSound(soundName: AnimationJson.Water)
+        }
+        
+        
+        if(space == .FREE_PARKING ) {
+            print("Parking")
+            vc.showLottieAnimation(json: AnimationJson.Parking, completion: {
+                
+            })
+            playSound(soundName: AnimationJson.Parking)
+        }
+        
         
         enableTouch(view:  vc.view)
     }
@@ -338,5 +396,11 @@ func getXPosition(index:Int) ->CGFloat {
    
 }
 
-
  
+
+func reloadTable() {
+    
+    DispatchQueue.main.async {
+        vc.tableView.reloadData()
+    }
+}
