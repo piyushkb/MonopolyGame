@@ -4,6 +4,8 @@ import SpriteKit
 
 var vc : GameViewController!
 
+var boardScene : BoardScene!
+
 class BoardScene: SKScene {
    var movesRemaining:Int = 0
    
@@ -12,7 +14,7 @@ class BoardScene: SKScene {
 
    
    override func didMove(to view: SKView) {
-       
+       boardScene = self
        self.addRollButton()
        self.addPeaces()
        
@@ -57,7 +59,7 @@ class BoardScene: SKScene {
   
    func movePiece() {
        
-          let player = getActivePlayerAndNextPosition()
+           let player = getActivePlayerAndNextPosition()
           
            let currentNode = getSkNode(name: player.1) // nextPosition
            
@@ -84,8 +86,7 @@ class BoardScene: SKScene {
            playMove()
            
            getSkNode(name: player.0.playerId).run( SKAction.sequence( [moveAction, wait, runAction]  ) )
-           
-    
+
    }
    
    func getActivePlayerAndNextPosition() -> (Player,String) {

@@ -5,6 +5,8 @@ import SpriteKit
 import GameplayKit
 import Lottie
 
+var  gameViewController : GameViewController!
+
 class GameViewController: UIViewController {
    
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
@@ -27,7 +29,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-     
+        gameViewController = self
+        
         self.hideLottie()
         self.tableView.registerCells([PlayerCell.self])
         self.tableView.delegate = self
@@ -244,10 +247,17 @@ extension GameViewController {
 
 extension GameViewController {
     
-    func opneChanceVC() {
+    func showChanceOrChestCard(title:String,description:String,image:String, chanceIsGood:Bool,completion:@escaping () -> Void){
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ChanceVC") as! ChanceVC
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
+        vc.titleText = title
+        vc.descriptionText = description
+        vc.imageName = image
+        vc.chanceIsGood = chanceIsGood
+        vc.completionHandler =  {
+            completion()
+        }
         self.present(vc, animated: true)
     }
     

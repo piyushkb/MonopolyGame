@@ -84,6 +84,8 @@
 		0056EA5F2922A2B50090EC72 /* chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5E2922A2B50090EC72 /* chance.mp3 */; };
 		008A556B292112C90001AEBB /* move.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008A556A292112C90001AEBB /* move.mp3 */; };
 		008A556D292115950001AEBB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A556C292115950001AEBB /* AudioManager.swift */; };
+		008F5646292EB5E90085BD51 /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = 008F5645292EB5E90085BD51 /* sad.json */; };
+		008F5648292EB7890085BD51 /* sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008F5647292EB7890085BD51 /* sad.mp3 */; };
 		00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6D2922ABAA0042F5C2 /* chest.json */; };
 		00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6F2922ACC10042F5C2 /* chest.mp3 */; };
 		00D6EB1629226712006D4BEA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D6EB1529226712006D4BEA /* Lottie */; };
@@ -175,6 +177,8 @@
 		0056EA5E2922A2B50090EC72 /* chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chance.mp3; sourceTree = "<group>"; };
 		008A556A292112C90001AEBB /* move.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = move.mp3; sourceTree = "<group>"; };
 		008A556C292115950001AEBB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		008F5645292EB5E90085BD51 /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
+		008F5647292EB7890085BD51 /* sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sad.mp3; sourceTree = "<group>"; };
 		00C6FF6D2922ABAA0042F5C2 /* chest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest.json; sourceTree = "<group>"; };
 		00C6FF6F2922ACC10042F5C2 /* chest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chest.mp3; sourceTree = "<group>"; };
 		4546E2F529274F9000F5CFCB /* Chances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chances.swift; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 				001D088A2924057A0072FC77 /* light.mp3 */,
 				001D089429240C0C0072FC77 /* water.mp3 */,
 				001D089E292431BD0072FC77 /* card.mp3 */,
+				008F5647292EB7890085BD51 /* sad.mp3 */,
 				001D08802923FDB00072FC77 /* tax.mp3 */,
 				001D0886292402F30072FC77 /* rail.mp3 */,
 				00C6FF6F2922ACC10042F5C2 /* chest.mp3 */,
@@ -452,6 +457,7 @@
 				001D0888292405190072FC77 /* light.json */,
 				001D08842924022F0072FC77 /* rail.json */,
 				001D089A2924259D0072FC77 /* star.json */,
+				008F5645292EB5E90085BD51 /* sad.json */,
 				001D088C2924060F0072FC77 /* parking.json */,
 				001D08902924091A0072FC77 /* water.json */,
 				001D087E2923FC680072FC77 /* tax.json */,
@@ -534,7 +540,9 @@
 				0006FC7D291F81850023DBAE /* dice_collision4.wav in Resources */,
 				001D08912924091A0072FC77 /* water.json in Resources */,
 				003A26D32919F4B300821AAA /* Assets.xcassets in Resources */,
+				008F5648292EB7890085BD51 /* sad.mp3 in Resources */,
 				0000BA6B292033C100B99039 /* MonopolyMusic3.mp3 in Resources */,
+				008F5646292EB5E90085BD51 /* sad.json in Resources */,
 				0006FC7B291F81850023DBAE /* dice_collision2.wav in Resources */,
 				001D08812923FDB00072FC77 /* tax.mp3 in Resources */,
 				001D089529240C0C0072FC77 /* water.mp3 in Resources */,
@@ -771,9 +779,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -801,9 +807,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

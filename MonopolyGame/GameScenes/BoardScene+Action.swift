@@ -4,6 +4,7 @@ import UIKit
 
 extension BoardScene {
     
+    
     func finalAction(space:PlayerSpace, player:Player) {
         
         if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
@@ -13,17 +14,28 @@ extension BoardScene {
             switch chanceCard.type {
                 
             case ChancesType.SPEEDING_FINE:
-                //show card
-                player.spend(moneyToSpend: chanceCard.amount)
+                
+                let des = "\(chanceCard.title)\n\(chanceCard.desc)"
+                
+                gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
+                    player.spend(moneyToSpend: chanceCard.amount)
+                }
                 
             case .BANK_PAYS_DIVENDED:
-                //show card
-                player.getPaid(amount: chanceCard.amount)
+                let des = "\(chanceCard.title)\n\(chanceCard.desc)"
+                
+                gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.MAN, chanceIsGood: true) {
+                    player.getPaid(amount: chanceCard.amount)
+                }
+            
                 
             case .GO_TO_JAIL:
-                //show card
-                //go to jail
-                player.sendToJail()
+                
+                let des = "\(chanceCard.title)\n\(chanceCard.desc)"
+                gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.GO_TO_JAIL, chanceIsGood: false) {
+                    player.sendToJail()
+                }
+               
             }
         }
         

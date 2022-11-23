@@ -1,5 +1,6 @@
  
 import UIKit
+import SpriteKit
 
 class Player {
     
@@ -37,12 +38,14 @@ class Player {
         dice2 = Int.random(in: 1...6)
         
         let total = dice1! + dice2!
-        
+        let dummy = 22
         if(dice1 == dice2){
-            doubleDice.append(total)
+           // doubleDice.append(total)
+            doubleDice.append(dummy)
         }else {
             doubleDice.removeAll()
-            doubleDice.append(12)
+           // doubleDice.append(total)
+            doubleDice.append(dummy)
         }
     }
      
@@ -59,8 +62,20 @@ class Player {
 //        clearRoundScore()
     }
     
-    func move(spaces: Int) {
-        // move player to new location
+    
+    func moveToJailPosition() {
+      
+        let jailNode = boardScene.getSkNode(name: PlayerSpace.JAIL_VISITING.rawValue)
+        
+        let moveAction:SKAction = SKAction.move(to: jailNode.position, duration: 0.5)
+        moveAction.timingMode = .easeInEaseOut
+        let wait:SKAction = SKAction.wait(forDuration: 0.2)
+        let runAction:SKAction = SKAction.run {
+            self.setPlayerPosition(position: PlayerSpace(rawValue: PlayerSpace.JAIL_VISITING.rawValue)!) // move to next
+        }
+        
+        playMove()
+        boardScene.getSkNode(name: self.playerId).run( SKAction.sequence( [moveAction, wait, runAction]  ) )
     }
     
     func spend(moneyToSpend: Int) {
@@ -82,8 +97,12 @@ class Player {
         return self.dice1! + self.dice2!
     }
     
+  
     func sendToJail() {
         inJail = true
+        self.moveToJailPosition()
+       // setPlayerPosition(position: .GO_TO_JAIL)
+        
         // send player to jail // show card to ask pay 50$ to get out from jail
         //otherwise user have to wait until he gets double
     }

@@ -48,6 +48,12 @@ struct Const {
     
 }
 
+struct ConstImages {
+    static let PAY_FEE = "pay_fee"
+    static let MAN = "chance_man"
+    static let GO_TO_JAIL = "Go-To-JAIl"
+}
+
 struct UtilityCard{
     struct WATER_WORKS{
         static let title = "WATER WORKS"
@@ -84,7 +90,7 @@ struct ChancesCard{
     
     struct GO_TO_JAIL{
         static let title = "GO TO JAIL"
-        static let desc = "GO DIRECTLY TO JAIL, DO NOT COLLECT $200"
+        static let desc = "GO DIRECTLY TO JAIL"
         static let amount = 0
     }
 }
@@ -142,6 +148,7 @@ struct AnimationJson {
     static let Light =  "light"
     static let Water =  "water"
     static let Star =  "star"
+    static let SAD =  "sad"
     
 }
 
