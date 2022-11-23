@@ -50,13 +50,15 @@ struct Const {
 
 struct UtilityCard{
     struct WATER_WORKS{
-        static let desc = "efergg"
-        static let amount = 12
+        static let title = "WATER WORKS"
+        static let desc = "If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice."
+        static let amount = 150
     }
     
     struct ELECTRICITY{
-        static let desc = "efergg"
-        static let amount = 12
+        static let title = "ELECTRIC COMPANY"
+        static let desc = "If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice."
+        static let amount = 150
     }
     
     static func getSingleCardRent(rollValue:Int) -> Int{
@@ -67,6 +69,65 @@ struct UtilityCard{
     }
 }
 
+struct ChancesCard{
+    struct SPEEDING_FINE{
+        static let title = "SPEEDING FINE"
+        static let desc = "PAY $15"
+        static let amount = 15
+    }
+    
+    struct BANK_PAYS_DIVENDED{
+        static let title = "BANK PAYS YOU"
+        static let desc = "DIVIDEND OF $50"
+        static let amount = 50
+    }
+    
+    struct GO_TO_JAIL{
+        static let title = "GO TO JAIL"
+        static let desc = "GO DIRECTLY TO JAIL, DO NOT COLLECT $200"
+        static let amount = 0
+    }
+}
+
+struct CommunityChestCard{
+    
+    struct DOCTORS_FEE{
+        static let title = "DOCTOR'S FEE"
+        static let desc = "PAY $50"
+        static let amount = 50
+    }
+    
+    struct SCHOOL_FEE{
+        static let title = "SCHOOL FEES"
+        static let desc = "PAY $50"
+        static let amount = 50
+    }
+    
+    struct INCOME_TAX_REFUND{
+        static let title = "INCOME TEX REFUND"
+        static let desc = "COLLECT $20"
+        static let amount = 20
+    }
+    
+    struct HOLIDAY_FUND_MATURES{
+        static let title = "HOLIDAY FUND MATURES"
+        static let desc = "RECEIVE $100"
+        static let amount = 100
+    }
+    
+}
+
+struct TaxCharges{
+    static let INCOME_TAX = 200
+    static let LUXURY_TAX = 100
+}
+
+struct RailRoadCard{
+    static let amount = 200
+    static func getRent(ownedStationsCount:Int) -> Int{
+        ownedStationsCount * 25
+    }
+}
 
  
 
@@ -157,7 +218,7 @@ enum PlayerSpace: String, CaseIterable {
 
     case  BALTIC_AVENUE = "A3"
 
-    case  INCOM_TAX = "A4"
+    case  INCOME_TAX = "A4"
 
     case  READING_RAILROAD = "A5"
 

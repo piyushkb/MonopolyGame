@@ -87,6 +87,9 @@
 		00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6D2922ABAA0042F5C2 /* chest.json */; };
 		00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6F2922ACC10042F5C2 /* chest.mp3 */; };
 		00D6EB1629226712006D4BEA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D6EB1529226712006D4BEA /* Lottie */; };
+		4546E2F629274F9000F5CFCB /* Chances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546E2F529274F9000F5CFCB /* Chances.swift */; };
+		4546E2F829275AD100F5CFCB /* List+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546E2F729275AD100F5CFCB /* List+Extension.swift */; };
+		4546E2FA2927612E00F5CFCB /* CommunityChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546E2F92927612E00F5CFCB /* CommunityChest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -174,6 +177,9 @@
 		008A556C292115950001AEBB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		00C6FF6D2922ABAA0042F5C2 /* chest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest.json; sourceTree = "<group>"; };
 		00C6FF6F2922ACC10042F5C2 /* chest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chest.mp3; sourceTree = "<group>"; };
+		4546E2F529274F9000F5CFCB /* Chances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chances.swift; sourceTree = "<group>"; };
+		4546E2F729275AD100F5CFCB /* List+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+Extension.swift"; sourceTree = "<group>"; };
+		4546E2F92927612E00F5CFCB /* CommunityChest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityChest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,7 @@
 				0006FC82291F81EF0023DBAE /* makeNSMutableAttributedString.swift */,
 				0006FC81291F81EF0023DBAE /* String+Extension.swift */,
 				0006FCA0291FDB200023DBAE /* Alerts.swift */,
+				4546E2F729275AD100F5CFCB /* List+Extension.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -232,6 +239,8 @@
 				0043A44D2926598400C1D2CC /* Assets.swift */,
 				0006FC8A291F88D20023DBAE /* Player.swift */,
 				0006FC8B291F88D20023DBAE /* Property.swift */,
+				4546E2F529274F9000F5CFCB /* Chances.swift */,
+				4546E2F92927612E00F5CFCB /* CommunityChest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -573,10 +582,12 @@
 				0043A44E2926598400C1D2CC /* Assets.swift in Sources */,
 				002D99CC2921AABA00ED80CE /* IQKeyboardManager+OrientationNotification.swift in Sources */,
 				002D99D02921AABA00ED80CE /* IQUITextFieldView+Additions.swift in Sources */,
+				4546E2FA2927612E00F5CFCB /* CommunityChest.swift in Sources */,
 				001D089929241E8D0072FC77 /* BoardScene+Action.swift in Sources */,
 				002D99CF2921AABA00ED80CE /* IQUIViewController+Additions.swift in Sources */,
 				002D99D32921AABA00ED80CE /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
 				002D99C02921AABA00ED80CE /* IQTitleBarButtonItem.swift in Sources */,
+				4546E2F629274F9000F5CFCB /* Chances.swift in Sources */,
 				002D99BE2921AABA00ED80CE /* IQKeyboardManager+Internal.swift in Sources */,
 				008A556D292115950001AEBB /* AudioManager.swift in Sources */,
 				0006FC8E291F88D20023DBAE /* Property.swift in Sources */,
@@ -592,6 +603,7 @@
 				002D99C62921AABA00ED80CE /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				0006FCA6291FE60D0023DBAE /* PlayerCell.swift in Sources */,
 				0006FC83291F81EF0023DBAE /* String+Extension.swift in Sources */,
+				4546E2F829275AD100F5CFCB /* List+Extension.swift in Sources */,
 				0006FC8C291F88D20023DBAE /* Color.swift in Sources */,
 				0006FC87291F85CC0023DBAE /* SoundAndHapticController.swift in Sources */,
 				001D089D292429C20072FC77 /* PropertyCardVc.swift in Sources */,

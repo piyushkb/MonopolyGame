@@ -82,6 +82,12 @@ class Player {
         return self.dice1! + self.dice2!
     }
     
+    func sendToJail() {
+        inJail = true
+        // send player to jail // show card to ask pay 50$ to get out from jail
+        //otherwise user have to wait until he gets double
+    }
+    
 }
   
 

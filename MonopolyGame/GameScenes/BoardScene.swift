@@ -116,7 +116,7 @@ class BoardScene: SKScene {
             self.handelPosition(space: playerSpace, player: player)
         case .BALTIC_AVENUE:
             self.handelPosition(space: playerSpace, player: player)
-        case .INCOM_TAX:
+        case .INCOME_TAX:
             self.handelPosition(space: playerSpace, player: player)
         case .READING_RAILROAD:
             self.handelPosition(space: playerSpace, player: player)
@@ -211,7 +211,7 @@ class BoardScene: SKScene {
         if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
             print("chest")
             vc.showLottieAnimation(json: AnimationJson.Chest, completion: {
-                
+                self.finalAction(space: space, player: player)
             })
             playSound(soundName: AnimationJson.Chest)
         }
@@ -224,10 +224,10 @@ class BoardScene: SKScene {
             playSound(soundName: AnimationJson.Chance)
         }
         
-        if(space == .INCOM_TAX || space == .LUXARY_TAX ) {
+        if(space == .INCOME_TAX || space == .LUXARY_TAX ) {
             print("tax")
             vc.showLottieAnimation(json: AnimationJson.Tax, completion: {
-                
+                self.finalAction(space: space, player: player)
             })
             playSound(soundName: AnimationJson.Tax)
         }
@@ -236,7 +236,7 @@ class BoardScene: SKScene {
         if(space == .READING_RAILROAD || space == .PENNSYLVANIA_RAILROAD || space == .B_O_RAILROAD || space == .SHORT_LINE) {
             print("Rail")
             vc.showLottieAnimation(json: AnimationJson.Rail, completion: {
-                
+                self.finalAction(space: space, player: player)
             })
             playSound(soundName: AnimationJson.Rail)
         }

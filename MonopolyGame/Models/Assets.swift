@@ -6,6 +6,7 @@ class Assets {
     
     private(set) var type: AssetType
     private(set) var utilities = [Utiliy]()
+    private(set) var railRoads = [RailRoad]()
     
     init(type: AssetType, utilities: [Utiliy] = [Utiliy]()) {
         self.type = type
@@ -14,6 +15,10 @@ class Assets {
     
     func addUtility(utility: Utiliy){
         utilities.append(utility)
+    }
+    
+    func addRailRoad(railroad: RailRoad){
+        railRoads.append(railroad)
     }
     
 }
@@ -35,5 +40,11 @@ enum Utiliy: String{
     case ELECTRICITY
 }
 
+enum RailRoad: String{
+    case READING_RAILROAD
+    case B_O_RAILROAD
+    case PENNSYLVANIA_RAILROAD
+    case SHORT_LINE
+}
 
 
