@@ -194,7 +194,7 @@ class BoardScene: SKScene {
    
     
     func handelPosition(space:PlayerSpace,player:Player) {
-        
+    
         print(space)
         
         if(space == .ORIENTAL_AVENUE) {

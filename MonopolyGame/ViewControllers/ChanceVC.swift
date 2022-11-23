@@ -17,12 +17,13 @@ class ChanceVC: UIViewController {
     @IBOutlet weak var lottieAnimatoinView: LottieAnimationView!
     
     @IBAction func onClose(_ sender: Any) {
-        
+        self.dismiss(animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
         if let completionHandler =  completionHandler{
             completionHandler()
         }
-        self.completionHandler!()
-        self.dismiss(animated: true)
     }
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class ChanceVC: UIViewController {
         self.view.viewWithTag(12)!.cornerRadius = 30
         
         DispatchQueue.main.asyncAfter(deadline: .now() + closeIn) {
-            self.onClose(UIButton())
+            self.dismiss(animated: true)
         }
         
         if(chanceIsGood) {

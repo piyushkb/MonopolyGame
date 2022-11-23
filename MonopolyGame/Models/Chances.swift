@@ -5,11 +5,11 @@ class Chances {
     
     static func getChanceCard() -> ChancesCardModel{
 //        
-//        chancesList[0] =  chancesList[1]
-//        chancesList[1] =  chancesList[2]
-//        chancesList[2] =  chancesList[0]
-//        
-        switch chancesList[2] {
+        chancesList[0] =  chancesList[1]
+        chancesList[1] =  chancesList[2]
+        chancesList[2] =  chancesList[0]
+        
+        switch chancesList[0] {
         case .SPEEDING_FINE:
             return ChancesCardModel(type: .SPEEDING_FINE, title: ChancesCard.SPEEDING_FINE.title, desc: ChancesCard.SPEEDING_FINE.desc, amount: ChancesCard.SPEEDING_FINE.amount, image: ConstImages.PAY_FEE)
         case .BANK_PAYS_DIVENDED:

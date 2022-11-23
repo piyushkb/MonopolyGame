@@ -86,6 +86,8 @@
 		008A556D292115950001AEBB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A556C292115950001AEBB /* AudioManager.swift */; };
 		008F5646292EB5E90085BD51 /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = 008F5645292EB5E90085BD51 /* sad.json */; };
 		008F564A292EC7320085BD51 /* sad.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008F5649292EC7320085BD51 /* sad.mp3 */; };
+		008F564E292EC9DC0085BD51 /* credit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008F564D292EC9DC0085BD51 /* credit.mp3 */; };
+		008F5650292EDA540085BD51 /* UtilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008F564F292EDA540085BD51 /* UtilityVC.swift */; };
 		00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6D2922ABAA0042F5C2 /* chest.json */; };
 		00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6F2922ACC10042F5C2 /* chest.mp3 */; };
 		00D6EB1629226712006D4BEA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D6EB1529226712006D4BEA /* Lottie */; };
@@ -179,6 +181,8 @@
 		008A556C292115950001AEBB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		008F5645292EB5E90085BD51 /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
 		008F5649292EC7320085BD51 /* sad.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sad.mp3; sourceTree = "<group>"; };
+		008F564D292EC9DC0085BD51 /* credit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = credit.mp3; sourceTree = "<group>"; };
+		008F564F292EDA540085BD51 /* UtilityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityVC.swift; sourceTree = "<group>"; };
 		00C6FF6D2922ABAA0042F5C2 /* chest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest.json; sourceTree = "<group>"; };
 		00C6FF6F2922ACC10042F5C2 /* chest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chest.mp3; sourceTree = "<group>"; };
 		4546E2F529274F9000F5CFCB /* Chances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chances.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				0000BA6629202B4A00B99039 /* GameViewController+Ext.swift */,
 				001D089629241ABE0072FC77 /* ChanceVC.swift */,
 				001D089C292429C20072FC77 /* PropertyCardVc.swift */,
+				008F564F292EDA540085BD51 /* UtilityVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 			children = (
 				0000BA6A292033C100B99039 /* MonopolyMusic3.mp3 */,
 				008F5649292EC7320085BD51 /* sad.mp3 */,
+				008F564D292EC9DC0085BD51 /* credit.mp3 */,
 				0056EA5E2922A2B50090EC72 /* chance.mp3 */,
 				001D088E292406FD0072FC77 /* parking.mp3 */,
 				001D088A2924057A0072FC77 /* light.mp3 */,
@@ -557,6 +563,7 @@
 				001D087F2923FC680072FC77 /* tax.json in Resources */,
 				0056EA59292284610090EC72 /* jail.json in Resources */,
 				004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */,
+				008F564E292EC9DC0085BD51 /* credit.mp3 in Resources */,
 				001D0887292402F30072FC77 /* rail.mp3 in Resources */,
 				001D088D2924060F0072FC77 /* parking.json in Resources */,
 				0006FCA7291FE60D0023DBAE /* PlayerCell.xib in Resources */,
@@ -600,6 +607,7 @@
 				008A556D292115950001AEBB /* AudioManager.swift in Sources */,
 				0006FC8E291F88D20023DBAE /* Property.swift in Sources */,
 				002D99C12921AABA00ED80CE /* IQBarButtonItem.swift in Sources */,
+				008F5650292EDA540085BD51 /* UtilityVC.swift in Sources */,
 				0006FC90291FAF940023DBAE /* Constants.swift in Sources */,
 				002D99C42921AABA00ED80CE /* IQInvocation.swift in Sources */,
 				003A26CE2919F4B200821AAA /* GameViewController.swift in Sources */,

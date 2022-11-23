@@ -261,6 +261,21 @@ extension GameViewController {
         self.present(vc, animated: true)
     }
     
+    func showUtilityCard(title:String,description:String,lottieJsonName:String,completion:@escaping () -> Void){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "UtilityVC") as! UtilityVC
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
+        vc.titleText = title
+        vc.descriptionText = description
+        vc.lottieAnimationName = lottieJsonName
+        vc.completionHandler =  {
+            completion()
+        }
+        self.present(vc, animated: true)
+    }
+    
+    
+     
     
     func opneCardVC() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PropertyCardVc") as! PropertyCardVc

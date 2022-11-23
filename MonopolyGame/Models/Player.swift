@@ -38,7 +38,7 @@ class Player {
         dice2 = Int.random(in: 1...6)
         
         let total = dice1! + dice2!
-        let dummy = 22
+        let dummy = 28
         if(dice1 == dice2){
            // doubleDice.append(total)
             doubleDice.append(dummy)
@@ -80,16 +80,18 @@ class Player {
     
     func spend(moneyToSpend: Int) {
         // spend money
+        print("Spenddd")
         totalMoney -= moneyToSpend
         reloadTable()
         playSound(soundName: AnimationJson.Tax)
     }
     
     func getPaid(amount: Int) {
+        print("Paidddd")
         // Get paid (e.g. rent)
         totalMoney += amount
         reloadTable()
-        playSound(soundName: AnimationJson.Tax)
+        playSound(soundName: AnimationJson.Credit)
     }
     
     func getRollValue()  -> Int{

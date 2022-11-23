@@ -59,12 +59,14 @@ struct UtilityCard{
         static let title = "WATER WORKS"
         static let desc = "If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice."
         static let amount = 150
+        static let mortgage = 75
     }
     
     struct ELECTRICITY{
         static let title = "ELECTRIC COMPANY"
         static let desc = "If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice."
         static let amount = 150
+        static let mortgage = 75
     }
     
     static func getSingleCardRent(rollValue:Int) -> Int{
@@ -149,6 +151,8 @@ struct AnimationJson {
     static let Water =  "water"
     static let Star =  "star"
     static let SAD =  "sad"
+    static let Credit =  "credit" // sound only no lotiiee
+    
     
 }
 

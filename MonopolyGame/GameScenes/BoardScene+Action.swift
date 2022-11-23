@@ -20,6 +20,7 @@ extension BoardScene {
                 gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
                     player.spend(moneyToSpend: chanceCard.amount)
                 }
+                break
                 
             case .BANK_PAYS_DIVENDED:
                 let des = "\(chanceCard.title)\n\(chanceCard.desc)"
@@ -27,7 +28,7 @@ extension BoardScene {
                 gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.MAN, chanceIsGood: true) {
                     player.getPaid(amount: chanceCard.amount)
                 }
-            
+            break
                 
             case .GO_TO_JAIL:
                 
@@ -35,6 +36,7 @@ extension BoardScene {
                 gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.GO_TO_JAIL, chanceIsGood: false) {
                     player.sendToJail()
                 }
+                break
                
             }
         }
@@ -42,21 +44,46 @@ extension BoardScene {
         if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
             
             let chestCard = CommunityChest.getCommunityChestCard()
-            
+           
             switch chestCard.type {
                 
             case .DOCTORS_FEE:
-                //show card
-                player.spend(moneyToSpend: chestCard.amount)
+                
+                let des = "\(chestCard.title)\n\(chestCard.desc)"
+                
+                gameViewController.showChanceOrChestCard(title: "COMMUNITY CHEST", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
+                    player.spend(moneyToSpend: chestCard.amount)
+                }
+                
+                break
+               
             case .SCHOOL_FEE:
-                //show card
-                player.spend(moneyToSpend: chestCard.amount)
+                
+                let des = "\(chestCard.title)\n\(chestCard.desc)"
+                
+                gameViewController.showChanceOrChestCard(title: "COMMUNITY CHEST", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
+                    player.spend(moneyToSpend: chestCard.amount)
+                }
+                
+                break
+                
             case .INCOME_TAX_REFUND:
-                //show card
-                player.getPaid(amount: chestCard.amount)
+                playSound(soundName: AnimationJson.Chance)
+                let des = "\(chestCard.title)\n\(chestCard.desc)"
+                
+                gameViewController.showChanceOrChestCard(title: "COMMUNITY CHEST", description: des, image: ConstImages.MAN, chanceIsGood: true) {
+                    player.getPaid(amount: chestCard.amount)
+                }
+                
+                break
+                
             case .HOLIDAY_FUND_MATURES:
-                //show card
-                player.getPaid(amount: chestCard.amount)
+                playSound(soundName: AnimationJson.Chance)
+                let des = "\(chestCard.title)\n\(chestCard.desc)"
+                gameViewController.showChanceOrChestCard(title: "COMMUNITY CHEST", description: des, image: ConstImages.MAN, chanceIsGood: true) {
+                    player.getPaid(amount: chestCard.amount)
+                }
+                break
             }
             
         }
@@ -73,24 +100,32 @@ extension BoardScene {
                 return
             }else {
                 
-                for (index,item) in players.enumerated() {
-                    if(item.assets.utilities.contains(.ELECTRICITY)){
-                        if(item.assets.utilities.contains(.WATER_WORKS)){
-                            //player having both electricity and water card
-                            let rent = UtilityCard.getBothCardRent(rollValue: player.getRollValue())
-                            players[index].getPaid(amount: rent)
-                            return
-                        }else{
-                            //player having only water card
-                            let rent = UtilityCard.getSingleCardRent(rollValue: player.getRollValue())
-                            players[index].getPaid(amount: rent)
-                            return
+                let e = UtilityCard.ELECTRICITY.self
+                
+                let des = "\(e.desc)\n\nMortgage $\(e.mortgage)"
+                
+                gameViewController.showUtilityCard(title: e.title, description: des, lottieJsonName: AnimationJson.Light) {
+                     
+                    for (index,item) in self.players.enumerated() {
+                        if(item.assets.utilities.contains(.ELECTRICITY)){
+                            if(item.assets.utilities.contains(.WATER_WORKS)){
+                                //player having both electricity and water card
+                                let rent = UtilityCard.getBothCardRent(rollValue: player.getRollValue())
+                                self.players[index].getPaid(amount: rent)
+                                return
+                            }else{
+                                //player having only water card
+                                let rent = UtilityCard.getSingleCardRent(rollValue: player.getRollValue())
+                                self.players[index].getPaid(amount: rent)
+                                return
+                            }
                         }
                     }
+                    
+                    player.assets.addUtility(utility: Utiliy.ELECTRICITY)
+                    player.spend(moneyToSpend: UtilityCard.ELECTRICITY.amount)
+                    
                 }
-                
-                player.assets.addUtility(utility: Utiliy.ELECTRICITY)
-                player.spend(moneyToSpend: UtilityCard.ELECTRICITY.amount)
                 
             }
               
@@ -103,24 +138,32 @@ extension BoardScene {
                 return
             }else {
                 
-                for item in players {
-                    if(item.assets.utilities.contains(.WATER_WORKS)){
-                        if(item.assets.utilities.contains(.ELECTRICITY)){
-                            //player having both electricity and water card
-                            let rent = UtilityCard.getBothCardRent(rollValue: player.getRollValue())
-                            item.getPaid(amount: rent)
-                            return
-                        }else{
-                            //player having only water card
-                            let rent = UtilityCard.getSingleCardRent(rollValue: player.getRollValue())
-                            item.getPaid(amount: rent)
-                            return
+                let w = UtilityCard.WATER_WORKS.self
+                
+                let des = "\(w.desc)\n\nMortgage $\(w.mortgage)"
+                
+                gameViewController.showUtilityCard(title: w.title, description: des, lottieJsonName: AnimationJson.Water) {
+                    
+                    for item in self.players {
+                        if(item.assets.utilities.contains(.WATER_WORKS)){
+                            if(item.assets.utilities.contains(.ELECTRICITY)){
+                                //player having both electricity and water card
+                                let rent = UtilityCard.getBothCardRent(rollValue: player.getRollValue())
+                                item.getPaid(amount: rent)
+                                return
+                            }else{
+                                //player having only water card
+                                let rent = UtilityCard.getSingleCardRent(rollValue: player.getRollValue())
+                                item.getPaid(amount: rent)
+                                return
+                            }
                         }
                     }
+                    
+                    player.assets.addUtility(utility: Utiliy.WATER_WORKS)
+                    player.spend(moneyToSpend: UtilityCard.WATER_WORKS.amount)
+                    
                 }
-                
-                player.assets.addUtility(utility: Utiliy.WATER_WORKS)
-                player.spend(moneyToSpend: UtilityCard.WATER_WORKS.amount)
                 
             }
         }
