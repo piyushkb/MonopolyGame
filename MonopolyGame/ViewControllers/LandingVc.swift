@@ -144,9 +144,16 @@ extension LandingVc {
                 Const.DefaultIsMusicEnabled = false
             }
             
+            
             for player in players {
-                player.setTotalMoney(totalMoney: Int(moneyStepper.value))
+                player.setTotalMoney(totalMoney: Int(600))
             }
+            
+            
+             // uncomment
+//            for player in players {
+//                player.setTotalMoney(totalMoney: Int(moneyStepper.value))
+//            }
             
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
             vc.modalPresentationStyle = .fullScreen

@@ -4,6 +4,9 @@ import Lottie
 
 class RailRoadVC: UIViewController {
 
+    var player:Player!
+    var buyAmount = 0
+    
     var titleText = ""
     var descriptionText = ""
     var alreadyOwned = false
@@ -37,12 +40,17 @@ class RailRoadVC: UIViewController {
    
    @IBAction func onBuy(_ sender: Any) {
        
-       self.dismiss(animated: true)
+       let haveEnaughMoney = LogicsHandler.shared.haveMoneyToBuy(player: player, buyAmount: buyAmount)
        
-       if let completionHandler =  completionHandler{
-           completionHandler()
+       if(!haveEnaughMoney) { // okaat nhi bachi kharidne ke
+           showErrorBanner(message: "You don't have enaugh Money to Buy")
+           self.dismiss(animated: true)
+       }else {
+           if let completionHandler =  completionHandler{
+               completionHandler()
+           }
+           self.dismiss(animated: true)
        }
-       
    }
    
    @IBAction func onExit(_ sender: Any) {

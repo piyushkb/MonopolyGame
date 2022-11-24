@@ -179,6 +179,11 @@ extension GameViewController : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssetsVC") as! AssetsVC
+        vc.player = self.players[indexPath.row]
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true)
     }
     
     
@@ -294,13 +299,15 @@ extension GameViewController {
     }
     
     
-    func showRailRoadCard(title:String,description:String,alreadyOwned:Bool, completion:@escaping () -> Void){
+    func showRailRoadCard(player:Player,amount:Int,title:String,description:String,alreadyOwned:Bool, completion:@escaping () -> Void){
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "RailRoadVC") as! RailRoadVC
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .coverVertical
         vc.titleText = title
         vc.descriptionText = description
         vc.alreadyOwned = alreadyOwned
+        vc.player = player
+        vc.buyAmount = amount
         vc.completionHandler =  {
             completion()
         }
@@ -316,4 +323,15 @@ extension GameViewController {
         self.present(vc, animated: true)
     }
 
+}
+
+
+extension GameViewController {
+    
+    func showWinnerScreen(){
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "WinnerVC") as! WinnerVC
+        vc.modalPresentationStyle = .fullScreen
+        vc.player = self.players.first
+        self.present(vc, animated: true)
+    }
 }

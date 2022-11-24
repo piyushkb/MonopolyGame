@@ -216,7 +216,7 @@ class BoardScene: SKScene {
         if(space == .JAIL_VISITING || space == .GO_TO_JAIL) {
             print("Jail")
             vc.showLottieAnimation(json: AnimationJson.JAIL, completion: {
-                
+                self.finalAction(space: space, player: player)
             })
             playSound(soundName: AnimationJson.JAIL)
         }

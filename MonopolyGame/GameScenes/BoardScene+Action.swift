@@ -92,6 +92,9 @@ extension BoardScene {
         if(space == .ORIENTAL_AVENUE) {
             vc.opneCardVC()
         }
+        if(space == .GO_TO_JAIL) {
+            player.sendToJail()
+        }
         
         if(space == .ELECTRICITY){
              
@@ -102,7 +105,7 @@ extension BoardScene {
                 
                 let e = UtilityCard.ELECTRICITY.self
                 
-                let des = "\(e.desc)\n\nMortgage $\(e.mortgage)"
+                let des = "\(e.desc)\n\n\(Const.StringSell) $\(e.sellValue)"
                 
                 gameViewController.showUtilityCard(title: e.title, description: des, lottieJsonName: AnimationJson.Light) {
                      
@@ -142,7 +145,7 @@ extension BoardScene {
                 
                 let w = UtilityCard.WATER_WORKS.self
                 
-                let des = "\(w.desc)\n\nMortgage $\(w.mortgage)"
+                let des = "\(w.desc)\n\n\(Const.StringSell) $\(w.sellValue)"
                 
                 gameViewController.showUtilityCard(title: w.title, description: des, lottieJsonName: AnimationJson.Water) {
                     
@@ -224,7 +227,7 @@ extension BoardScene {
         
         if(space == .READING_RAILROAD){
             
-            gameViewController.showRailRoadCard(title: "READING RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .READING_RAILROAD )) {
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "READING RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .READING_RAILROAD )) {
                  
                 if player.assets.railRoads.contains(.READING_RAILROAD) {
                     // do nothing
@@ -243,7 +246,7 @@ extension BoardScene {
         }
         if(space == .SHORT_LINE){
             
-            gameViewController.showRailRoadCard(title: "SHORT LINE", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .SHORT_LINE )) {
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "SHORT LINE", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .SHORT_LINE )) {
            
                 if player.assets.railRoads.contains(.SHORT_LINE) {
                     // do nothing
@@ -261,7 +264,7 @@ extension BoardScene {
         }
         if(space == .PENNSYLVANIA_RAILROAD){
             
-            gameViewController.showRailRoadCard(title: "PENNSYLVANIA RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .PENNSYLVANIA_RAILROAD )) {
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "PENNSYLVANIA RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .PENNSYLVANIA_RAILROAD )) {
                 
                 
                 if player.assets.railRoads.contains(.PENNSYLVANIA_RAILROAD) {
@@ -279,7 +282,7 @@ extension BoardScene {
         }
         if(space == .B_O_RAILROAD){
             
-            gameViewController.showRailRoadCard(title: "B_O_RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .B_O_RAILROAD )) {
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "B_O_RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .B_O_RAILROAD )) {
                 
                 
                 if player.assets.railRoads.contains(.B_O_RAILROAD) {

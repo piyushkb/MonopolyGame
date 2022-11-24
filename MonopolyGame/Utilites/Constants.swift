@@ -19,8 +19,10 @@ enum BackgroundImage: String {
     case none
 }
 
+
+
 struct Const {
-    
+    static let StringSell = "Sell Value" // Mortgage
     static let GO_PASS_AMOUNT = 200
     // Assets
     static let DiceFaces = [#imageLiteral(resourceName: "dice-1"), #imageLiteral(resourceName: "dice-2"), #imageLiteral(resourceName: "dice-3"), #imageLiteral(resourceName: "dice-4"), #imageLiteral(resourceName: "dice-5"), #imageLiteral(resourceName: "dice-6")]
@@ -64,14 +66,14 @@ struct UtilityCard{
         static let title = "WATER WORKS"
         static let desc = "If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice."
         static let amount = 150
-        static let mortgage = 75
+        static let sellValue = 75
     }
     
     struct ELECTRICITY{
         static let title = "ELECTRIC COMPANY"
         static let desc = "If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice."
         static let amount = 150
-        static let mortgage = 75
+        static let sellValue = 75
     }
     
     static func getSingleCardRent(rollValue:Int) -> Int{
@@ -151,9 +153,9 @@ struct RailRoadCard{
     If 4 R.R.'s are owned $200.
     
     
-    Mortgage Value $100.
+    \(Const.StringSell) Value $100.
     """
-    static let mortgage = 100
+    static let sellValue = 100
 }
 
  
@@ -171,6 +173,9 @@ struct AnimationJson {
     static let Star =  "star"
     static let SAD =  "sad"
     static let Credit =  "credit" // sound only no lotiiee
+    static let Win =  "winner"
+    static let Assets =  "assets"
+    static let Success = "success"
     
     
 }

@@ -260,13 +260,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANCE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4O-ja-zEV">
-                                        <rect key="frame" x="212" y="24" width="108" height="31.5"/>
+                                        <rect key="frame" x="212" y="24" width="108" height="30.5"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Collect 2000$" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXG-IS-UE1">
-                                        <rect key="frame" x="48" y="88" width="326" height="24"/>
+                                        <rect key="frame" x="48" y="87" width="326" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -385,7 +385,7 @@ With 3 Houses
 With 4 Houses
 1025.
 With HOTEL $1200.
-Mortgage Value $140.
+Sell Value $140.
 Houses cost $150. each
 Hotels, $150. plus 4 houses
 If a player owns ALL the Lots of any Color-Group, the
@@ -506,7 +506,7 @@ rent is Doubled on Unimproved Lots in that</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-Ns-KAT">
-                                        <rect key="frame" x="25" y="75" width="250" height="120"/>
+                                        <rect key="frame" x="25" y="75" width="250" height="116.5"/>
                                         <string key="text">If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice.</string>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -611,7 +611,7 @@ rent is Doubled on Unimproved Lots in that</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Np-dQ-3cy">
-                                        <rect key="frame" x="25" y="75" width="250" height="120"/>
+                                        <rect key="frame" x="25" y="75" width="250" height="116.5"/>
                                         <string key="text">If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice.</string>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -697,6 +697,154 @@ rent is Doubled on Unimproved Lots in that</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1X-o7-6Si" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6209" y="-1"/>
+        </scene>
+        <!--WinnerVC-->
+        <scene sceneID="BFW-gV-d80">
+            <objects>
+                <viewController storyboardIdentifier="WinnerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="crk-D8-jE4" customClass="WinnerVC" customModule="MonopolyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="23p-Nn-lXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzd-Kz-o45" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wk-pZ-gm9">
+                                <rect key="frame" x="100" y="20" width="712" height="335"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piyush Kumar Won" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-By-mVe">
+                                        <rect key="frame" x="0.0" y="0.0" width="356" height="335"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eI6-e2-eRs" customClass="LottieAnimationView" customModule="Lottie">
+                                        <rect key="frame" x="356" y="0.0" width="356" height="335"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eI6-e2-eRs" firstAttribute="width" secondItem="7Wk-pZ-gm9" secondAttribute="width" multiplier="0.5" id="ncP-Do-sUb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CWg-fc-Rxp"/>
+                        <color key="backgroundColor" red="0.28880783920000003" green="0.60195750000000003" blue="0.86629563570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CWg-fc-Rxp" firstAttribute="trailing" secondItem="Hzd-Kz-o45" secondAttribute="trailing" id="D7l-de-phG"/>
+                            <constraint firstAttribute="bottom" secondItem="7Wk-pZ-gm9" secondAttribute="bottom" constant="20" id="PZQ-z0-FeL"/>
+                            <constraint firstItem="Hzd-Kz-o45" firstAttribute="top" secondItem="23p-Nn-lXZ" secondAttribute="top" id="Wai-Yn-bWB"/>
+                            <constraint firstAttribute="trailing" secondItem="7Wk-pZ-gm9" secondAttribute="trailing" id="aSx-B2-mcK"/>
+                            <constraint firstItem="Hzd-Kz-o45" firstAttribute="leading" secondItem="CWg-fc-Rxp" secondAttribute="leading" id="dlN-tT-mTd"/>
+                            <constraint firstItem="7Wk-pZ-gm9" firstAttribute="top" secondItem="23p-Nn-lXZ" secondAttribute="top" constant="20" id="or9-SY-r83"/>
+                            <constraint firstItem="7Wk-pZ-gm9" firstAttribute="leading" secondItem="23p-Nn-lXZ" secondAttribute="leading" constant="100" id="qda-2l-sOZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Hzd-Kz-o45" secondAttribute="bottom" id="y46-ou-xFf"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="812" height="375"/>
+                    <connections>
+                        <outlet property="bigAnimationView" destination="Hzd-Kz-o45" id="tHF-Oq-zbP"/>
+                        <outlet property="smallAnimationView" destination="eI6-e2-eRs" id="cah-bw-cIs"/>
+                        <outlet property="winnerLabel" destination="UgC-By-mVe" id="3UD-vp-YaR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A4J-B0-NIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7692.753623188406" y="-1.0044642857142856"/>
+        </scene>
+        <!--AssetsVC-->
+        <scene sceneID="aRY-wl-Yuc">
+            <objects>
+                <viewController storyboardIdentifier="AssetsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RNB-ZT-vfS" customClass="AssetsVC" customModule="MonopolyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8yf-Ro-OJN">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeY-dS-Zm7">
+                                <rect key="frame" x="355" y="0.0" width="457" height="375"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="n8U-jz-fHS">
+                                <rect key="frame" x="50" y="50" width="762" height="305"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-xK-FzO">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="305"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piyush Kumar's All Assets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-r5-yts">
+                                                <rect key="frame" x="0.0" y="0.0" width="290" height="152.5"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5b-TA-ycf" customClass="LottieAnimationView" customModule="Lottie">
+                                                <rect key="frame" x="0.0" y="152.5" width="290" height="152.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Wcm-SL-isa">
+                                        <rect key="frame" x="305" y="0.0" width="457" height="305"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Wcm-SL-isa" firstAttribute="width" secondItem="n8U-jz-fHS" secondAttribute="width" multiplier="0.6" id="Tql-8a-Ed9"/>
+                                    <constraint firstItem="Wcm-SL-isa" firstAttribute="top" secondItem="n8U-jz-fHS" secondAttribute="top" id="ewq-XA-PbX"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeD-W6-eNq" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="256" y="44.5" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="HdC-Cc-S7e"/>
+                                    <constraint firstAttribute="width" constant="300" id="V9N-RL-PFP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zn2-B5-oQH">
+                                <rect key="frame" x="760" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="NCd-Oh-WdW"/>
+                                    <constraint firstAttribute="height" constant="40" id="tlW-fc-tgE"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                    <backgroundConfiguration key="background" image="close"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onClose:" destination="RNB-ZT-vfS" eventType="touchUpInside" id="x1a-V9-bJ2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="57u-ja-Ulv"/>
+                        <color key="backgroundColor" red="0.28880783920000003" green="0.60195750000000003" blue="0.86629563570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aeY-dS-Zm7" firstAttribute="top" secondItem="8yf-Ro-OJN" secondAttribute="top" id="4JR-0X-l4X"/>
+                            <constraint firstAttribute="bottom" secondItem="n8U-jz-fHS" secondAttribute="bottom" constant="20" id="4Ri-Q8-QSP"/>
+                            <constraint firstAttribute="trailing" secondItem="zn2-B5-oQH" secondAttribute="trailing" constant="12" id="8Og-tE-EiM"/>
+                            <constraint firstAttribute="trailing" secondItem="n8U-jz-fHS" secondAttribute="trailing" id="AFA-KP-N9l"/>
+                            <constraint firstAttribute="bottom" secondItem="aeY-dS-Zm7" secondAttribute="bottom" id="IjU-st-VOx"/>
+                            <constraint firstItem="aeD-W6-eNq" firstAttribute="centerX" secondItem="8yf-Ro-OJN" secondAttribute="centerX" id="Kcz-sr-Y3x"/>
+                            <constraint firstItem="n8U-jz-fHS" firstAttribute="leading" secondItem="8yf-Ro-OJN" secondAttribute="leading" constant="50" id="OuT-zH-qPs"/>
+                            <constraint firstItem="n8U-jz-fHS" firstAttribute="top" secondItem="8yf-Ro-OJN" secondAttribute="top" constant="50" id="aQz-32-5xj"/>
+                            <constraint firstItem="aeY-dS-Zm7" firstAttribute="width" secondItem="Wcm-SL-isa" secondAttribute="width" id="gBp-Dh-0bE"/>
+                            <constraint firstItem="zn2-B5-oQH" firstAttribute="top" secondItem="8yf-Ro-OJN" secondAttribute="top" constant="30" id="iaS-2W-IW9"/>
+                            <constraint firstAttribute="trailing" secondItem="aeY-dS-Zm7" secondAttribute="trailing" id="nFn-Tb-I1m"/>
+                            <constraint firstItem="aeD-W6-eNq" firstAttribute="centerY" secondItem="8yf-Ro-OJN" secondAttribute="centerY" constant="7" id="zVU-Nv-dZr"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="812" height="375"/>
+                    <connections>
+                        <outlet property="lottieAnimationView" destination="Y5b-TA-ycf" id="uXI-jp-QLM"/>
+                        <outlet property="successLottieView" destination="aeD-W6-eNq" id="2bY-RC-LMP"/>
+                        <outlet property="tableView" destination="Wcm-SL-isa" id="XRL-mz-ZaQ"/>
+                        <outlet property="userLabel" destination="eXe-r5-yts" id="caD-ZR-h5r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Spn-QF-Wa9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9515.9420289855079" y="-1.0044642857142856"/>
         </scene>
     </scenes>
     <resources>
