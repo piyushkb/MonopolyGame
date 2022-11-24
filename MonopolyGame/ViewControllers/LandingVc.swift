@@ -146,7 +146,7 @@ extension LandingVc {
             
             
             for player in players {
-                player.setTotalMoney(totalMoney: Int(600))
+                player.setTotalMoney(totalMoney: Int(200))
             }
             
             

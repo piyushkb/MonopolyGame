@@ -42,9 +42,22 @@ class RailRoadVC: UIViewController {
        
        let haveEnaughMoney = LogicsHandler.shared.haveMoneyToBuy(player: player, buyAmount: buyAmount)
        
-       if(!haveEnaughMoney) { // okaat nhi bachi kharidne ke
-           showErrorBanner(message: "You don't have enaugh Money to Buy")
-           self.dismiss(animated: true)
+       if(!haveEnaughMoney) {
+           // okaat nhi bachi kharidne ke
+           let msg = "You don't have enough Money to Buy, Would you like to sell your assets?"
+           showConfirmationAlertGlobal(message: msg) { value in
+               
+               if value {
+                   let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssetsVC") as! AssetsVC
+                   vc.player = self.player
+                   vc.modalTransitionStyle = .coverVertical
+                   vc.modalPresentationStyle = .overCurrentContext
+                   self.present(vc, animated: true)
+               }else{
+                  // self.dismiss(animated: true)
+               }
+           }
+        
        }else {
            if let completionHandler =  completionHandler{
                completionHandler()

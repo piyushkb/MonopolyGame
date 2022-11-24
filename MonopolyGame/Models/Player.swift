@@ -39,7 +39,7 @@ class Player {
         
         var total = dice1! + dice2!
         print("Totallllllllllllllllll  \(total)")
-        total = 30
+        total = 5
         if(doubleDice.isEmpty){
             doubleDice.append(total)
         }else{
