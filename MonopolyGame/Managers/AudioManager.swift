@@ -25,7 +25,9 @@ func playSound(soundName:String) {
 }
 
 func playMove() {
-    playSound(soundName: "move")
+    if(playMoveSound) {
+        playSound(soundName: "move")
+    }
 }
 
  

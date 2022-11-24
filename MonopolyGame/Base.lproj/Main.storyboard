@@ -190,12 +190,18 @@
                                     <constraint firstAttribute="width" constant="250" id="WRd-ci-0Cy"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-TJ-g9S" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QWL-ql-HD6" firstAttribute="leading" secondItem="YoJ-TS-NNz" secondAttribute="leading" id="AJj-RB-AMq"/>
                             <constraint firstItem="YoJ-TS-NNz" firstAttribute="trailing" secondItem="3se-qz-xqx" secondAttribute="trailing" id="F9H-bb-BjX"/>
+                            <constraint firstItem="xSo-TJ-g9S" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="HD7-Al-5n1"/>
+                            <constraint firstItem="xSo-TJ-g9S" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="Hdp-u6-tSt"/>
                             <constraint firstItem="QWL-ql-HD6" firstAttribute="trailing" secondItem="YoJ-TS-NNz" secondAttribute="trailing" id="IGW-X6-3dC"/>
                             <constraint firstItem="Kic-Gt-IhR" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="77" id="NhT-Zm-uIJ"/>
                             <constraint firstAttribute="bottom" secondItem="Kic-Gt-IhR" secondAttribute="bottom" constant="60" id="SyO-zX-afw"/>
@@ -204,8 +210,10 @@
                             <constraint firstItem="Kic-Gt-IhR" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" constant="53" id="cs3-oy-ziY"/>
                             <constraint firstItem="dX2-6n-BcJ" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="eHN-YH-KPS"/>
                             <constraint firstItem="r9v-iC-doT" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="eMM-kY-VEs"/>
+                            <constraint firstItem="xSo-TJ-g9S" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" id="fDi-Yf-xYB"/>
                             <constraint firstItem="YoJ-TS-NNz" firstAttribute="leading" secondItem="Kic-Gt-IhR" secondAttribute="trailing" constant="80" id="gSn-hf-xVl"/>
                             <constraint firstItem="r9v-iC-doT" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="h0H-mx-bfX"/>
+                            <constraint firstAttribute="bottom" secondItem="xSo-TJ-g9S" secondAttribute="bottom" id="kjt-x7-wDu"/>
                             <constraint firstItem="Inm-Bz-wMa" firstAttribute="centerX" secondItem="Kic-Gt-IhR" secondAttribute="centerX" id="kyf-u8-XKI"/>
                             <constraint firstItem="YoJ-TS-NNz" firstAttribute="leading" secondItem="r9v-iC-doT" secondAttribute="trailing" id="mEg-sJ-DNu"/>
                             <constraint firstAttribute="bottom" secondItem="dX2-6n-BcJ" secondAttribute="bottom" id="nY6-z9-XWS"/>
@@ -219,6 +227,7 @@
                     <size key="freeformSize" width="812" height="375"/>
                     <connections>
                         <outlet property="DiceAnimationView" destination="Kic-Gt-IhR" id="FLZ-Do-6te"/>
+                        <outlet property="bigAnimationView" destination="xSo-TJ-g9S" id="tXf-mQ-7tb"/>
                         <outlet property="bottomSpaceDiceView" destination="SyO-zX-afw" id="EON-Ra-vWC"/>
                         <outlet property="gameBoardScene" destination="r9v-iC-doT" id="P8u-mo-eWO"/>
                         <outlet property="lottieAnimationView" destination="Inm-Bz-wMa" id="Qz2-mE-ERb"/>
@@ -469,7 +478,7 @@ rent is Doubled on Unimproved Lots in that</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRf-w6-9RF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="-13"/>
+            <point key="canvasLocation" x="3500" y="-13"/>
         </scene>
         <!--UtilityVC-->
         <scene sceneID="bJP-Nl-Ubv">
@@ -575,6 +584,119 @@ rent is Doubled on Unimproved Lots in that</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyL-hU-Q3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4863.768115942029" y="-13.058035714285714"/>
+        </scene>
+        <!--Rail RoadVC-->
+        <scene sceneID="QpE-zP-gIu">
+            <objects>
+                <viewController storyboardIdentifier="RailRoadVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxd-F3-bNj" customClass="RailRoadVC" customModule="MonopolyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qet-nv-kLf">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJm-Dh-NMH" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uag-10-D4C">
+                                <rect key="frame" x="256" y="28.5" width="300" height="332"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utility" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eug-ZU-fcW">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="kaI-AA-cl0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="19"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Np-dQ-3cy">
+                                        <rect key="frame" x="25" y="75" width="250" height="120"/>
+                                        <string key="text">If one Utility is owned, Rent is 4 times amount shown on dice. If both Utilities are owned, Rent is 10 times amount shown on dice.</string>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3Np-dQ-3cy" firstAttribute="leading" secondItem="Uag-10-D4C" secondAttribute="leading" constant="25" id="0Mt-dz-mTf"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Np-dQ-3cy" secondAttribute="trailing" constant="25" id="0dA-sI-n6A"/>
+                                    <constraint firstItem="eug-ZU-fcW" firstAttribute="leading" secondItem="Uag-10-D4C" secondAttribute="leading" id="5i5-eK-ITf"/>
+                                    <constraint firstAttribute="trailing" secondItem="eug-ZU-fcW" secondAttribute="trailing" id="BfI-Wc-ssR"/>
+                                    <constraint firstItem="3Np-dQ-3cy" firstAttribute="top" secondItem="eug-ZU-fcW" secondAttribute="bottom" constant="25" id="HnL-Kh-d4R"/>
+                                    <constraint firstItem="eug-ZU-fcW" firstAttribute="top" secondItem="Uag-10-D4C" secondAttribute="top" id="XUX-CU-CNO"/>
+                                    <constraint firstAttribute="width" constant="300" id="l0f-od-0wr"/>
+                                    <constraint firstAttribute="height" constant="332" id="s9E-g9-47Y"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Sx-3G-7AB">
+                                <rect key="frame" x="586" y="140.5" width="163" height="108"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUv-XU-3SA" userLabel="Roll Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="50"/>
+                                        <color key="backgroundColor" red="0.60268509390000002" green="0.1062916592" blue="0.11218477039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="unV-o4-clA"/>
+                                            <constraint firstAttribute="width" constant="163" id="xp3-Ne-YxU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Buy" image="house" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onBuy:" destination="cxd-F3-bNj" eventType="touchUpInside" id="Lco-7o-2Rh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEt-59-uhy" userLabel="Roll Button">
+                                        <rect key="frame" x="0.0" y="58" width="163" height="50"/>
+                                        <color key="backgroundColor" red="0.60268509390000002" green="0.1062916592" blue="0.11218477039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="163" id="3jl-rD-0As"/>
+                                            <constraint firstAttribute="height" constant="50" id="EyH-oL-Tue"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Exit" image="xmark" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onExit:" destination="cxd-F3-bNj" eventType="touchUpInside" id="ifO-Lt-WDa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SXB-Ho-5ft"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Uag-10-D4C" firstAttribute="centerY" secondItem="SXB-Ho-5ft" secondAttribute="centerY" id="5Vx-SL-ioO"/>
+                            <constraint firstItem="Uag-10-D4C" firstAttribute="centerX" secondItem="SXB-Ho-5ft" secondAttribute="centerX" id="8vQ-yR-SCQ"/>
+                            <constraint firstItem="Uag-10-D4C" firstAttribute="leading" secondItem="KJm-Dh-NMH" secondAttribute="trailing" id="93v-JY-m2w"/>
+                            <constraint firstItem="KJm-Dh-NMH" firstAttribute="leading" secondItem="SXB-Ho-5ft" secondAttribute="leading" id="Oqp-TZ-OkS"/>
+                            <constraint firstItem="KJm-Dh-NMH" firstAttribute="top" secondItem="qet-nv-kLf" secondAttribute="top" id="i4b-oT-qA4"/>
+                            <constraint firstItem="2Sx-3G-7AB" firstAttribute="centerY" secondItem="Uag-10-D4C" secondAttribute="centerY" id="m3c-YV-dhW"/>
+                            <constraint firstItem="2Sx-3G-7AB" firstAttribute="leading" secondItem="Uag-10-D4C" secondAttribute="trailing" constant="30" id="mYa-lI-DXy"/>
+                            <constraint firstAttribute="bottom" secondItem="KJm-Dh-NMH" secondAttribute="bottom" id="qKj-zw-zT6"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="812" height="375"/>
+                    <connections>
+                        <outlet property="buyButton" destination="ZUv-XU-3SA" id="Jn8-js-W7v"/>
+                        <outlet property="cardDescription" destination="3Np-dQ-3cy" id="7CO-Fa-WOW"/>
+                        <outlet property="cardTitle" destination="eug-ZU-fcW" id="Mx0-DA-LLn"/>
+                        <outlet property="exitButton" destination="dEt-59-uhy" id="j95-rh-yxM"/>
+                        <outlet property="lottieAnimatoinView" destination="KJm-Dh-NMH" id="cO2-fw-CQn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f1X-o7-6Si" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6209" y="-1"/>
         </scene>
     </scenes>
     <resources>

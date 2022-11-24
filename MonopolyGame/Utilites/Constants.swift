@@ -20,6 +20,8 @@ enum BackgroundImage: String {
 }
 
 struct Const {
+    
+    static let GO_PASS_AMOUNT = 200
     // Assets
     static let DiceFaces = [#imageLiteral(resourceName: "dice-1"), #imageLiteral(resourceName: "dice-2"), #imageLiteral(resourceName: "dice-3"), #imageLiteral(resourceName: "dice-4"), #imageLiteral(resourceName: "dice-5"), #imageLiteral(resourceName: "dice-6")]
     static var DiceSize = 100
@@ -29,6 +31,7 @@ struct Const {
     static let MusicFiles: [String] = ["MonopolyMusic2" , "MonopolyMusic" , "MonopolyMusic3"]
     static let MusicFileType = "mp3"
     static let dices = ["redDisk" , "blueDisk","greenDisk", "yellowDisk"]
+    static let GO_PASS_SOUND = "goPass"
 
 
     // Game
@@ -47,6 +50,8 @@ struct Const {
     
     
 }
+
+var playMoveSound = true
 
 struct ConstImages {
     static let PAY_FEE = "pay_fee"
@@ -135,6 +140,20 @@ struct RailRoadCard{
     static func getRent(ownedStationsCount:Int) -> Int{
         ownedStationsCount * 25
     }
+    
+    static let des = """
+    Rent  $25.
+    
+    If 2 R.R.'s are owned $50.
+    
+    If 3 R.R.'s are owned $100.
+    
+    If 4 R.R.'s are owned $200.
+    
+    
+    Mortgage Value $100.
+    """
+    static let mortgage = 100
 }
 
  

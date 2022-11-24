@@ -10,7 +10,7 @@ var  gameViewController : GameViewController!
 class GameViewController: UIViewController {
    
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
-    
+    @IBOutlet weak var bigAnimationView: LottieAnimationView!
     @IBOutlet weak var bottomSpaceDiceView: NSLayoutConstraint!
     @IBOutlet weak var DiceAnimationView: UIView!
     public var dice1ImageView: UIImageView!
@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
        
         gameViewController = self
-        
+        self.hideBigLottie()
         self.hideLottie()
         self.tableView.registerCells([PlayerCell.self])
         self.tableView.delegate = self
@@ -77,16 +77,35 @@ class GameViewController: UIViewController {
         }
     }
 
-    func showLottieAnimation(json:String,completion: @escaping ()->()) {
+    func showLottieAnimation(mode:UIView.ContentMode = UIView.ContentMode.scaleAspectFit, json:String,completion: @escaping ()->()) {
         lottieAnimationView.animation = LottieAnimation.named(json)
         lottieAnimationView.loopMode = .playOnce
-        lottieAnimationView.contentMode = .scaleAspectFit
+        lottieAnimationView.contentMode = mode
         self.showLottie()
         lottieAnimationView.play { _ in
             self.hideLottie()
             completion() // sendCall back when animation complete
         }
     }
+    
+    func showBigLottieAnimation(mode:UIView.ContentMode = UIView.ContentMode.scaleToFill, json:String,completion: @escaping ()->()) {
+        bigAnimationView.animation = LottieAnimation.named(json)
+        bigAnimationView.loopMode = .playOnce
+        bigAnimationView.contentMode = mode
+        self.showBigLottie()
+        bigAnimationView.play { _ in
+            self.hideBigLottie()
+            completion() // sendCall back when animation complete
+        }
+    }
+
+    func hideBigLottie(){
+        bigAnimationView.isHidden = true
+    }
+    func showBigLottie(){
+        bigAnimationView.isHidden = false
+    }
+    
     
     func hideLottie(){
         lottieAnimationView.isHidden = true
@@ -274,6 +293,19 @@ extension GameViewController {
         self.present(vc, animated: true)
     }
     
+    
+    func showRailRoadCard(title:String,description:String,alreadyOwned:Bool, completion:@escaping () -> Void){
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RailRoadVC") as! RailRoadVC
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .coverVertical
+        vc.titleText = title
+        vc.descriptionText = description
+        vc.alreadyOwned = alreadyOwned
+        vc.completionHandler =  {
+            completion()
+        }
+        self.present(vc, animated: true)
+    }
     
      
     

@@ -38,15 +38,22 @@ class Player {
         dice2 = Int.random(in: 1...6)
         
         let total = dice1! + dice2!
-        let dummy = 28
-        if(dice1 == dice2){
-           // doubleDice.append(total)
-            doubleDice.append(dummy)
-        }else {
-            doubleDice.removeAll()
-           // doubleDice.append(total)
-            doubleDice.append(dummy)
+        print("Totallllllllllllllllll  \(total)")
+       
+        if(doubleDice.isEmpty){
+            doubleDice.append(total)
+        }else{
+            doubleDice[0] = total
         }
+       // doubleDice.append(total)
+//        if(dice1 == dice2){
+//           // doubleDice.append(total)
+//            doubleDice.append(total)
+//        }else {
+//            doubleDice.removeAll()
+//           // doubleDice.append(total)
+//            doubleDice.append(total)
+//        }
     }
      
     

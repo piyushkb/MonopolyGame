@@ -99,7 +99,19 @@ class BoardScene: SKScene {
        let nextNumber:Int = Int(spaceNumber)! + 1
        let nextSpace:String = String(firstCharacter) + String(nextNumber)
 
-       return (currentPlayer,nextSpace)
+       if(nextNumber == 40) {
+           currentPlayer.getPaid(amount: Const.GO_PASS_AMOUNT)
+           playMoveSound = false
+           playSound(soundName: Const.GO_PASS_SOUND)
+           gameViewController.showBigLottieAnimation(mode: .scaleAspectFill ,json: AnimationJson.Star, completion: {
+               playMoveSound = true
+           })
+           return (currentPlayer,"A0")
+       }else {
+           return (currentPlayer,nextSpace)
+       }
+       
+    
    }
 
     func onReachAtPosition(player:Player) {
