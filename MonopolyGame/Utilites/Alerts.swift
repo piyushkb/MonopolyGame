@@ -13,13 +13,13 @@ func showAlertAnyWhere(message:String){
    }
 }
 
-func showConfirmationAlertGlobal(message:String,completion:@escaping (Bool) -> Void){
+func showConfirmationAlertGlobal(noText:String = "No",message:String,completion:@escaping (Bool) -> Void){
    DispatchQueue.main.async {
    let alert = UIAlertController(title: "Message", message: message, preferredStyle: .alert)
    let yesAction = UIAlertAction(title: "Yes", style: .default) { (alert) in
        completion(true)
    }
-   let noAction = UIAlertAction(title: "No", style: .default) { (alert) in
+   let noAction = UIAlertAction(title: noText, style: .default) { (alert) in
            completion(false)
    }
    alert.addAction(yesAction)

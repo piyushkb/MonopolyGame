@@ -39,7 +39,7 @@ class Player {
         
         var total = dice1! + dice2!
         print("Totallllllllllllllllll  \(total)")
-        total = 5
+        //total = 2
         if(doubleDice.isEmpty){
             doubleDice.append(total)
         }else{
@@ -86,73 +86,101 @@ class Player {
     }
     
     func hideTopDialog() {
-        
-        
-        let  topVC =  UIApplication.topViewController()!
-        
-        var className = NSStringFromClass(topVC.classForCoder)
-        
-        print(className)
-        
-        if(className != "MonopolyGame.GameViewController") {
-            UIApplication.topViewController()!.dismiss(animated: true)
-        }
-        
+//        let  topVC =  UIApplication.topViewController()!
+//
+//        var className = NSStringFromClass(topVC.classForCoder)
+//
+//        print(className)
+//
+//        if(className != "MonopolyGame.GameViewController") {
+//            UIApplication.topViewController()!.dismiss(animated: true)
+//        }
     }
-    func ifPlayerHaveAssets()->Bool {
-        
-        return false
-    }
+   
     func spend(moneyToSpend: Int) {
-        // spend money
-        print("Spenddd")
         
-        var tempMoney = totalMoney
-        tempMoney = tempMoney - moneyToSpend
+        print("Spening")
         
-        if(tempMoney < 0) {
+        let haveEnoughMoney = LogicsHandler.shared.haveMoneyToBuy(player: self, spndingAmount: moneyToSpend)
+        
+        let haveEnoughAssets = LogicsHandler.shared.haveEnoughAssets(player: self, spndingAmount: moneyToSpend)
+        
+        if(!haveEnoughMoney) {
             
-            if(ifPlayerHaveAssets()) {
-                reloadTable() // show asset Contoller
-            }else {
-                // assets nahi hai
-              
+            if(haveEnoughAssets) {
+                
+                let msg = "You don't have enough Money,You need to sell your Assets?"
+                
+                showConfirmationAlertGlobal(noText: "Quit Game" , message: msg) { value in
                     
-                    hideTopDialog()
-                    
-                    showOkeyAlertWithCallBackAnyWhere(message:  "\(playerName) Got Bank Currepted.. " ) {
+                    if value {
                         
-                        var playerIndex = 0
-                        for (index,item) in gameViewController.players.enumerated() {
-                            
-                            if(item.playerId == self.playerId) {
-                                playerIndex = index
-                                break
-                            }
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AssetsVC") as! AssetsVC
+                        vc.player = self
+                        vc.mustSpend = true
+                        vc.spndingAmount = moneyToSpend
+                        vc.modalTransitionStyle = .coverVertical
+                        vc.modalPresentationStyle = .overFullScreen
+                        UIApplication.topViewController()!.present(vc, animated: true)
+                        
+                        vc.completionHandler = {
+                            self.spentMoney(moneyToSpend:moneyToSpend)
                         }
-                        gameViewController.players.remove(at: playerIndex)
-                        reloadTable()
-                        if(gameViewController.players.count == 1) {
-                            gameViewController.showWinnerScreen()
-                        }
+                        
+                    }else{
+                        playSound(soundName: AnimationJson.SAD)
+                        self.removePlayer()
+                    }
+                    reloadTable() // show asset Contoller
+                }
+               
+              
+            }else {
+                   
+                    hideTopDialog()
+                showOkeyAlertWithCallBackAnyWhere(message:  "\(playerName) Got Bank Currepted.. " ) {
+                    
+                        self.removePlayer()
+                     
                     }
                     playSound(soundName: AnimationJson.SAD)
                 }
-           
-            
-            
         }else {
-            totalMoney -= moneyToSpend
-            playSound(soundName: AnimationJson.Tax)
-            reloadTable()
+            spentMoney(moneyToSpend:moneyToSpend)
         }
        
-        if(gameViewController.players.count == 1) {
-            gameViewController.showWinnerScreen()
-        }
+        checkWin()
       
     }
     
+    func spentMoney(moneyToSpend:Int) {
+        
+        totalMoney -= moneyToSpend
+        playSound(soundName: AnimationJson.Tax)
+        reloadTable()
+    }
+    
+    func removePlayer(){
+        
+        var playerIndex = 0
+        for (index,item) in gameViewController.players.enumerated() {
+            
+            if(item.playerId == self.playerId) {
+                playerIndex = index
+                break
+            }
+        }
+        gameViewController.players.remove(at: playerIndex)
+        reloadTable()
+        self.checkWin()
+    }
+    
+    func checkWin() {
+        
+        if(gameViewController.players.count == 1) {
+            showWinnerScreen()
+        }
+    }
     func getPaid(amount: Int) {
         print("Paidddd")
         // Get paid (e.g. rent)

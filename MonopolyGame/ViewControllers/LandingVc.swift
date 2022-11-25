@@ -145,15 +145,16 @@ extension LandingVc {
             }
             
             
-            for player in players {
-                player.setTotalMoney(totalMoney: Int(200))
-            }
+//            for player in players {
+//                player.setTotalMoney(totalMoney: Int(0))
+//                player.assets.addUtility(utility: .WATER_WORKS)
+//            }
             
             
              // uncomment
-//            for player in players {
-//                player.setTotalMoney(totalMoney: Int(moneyStepper.value))
-//            }
+            for player in players {
+                player.setTotalMoney(totalMoney: Int(moneyStepper.value))
+            }
             
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
             vc.modalPresentationStyle = .fullScreen

@@ -326,12 +326,12 @@ extension GameViewController {
 }
 
 
-extension GameViewController {
+ 
+func showWinnerScreen(){
+    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WinnerVC") as! WinnerVC
+   // vc.modalPresentationStyle = .fullScreen
+    vc.player = gameViewController.players.first
+    vc.modalPresentationStyle = .overFullScreen
+    UIApplication.topViewController()!.present(vc, animated: true)
     
-    func showWinnerScreen(){
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "WinnerVC") as! WinnerVC
-        vc.modalPresentationStyle = .fullScreen
-        vc.player = self.players.first
-        self.present(vc, animated: true)
-    }
 }

@@ -210,7 +210,7 @@ class BoardScene: SKScene {
         print(space)
         
         if(space == .ORIENTAL_AVENUE) {
-            vc.opneCardVC()
+           // vc.opneCardVC()
         }
         
         if(space == .JAIL_VISITING || space == .GO_TO_JAIL) {

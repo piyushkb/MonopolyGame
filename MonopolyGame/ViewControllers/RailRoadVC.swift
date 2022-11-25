@@ -40,23 +40,32 @@ class RailRoadVC: UIViewController {
    
    @IBAction func onBuy(_ sender: Any) {
        
-       let haveEnaughMoney = LogicsHandler.shared.haveMoneyToBuy(player: player, buyAmount: buyAmount)
+       let haveEnaughMoney = LogicsHandler.shared.haveMoneyToBuy(player: player, spndingAmount: buyAmount)
+       
+       let haveAssets = LogicsHandler.shared.haveAssets(player: player)
        
        if(!haveEnaughMoney) {
            // okaat nhi bachi kharidne ke
-           let msg = "You don't have enough Money to Buy, Would you like to sell your assets?"
-           showConfirmationAlertGlobal(message: msg) { value in
-               
-               if value {
-                   let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssetsVC") as! AssetsVC
-                   vc.player = self.player
-                   vc.modalTransitionStyle = .coverVertical
-                   vc.modalPresentationStyle = .overCurrentContext
-                   self.present(vc, animated: true)
-               }else{
-                  // self.dismiss(animated: true)
+           
+           if(haveAssets) {
+               let msg = "You don't have enough Money to Buy, Would you like to sell your assets?"
+               showConfirmationAlertGlobal(message: msg) { value in
+                   
+                   if value {
+                       let vc = self.storyboard?.instantiateViewController(withIdentifier: "AssetsVC") as! AssetsVC
+                       vc.player = self.player
+                       vc.modalTransitionStyle = .coverVertical
+                       vc.modalPresentationStyle = .overCurrentContext
+                       self.present(vc, animated: true)
+                   }else{
+                      // self.dismiss(animated: true)
+                   }
                }
+           }else {
+               showAlertAnyWhere(message: "You don't have Enough Money to buy")
+               return
            }
+
         
        }else {
            if let completionHandler =  completionHandler{

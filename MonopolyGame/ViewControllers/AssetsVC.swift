@@ -5,13 +5,14 @@ import Lottie
 class AssetsVC : UIViewController, CellDelegate{
     
     var player:Player!
-    var sellRequire = false
+    var spndingAmount = 0
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var lottieAnimationView: LottieAnimationView!
     @IBOutlet weak var successLottieView: LottieAnimationView!
+    var completionHandler:(() -> Void)?
+    var mustSpend = false
     override func viewDidLoad() {
-      // self.setDummy()
        self.tableView.registerCells([AssetCell.self])
        self.tableView.delegate = self
        self.tableView.dataSource = self
@@ -49,7 +50,22 @@ extension AssetsVC : UITableViewDelegate,UITableViewDataSource {
     
     @IBAction func onClose(_ sender: Any) {
         
-        self.dismiss(animated: true)
+        if(mustSpend) {
+            
+            if(self.spndingAmount > self.player.totalMoney) {
+                showAlertAnyWhere(message: "You Need to Sell More Assets.")
+            }else {
+                self.dismiss(animated: true)
+                if let completionHandler = completionHandler{
+                    completionHandler()
+                }
+            }
+            
+            
+        }else {
+            self.dismiss(animated: true)
+        }
+      
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -133,12 +149,5 @@ extension AssetsVC {
                 self.tableView.reloadData()
             }
         }
-    }
-    func setDummy() {
-        self.player = Player(isActive: true, playerImage: Const.dices.first!, playerId: 10.description, totalMoney: 1000, playerName: "Piyush Kumar", playerPosition: .GO)
-        
-        player.assets.addUtility(utility: Utiliy.ELECTRICITY)
-        player.assets.addUtility(utility: Utiliy.WATER_WORKS)
-        player.assets.addRailRoad(railroad: .B_O_RAILROAD)
     }
 }

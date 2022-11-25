@@ -67,6 +67,19 @@ class Assets {
         return  types
     }
     
+    func getTotalValueOfAllAssets()->Int {
+        
+        
+        var utilityValue = UtilityCard.WATER_WORKS.sellValue * utilities.count
+        
+        var railRoadValue = RailRoadCard.sellValue * railRoads.count
+         
+        // house and lands also in next
+        
+        return utilityValue + railRoadValue
+        
+    }
+    
 }
 
 enum AssetType: String {
