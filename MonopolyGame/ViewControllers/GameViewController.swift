@@ -145,7 +145,7 @@ extension GameViewController {
          SoundAndHapticController.cacheSounds(soundNames: Const.DiceRollSoundFileNames, fileType: Const.SoundFileType)
         
         
-            //self.playSound()
+           self.playSound()
     }
     
     func playSound() {
@@ -316,10 +316,16 @@ extension GameViewController {
     
      
     
-    func opneCardVC() {
+    func showPropertyCard(player:Player, space:PlayerSpace, completion:@escaping (String) -> Void){
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PropertyCardVc") as! PropertyCardVc
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .flipHorizontal
+        vc.space = space
+        vc.player = player
+        vc.completionHandler = { value in
+            completion(value)
+        }
         self.present(vc, animated: true)
     }
 

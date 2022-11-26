@@ -40,7 +40,7 @@ class RailRoadVC: UIViewController {
    
    @IBAction func onBuy(_ sender: Any) {
        
-       let haveEnaughMoney = LogicsHandler.shared.haveMoneyToBuy(player: player, spndingAmount: buyAmount)
+       let haveEnaughMoney = LogicsHandler.shared.haveMoneyToBuy(player: player, spendingAmount: buyAmount)
        
        let haveAssets = LogicsHandler.shared.haveAssets(player: player)
        

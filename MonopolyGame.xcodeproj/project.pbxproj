@@ -82,6 +82,8 @@
 		0056EA5B29228FC70090EC72 /* jail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5A29228FC70090EC72 /* jail.mp3 */; };
 		0056EA5D29229C740090EC72 /* chance.json in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5C29229C740090EC72 /* chance.json */; };
 		0056EA5F2922A2B50090EC72 /* chance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0056EA5E2922A2B50090EC72 /* chance.mp3 */; };
+		006255442932229000ED9ABE /* property.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 006255432932229000ED9ABE /* property.mp3 */; };
+		00625546293224D300ED9ABE /* property.json in Resources */ = {isa = PBXBuildFile; fileRef = 00625545293224D300ED9ABE /* property.json */; };
 		008A556B292112C90001AEBB /* move.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 008A556A292112C90001AEBB /* move.mp3 */; };
 		008A556D292115950001AEBB /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008A556C292115950001AEBB /* AudioManager.swift */; };
 		008F5646292EB5E90085BD51 /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = 008F5645292EB5E90085BD51 /* sad.json */; };
@@ -190,6 +192,8 @@
 		0056EA5A29228FC70090EC72 /* jail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jail.mp3; sourceTree = "<group>"; };
 		0056EA5C29229C740090EC72 /* chance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chance.json; sourceTree = "<group>"; };
 		0056EA5E2922A2B50090EC72 /* chance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chance.mp3; sourceTree = "<group>"; };
+		006255432932229000ED9ABE /* property.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = property.mp3; sourceTree = "<group>"; };
+		00625545293224D300ED9ABE /* property.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = property.json; sourceTree = "<group>"; };
 		008A556A292112C90001AEBB /* move.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = move.mp3; sourceTree = "<group>"; };
 		008A556C292115950001AEBB /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		008F5645292EB5E90085BD51 /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
@@ -471,6 +475,7 @@
 				008F564D292EC9DC0085BD51 /* credit.mp3 */,
 				0056EA5E2922A2B50090EC72 /* chance.mp3 */,
 				001D088E292406FD0072FC77 /* parking.mp3 */,
+				006255432932229000ED9ABE /* property.mp3 */,
 				00B5165F292FA03C005A40CE /* goPass.mp3 */,
 				001D088A2924057A0072FC77 /* light.mp3 */,
 				00B5167829301721005A40CE /* success.mp3 */,
@@ -500,6 +505,7 @@
 				00B51663292FC63A005A40CE /* winner.json */,
 				001D089A2924259D0072FC77 /* star.json */,
 				008F5645292EB5E90085BD51 /* sad.json */,
+				00625545293224D300ED9ABE /* property.json */,
 				00B51676293016E0005A40CE /* success.json */,
 				001D088C2924060F0072FC77 /* parking.json */,
 				001D08902924091A0072FC77 /* water.json */,
@@ -614,6 +620,7 @@
 				00B51660292FA03C005A40CE /* goPass.mp3 in Resources */,
 				00B5167929301721005A40CE /* success.mp3 in Resources */,
 				00B51664292FC63A005A40CE /* winner.json in Resources */,
+				00625546293224D300ED9ABE /* property.json in Resources */,
 				001D087F2923FC680072FC77 /* tax.json in Resources */,
 				0056EA59292284610090EC72 /* jail.json in Resources */,
 				004D3D6E291F12280050D396 /* MonopolyMusic.mp3 in Resources */,
@@ -625,6 +632,7 @@
 				003A26D62919F4B300821AAA /* LaunchScreen.storyboard in Resources */,
 				001D088B2924057A0072FC77 /* light.mp3 in Resources */,
 				001D089F292431BD0072FC77 /* card.mp3 in Resources */,
+				006255442932229000ED9ABE /* property.mp3 in Resources */,
 				001D08832924019C0072FC77 /* money_receive.json in Resources */,
 				0000BA692920330000B99039 /* MonopolyMusic2.mp3 in Resources */,
 				003A26CA2919F4B200821AAA /* Actions.sks in Resources */,

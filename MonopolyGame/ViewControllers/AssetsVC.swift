@@ -88,10 +88,10 @@ extension AssetsVC : UITableViewDelegate,UITableViewDataSource {
         }else if(assetName == Assets.LandsText) {
             return player.assets.lands.count
         }
-        else if(assetName == Assets.HouseText) {
-            return player.assets.houses.count
-        }
-        
+//        else if(assetName == Assets.HouseText) {
+//            return player.assets.houses.count
+//        }
+//
         return 0
     }
     
@@ -117,14 +117,14 @@ extension AssetsVC : UITableViewDelegate,UITableViewDataSource {
             cell.sellAmount.text = "\(Const.StringSell) $ " + RailRoadCard.sellValue.description
         }else if(assetName == Assets.LandsText) {
             let asset = player.assets.lands[indexPath.row]
-            cell.cardName.text = ""
-            cell.sellAmount.text = ""
+            cell.cardName.text = asset.name
+            cell.sellAmount.text = "$" + asset.getSellValue().description
         }
-        else if(assetName == Assets.HouseText) {
-            let asset = player.assets.houses[indexPath.row]
-            cell.cardName.text = ""
-            cell.sellAmount.text = ""
-        }
+//        else if(assetName == Assets.HouseText) {
+//            let asset = player.assets.houses[indexPath.row]
+//            cell.cardName.text = ""
+//            cell.sellAmount.text = ""
+//        }
         cell.delegate = self
         cell.setCell(section: indexPath.section, row: indexPath.row)
         cell.sellButton.tag = indexPath.row

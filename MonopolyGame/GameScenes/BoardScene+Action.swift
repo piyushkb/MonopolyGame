@@ -7,7 +7,7 @@ extension BoardScene {
     
     func finalAction(space:PlayerSpace, player:Player) {
         
-        if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
+       if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
            
             let chanceCard = Chances.getChanceCard()
         
@@ -18,7 +18,7 @@ extension BoardScene {
                 let des = "\(chanceCard.title)\n\(chanceCard.desc)"
                 
                 gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
-                    player.spend(moneyToSpend: chanceCard.amount)
+                    player.spend(moneyToSpend: chanceCard.amount, type: "Other", space: space)
                 }
                 break
                 
@@ -41,7 +41,7 @@ extension BoardScene {
             }
         }
         
-        if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
+       else if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
             
             let chestCard = CommunityChest.getCommunityChestCard()
            
@@ -52,7 +52,7 @@ extension BoardScene {
                 let des = "\(chestCard.title)\n\(chestCard.desc)"
                 
                 gameViewController.showChanceOrChestCard(title: "COMMUNITY CHEST", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
-                    player.spend(moneyToSpend: chestCard.amount)
+                    player.spend(moneyToSpend: chestCard.amount, type: "Other", space: space)
                 }
                 
                 break
@@ -62,7 +62,7 @@ extension BoardScene {
                 let des = "\(chestCard.title)\n\(chestCard.desc)"
                 
                 gameViewController.showChanceOrChestCard(title: "COMMUNITY CHEST", description: des, image: ConstImages.PAY_FEE, chanceIsGood: false) {
-                    player.spend(moneyToSpend: chestCard.amount)
+                    player.spend(moneyToSpend: chestCard.amount, type: "Other", space: space)
                 }
                 
                 break
@@ -88,15 +88,19 @@ extension BoardScene {
             
         }
         
-        
-        if(space == .ORIENTAL_AVENUE) {
-            vc.opneCardVC()
-        }
-        if(space == .GO_TO_JAIL) {
+       else if(space == .GO_TO_JAIL) {
             player.sendToJail()
         }
         
-        if(space == .ELECTRICITY){
+        else if(space == .JAIL_VISITING) {
+             
+        }
+        
+        else if(space == .FREE_PARKING) {
+             
+        }
+        
+       else if(space == .ELECTRICITY){
              
             if player.assets.utilities.contains(.ELECTRICITY) {
                 // do nothing
@@ -115,20 +119,20 @@ extension BoardScene {
                                 //player having both electricity and water card
                                 let rent = UtilityCard.getBothCardRent(rollValue: player.getRollValue())
                                 self.players[index].getPaid(amount: rent)
-                                player.spend(moneyToSpend: rent)
+                                player.spend(moneyToSpend: rent, type: "UtilityBill", space: space)
                                 return
                             }else{
                                 //player having only water card
                                 let rent = UtilityCard.getSingleCardRent(rollValue: player.getRollValue())
                                 self.players[index].getPaid(amount: rent)
-                                player.spend(moneyToSpend: rent)
+                                player.spend(moneyToSpend: rent, type: "UtilityBill", space: space)
                                 return
                             }
                         }
                     }
                     
                     player.assets.addUtility(utility: Utiliy.ELECTRICITY)
-                    player.spend(moneyToSpend: UtilityCard.ELECTRICITY.amount)
+                    player.spend(moneyToSpend: UtilityCard.ELECTRICITY.amount, type: "UtilityBill", space: space)
                     
                 }
                 
@@ -136,7 +140,7 @@ extension BoardScene {
               
         }
         
-        if(space == .WATER_WORKS){
+       else if(space == .WATER_WORKS){
              
             if player.assets.utilities.contains(.WATER_WORKS) {
                 // do nothing
@@ -155,37 +159,128 @@ extension BoardScene {
                                 //player having both electricity and water card
                                 let rent = UtilityCard.getBothCardRent(rollValue: player.getRollValue())
                                 item.getPaid(amount: rent)
-                                player.spend(moneyToSpend: rent)
+                                player.spend(moneyToSpend: rent, type: "UtilityBill", space: space)
                                 return
                             }else{
                                 //player having only water card
                                 let rent = UtilityCard.getSingleCardRent(rollValue: player.getRollValue())
                                 item.getPaid(amount: rent)
-                                player.spend(moneyToSpend: rent)
+                                player.spend(moneyToSpend: rent, type: "UtilityBill", space: space)
                                 return
                             }
                         }
                     }
                     
                     player.assets.addUtility(utility: Utiliy.WATER_WORKS)
-                    player.spend(moneyToSpend: UtilityCard.WATER_WORKS.amount)
+                    player.spend(moneyToSpend: UtilityCard.WATER_WORKS.amount, type: "UtilityBill", space: space)
                     
                 }
                 
             }
         }
         
-        if(space == .INCOME_TAX){
-            player.spend(moneyToSpend: TaxCharges.INCOME_TAX)
+       else if(space == .INCOME_TAX){
+           player.spend(moneyToSpend: TaxCharges.INCOME_TAX, type: "Other", space: space)
         }
         
-        if(space == .LUXARY_TAX){
-            player.spend(moneyToSpend: TaxCharges.LUXURY_TAX)
+        else if(space == .LUXARY_TAX){
+            player.spend(moneyToSpend: TaxCharges.LUXURY_TAX, type: "Other", space: space)
         }
         
+        else if(space == .READING_RAILROAD){
+            
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "READING RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .READING_RAILROAD )) {
+                 
+                if player.assets.railRoads.contains(.READING_RAILROAD) {
+                    // do nothing
+                    return
+                }else {
+                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.READING_RAILROAD, player: player)
+                    if(isAnyoneOwnedRailRoad) {
+                        return
+                    }else{
+                        buyRailRoad(player: player, railroad: RailRoad.READING_RAILROAD)
+                    }
+                }
+                
+            }
+            
+        }
+       else if(space == .SHORT_LINE){
+            
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "SHORT LINE", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .SHORT_LINE )) {
+           
+                if player.assets.railRoads.contains(.SHORT_LINE) {
+                    // do nothing
+                    return
+                }else {
+                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.SHORT_LINE, player: player)
+                    if(isAnyoneOwnedRailRoad) {
+                        return
+                    }else{
+                        buyRailRoad(player: player, railroad: RailRoad.SHORT_LINE)
+                    }
+                }
+            }
+           
+        }
+        else if(space == .PENNSYLVANIA_RAILROAD){
+            
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "PENNSYLVANIA RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .PENNSYLVANIA_RAILROAD )) {
+                
+                
+                if player.assets.railRoads.contains(.PENNSYLVANIA_RAILROAD) {
+                    // do nothing
+                    return
+                }else {
+                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.PENNSYLVANIA_RAILROAD, player: player)
+                    if(isAnyoneOwnedRailRoad) {
+                        return
+                    }else{
+                        buyRailRoad(player: player, railroad: RailRoad.PENNSYLVANIA_RAILROAD)
+                    }
+                }
+            }
+        }
+        else if(space == .B_O_RAILROAD){
+            
+            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "B_O_RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .B_O_RAILROAD )) {
+                
+                
+                if player.assets.railRoads.contains(.B_O_RAILROAD) {
+                    // do nothing
+                    return
+                }else {
+                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.B_O_RAILROAD, player: player)
+                    if(isAnyoneOwnedRailRoad) {
+                        return
+                    }else{
+                        buyRailRoad(player: player, railroad: RailRoad.B_O_RAILROAD)
+                    }
+                }
+            }
+        }
         
-       
-        //RailRoad --------
+        else {
+            gameViewController.showPropertyCard(player: player, space: space) { value in
+                
+                if(player.assets.isOwnedByMe(space:space)) {
+                    // do nothing
+                    return
+                }
+               
+                if(value == "Buy") {
+                    player.buyLand(space: space)
+                }else {
+                    
+                    if(player.assets.isOwnedByOther(space:space)) { // means you need to pay only if Property own by other
+                        player.payPropertyRent(space: space)
+                    }
+                    
+                }
+            }
+            
+        }
         
         func getAlreadyOwned(railRoad: RailRoad)->Bool {
             
@@ -209,7 +304,7 @@ extension BoardScene {
                     let countAllOwnedRailRoads = item.assets.railRoads.count
                     let rent = RailRoadCard.getRent(ownedStationsCount: countAllOwnedRailRoads)
                     item.getPaid(amount: rent)
-                    player.spend(moneyToSpend: rent)
+                    player.spend(moneyToSpend: rent, type: "Rail", space: space)
                     op =  true
                     break
                 }else{
@@ -220,87 +315,10 @@ extension BoardScene {
         }
         
         func buyRailRoad(player: Player, railroad: RailRoad){
-            //show card and ask first to buy or not the railroad
             player.assets.addRailRoad(railroad: railroad)
-            player.spend(moneyToSpend: RailRoadCard.amount)
+            player.spend(moneyToSpend: RailRoadCard.amount, type: "Rail", space: space)
         }
         
-        if(space == .READING_RAILROAD){
-            
-            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "READING RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .READING_RAILROAD )) {
-                 
-                if player.assets.railRoads.contains(.READING_RAILROAD) {
-                    // do nothing
-                    return
-                }else {
-                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.READING_RAILROAD, player: player)
-                    if(isAnyoneOwnedRailRoad) {
-                        return
-                    }else{
-                        buyRailRoad(player: player, railroad: RailRoad.READING_RAILROAD)
-                    }
-                }
-                
-            }
-            
-        }
-        if(space == .SHORT_LINE){
-            
-            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "SHORT LINE", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .SHORT_LINE )) {
-           
-                if player.assets.railRoads.contains(.SHORT_LINE) {
-                    // do nothing
-                    return
-                }else {
-                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.SHORT_LINE, player: player)
-                    if(isAnyoneOwnedRailRoad) {
-                        return
-                    }else{
-                        buyRailRoad(player: player, railroad: RailRoad.SHORT_LINE)
-                    }
-                }
-            }
-           
-        }
-        if(space == .PENNSYLVANIA_RAILROAD){
-            
-            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "PENNSYLVANIA RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .PENNSYLVANIA_RAILROAD )) {
-                
-                
-                if player.assets.railRoads.contains(.PENNSYLVANIA_RAILROAD) {
-                    // do nothing
-                    return
-                }else {
-                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.PENNSYLVANIA_RAILROAD, player: player)
-                    if(isAnyoneOwnedRailRoad) {
-                        return
-                    }else{
-                        buyRailRoad(player: player, railroad: RailRoad.PENNSYLVANIA_RAILROAD)
-                    }
-                }
-            }
-        }
-        if(space == .B_O_RAILROAD){
-            
-            gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "B_O_RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .B_O_RAILROAD )) {
-                
-                
-                if player.assets.railRoads.contains(.B_O_RAILROAD) {
-                    // do nothing
-                    return
-                }else {
-                    let isAnyoneOwnedRailRoad =  railRoadOp(railRoad: RailRoad.B_O_RAILROAD, player: player)
-                    if(isAnyoneOwnedRailRoad) {
-                        return
-                    }else{
-                        buyRailRoad(player: player, railroad: RailRoad.B_O_RAILROAD)
-                    }
-                }
-            }
-        }
-        
-        //------------- RailRoad
-       
         
     }
 }

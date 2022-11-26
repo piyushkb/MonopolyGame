@@ -39,7 +39,7 @@ class Player {
         
         var total = dice1! + dice2!
         print("Totallllllllllllllllll  \(total)")
-        //total = 2
+        // total = 1
         if(doubleDice.isEmpty){
             doubleDice.append(total)
         }else{
@@ -97,15 +97,16 @@ class Player {
 //        }
     }
    
-    func spend(moneyToSpend: Int) {
+    func spend(moneyToSpend: Int,type:String,space:PlayerSpace) {
         
         print("Spening")
         
-        let haveEnoughMoney = LogicsHandler.shared.haveMoneyToBuy(player: self, spndingAmount: moneyToSpend)
-        
-        let haveEnoughAssets = LogicsHandler.shared.haveEnoughAssets(player: self, spndingAmount: moneyToSpend)
+        let haveEnoughMoney = LogicsHandler.shared.haveMoneyToBuy(player: self, spendingAmount: moneyToSpend)
         
         if(!haveEnoughMoney) {
+            
+            let haveEnoughAssets = LogicsHandler.shared.haveEnoughAssets(player: self, spndingAmount: moneyToSpend)
+          
             
             if(haveEnoughAssets) {
                 
@@ -124,7 +125,7 @@ class Player {
                         UIApplication.topViewController()!.present(vc, animated: true)
                         
                         vc.completionHandler = {
-                            self.spentMoney(moneyToSpend:moneyToSpend)
+                            self.spentMoney(moneyToSpend:moneyToSpend, type: type, space: space)
                         }
                         
                     }else{
@@ -146,17 +147,18 @@ class Player {
                     playSound(soundName: AnimationJson.SAD)
                 }
         }else {
-            spentMoney(moneyToSpend:moneyToSpend)
+            spentMoney(moneyToSpend:moneyToSpend, type: type, space: space)
         }
        
         checkWin()
       
     }
     
-    func spentMoney(moneyToSpend:Int) {
+    func spentMoney(moneyToSpend:Int,type:String,space:PlayerSpace) {
         
         totalMoney -= moneyToSpend
         playSound(soundName: AnimationJson.Tax)
+        self.sendMoneyToOwner(space: space, type: type)
         reloadTable()
     }
     
@@ -272,5 +274,76 @@ extension  Player
         return UIImage(named: self.playerImage)!
     }
      
+    
+}
+
+
+extension Player {
+    
+    
+    func payPropertyRent(space: PlayerSpace){
+        
+        let property = getPropertyCard(space: space)
+        
+        let rent = self.getPropertyRent(space:space).0
+        
+            print(rent)
+            
+        self.spend(moneyToSpend: rent, type: "PropertyRent", space: space)
+    }
+    
+    func sendMoneyToOwner(space:PlayerSpace,type:String) {
+        
+        if(type == "PropertyRent") {
+            let rent = self.getPropertyRent(space:space).0
+            let playerIndex = self.getPropertyRent(space:space).1
+            gameViewController.players[playerIndex].getPaid(amount: rent)
+        }
+    }
+    
+    func getPropertyRent(space:PlayerSpace)->(Int,Int){
+        
+        let propertyCard = getPropertyCard(space: space)
+        
+        var playerIndex = 0
+        
+        for (index,player) in gameViewController.players.enumerated() {
+            
+            let lands = player.assets.lands
+            
+            let x = lands.filter({$0.space == space})
+            
+            if(x.count > 0) {
+                playerIndex = index
+                break
+            }
+        }
+        
+        
+             let player = gameViewController.players[playerIndex]
+            
+             let lands = player.assets.lands
+            
+             let x = lands.filter({$0.color == propertyCard.color})
+            
+        if(x.count == 3 ){
+            return (propertyCard.baserent * 2,playerIndex)
+        }else{
+            return (propertyCard.baserent ,playerIndex)
+        }
+        
+           
+            
+        
+    }
+    
+    
+    func buyLand(space: PlayerSpace){
+    
+        let property = getPropertyCard(space: space)
+        self.assets.addLand(prpertyCard: property)
+        self.spend(moneyToSpend: property.getPriceInt(), type: "Buy", space: space)
+    }
+    
     
 }

@@ -4,10 +4,10 @@ class LogicsHandler {
     static let shared = LogicsHandler()
 
 
-    func haveMoneyToBuy(player:Player,spndingAmount:Int)->Bool {
+    func haveMoneyToBuy(player:Player,spendingAmount:Int)->Bool {
         
         var tempMoney = player.totalMoney
-        tempMoney = tempMoney - spndingAmount
+        tempMoney = tempMoney - spendingAmount
        
         print(tempMoney)
         

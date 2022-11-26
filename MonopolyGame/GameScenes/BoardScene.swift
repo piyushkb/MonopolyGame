@@ -209,9 +209,6 @@ class BoardScene: SKScene {
     
         print(space)
         
-        if(space == .ORIENTAL_AVENUE) {
-           // vc.opneCardVC()
-        }
         
         if(space == .JAIL_VISITING || space == .GO_TO_JAIL) {
             print("Jail")
@@ -221,7 +218,7 @@ class BoardScene: SKScene {
             playSound(soundName: AnimationJson.JAIL)
         }
         
-        if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
+        else if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
             print("chest")
             vc.showLottieAnimation(json: AnimationJson.Chest, completion: {
                 self.finalAction(space: space, player: player)
@@ -229,7 +226,7 @@ class BoardScene: SKScene {
             playSound(soundName: AnimationJson.Chest)
         }
         
-        if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
+        else if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
             print("chance")
             vc.showLottieAnimation(json: AnimationJson.Chance, completion: {
                 self.finalAction(space: space, player: player)
@@ -237,7 +234,7 @@ class BoardScene: SKScene {
             playSound(soundName: AnimationJson.Chance)
         }
         
-        if(space == .INCOME_TAX || space == .LUXARY_TAX ) {
+       else  if(space == .INCOME_TAX || space == .LUXARY_TAX ) {
             print("tax")
             vc.showLottieAnimation(json: AnimationJson.Tax, completion: {
                 self.finalAction(space: space, player: player)
@@ -246,7 +243,7 @@ class BoardScene: SKScene {
         }
         
         
-        if(space == .READING_RAILROAD || space == .PENNSYLVANIA_RAILROAD || space == .B_O_RAILROAD || space == .SHORT_LINE) {
+       else  if(space == .READING_RAILROAD || space == .PENNSYLVANIA_RAILROAD || space == .B_O_RAILROAD || space == .SHORT_LINE) {
             print("Rail")
             vc.showLottieAnimation(json: AnimationJson.Rail, completion: {
                 self.finalAction(space: space, player: player)
@@ -255,7 +252,7 @@ class BoardScene: SKScene {
         }
         
         
-        if(space == .ELECTRICITY) {
+       else if(space == .ELECTRICITY) {
             print("electic")
             vc.showLottieAnimation(json: AnimationJson.Light, completion: {
                 self.finalAction(space: space, player: player)
@@ -263,7 +260,7 @@ class BoardScene: SKScene {
             playSound(soundName: AnimationJson.Light)
         }
         
-        if(space == .WATER_WORKS) {
+        else if(space == .WATER_WORKS) {
             print("water")
             vc.showLottieAnimation(json: AnimationJson.Water, completion: {
                 self.finalAction(space: space, player: player)
@@ -272,12 +269,16 @@ class BoardScene: SKScene {
         }
         
         
-        if(space == .FREE_PARKING ) {
+       else  if(space == .FREE_PARKING ) {
             print("Parking")
             vc.showLottieAnimation(json: AnimationJson.Parking, completion: {
                 
             })
             playSound(soundName: AnimationJson.Parking)
+        }
+        
+        else {
+              self.finalAction(space: space, player: player)
         }
         
         
