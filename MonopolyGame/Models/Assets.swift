@@ -41,6 +41,7 @@ class Assets {
             railRoads.remove(at: index)
             player.getPaid(amount: RailRoadCard.sellValue)
         }else if(assetName == Assets.LandsText) {
+            player.getPaid(amount: lands[index].getSellValue())
             lands.remove(at: index)
         }
     }

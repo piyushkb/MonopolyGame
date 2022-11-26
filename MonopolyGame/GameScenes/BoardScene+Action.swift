@@ -7,6 +7,8 @@ extension BoardScene {
     
     func finalAction(space:PlayerSpace, player:Player) {
         
+        enableTouch(view:  vc.view)
+        
        if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
            
             let chanceCard = Chances.getChanceCard()
@@ -98,6 +100,9 @@ extension BoardScene {
         
         else if(space == .FREE_PARKING) {
              
+        }
+        else if(space == .GO) {
+            
         }
         
        else if(space == .ELECTRICITY){
@@ -262,23 +267,29 @@ extension BoardScene {
         }
         
         else {
-            gameViewController.showPropertyCard(player: player, space: space) { value in
-                
-                if(player.assets.isOwnedByMe(space:space)) {
-                    // do nothing
-                    return
-                }
-               
-                if(value == "Buy") {
-                    player.buyLand(space: space)
-                }else {
+            if(player.assets.isOwnedByMe(space:space)) {
+                // do nothing
+                 return
+            }else {
+                gameViewController.showPropertyCard(player: player, space: space) { value in
                     
-                    if(player.assets.isOwnedByOther(space:space)) { // means you need to pay only if Property own by other
-                        player.payPropertyRent(space: space)
+                    if(player.assets.isOwnedByMe(space:space)) {
+                        // do nothing
+                        return
                     }
-                    
+                   
+                    if(value == "Buy") {
+                        player.buyLand(space: space)
+                    }else {
+                        
+                        if(player.assets.isOwnedByOther(space:space)) { // means you need to pay only if Property own by other
+                            player.payPropertyRent(space: space)
+                        }
+                        
+                    }
                 }
             }
+           
             
         }
         

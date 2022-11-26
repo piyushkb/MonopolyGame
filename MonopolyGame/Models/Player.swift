@@ -37,8 +37,7 @@ class Player {
         dice1 = Int.random(in: 1...6)
         dice2 = Int.random(in: 1...6)
         
-        var total = dice1! + dice2!
-        print("Totallllllllllllllllll  \(total)")
+        let total = dice1! + dice2!
         // total = 1
         if(doubleDice.isEmpty){
             doubleDice.append(total)
@@ -57,19 +56,7 @@ class Player {
     }
      
     
-    func clearTotalScore() {
-        totalMoney = 0
-    }
-    
-    func clearStateAfterRound() {
-//        dice1 = nil
-//        dice2 = nil
-//        previousDice = nil
-//
-//        clearRoundScore()
-    }
-    
-    
+  
     func moveToJailPosition() {
       
         let jailNode = boardScene.getSkNode(name: PlayerSpace.JAIL_VISITING.rawValue)
@@ -85,18 +72,7 @@ class Player {
         boardScene.getSkNode(name: self.playerId).run( SKAction.sequence( [moveAction, wait, runAction]  ) )
     }
     
-    func hideTopDialog() {
-//        let  topVC =  UIApplication.topViewController()!
-//
-//        var className = NSStringFromClass(topVC.classForCoder)
-//
-//        print(className)
-//
-//        if(className != "MonopolyGame.GameViewController") {
-//            UIApplication.topViewController()!.dismiss(animated: true)
-//        }
-    }
-   
+ 
     func spend(moneyToSpend: Int,type:String,space:PlayerSpace) {
         
         print("Spening")
@@ -138,8 +114,7 @@ class Player {
               
             }else {
                    
-                    hideTopDialog()
-                showOkeyAlertWithCallBackAnyWhere(message:  "\(playerName) Got Bank Currepted.. " ) {
+                showOkeyAlertWithCallBackAnyWhere(message:  "\(playerName) Got Bankrupted.. " ) {
                     
                         self.removePlayer()
                      

@@ -71,6 +71,15 @@ class BoardScene: SKScene {
 
                player.0.setPlayerPosition(position: PlayerSpace(rawValue: player.1)!) // move to next Position
                
+               if(player.0.playerPosition == .GO) {
+                   player.0.getPaid(amount: Const.GO_PASS_AMOUNT)
+                   playMoveSound = false
+                   playSound(soundName: Const.GO_PASS_SOUND)
+                   gameViewController.showBigLottieAnimation(mode: .scaleAspectFill ,json: AnimationJson.Star, completion: {
+                       playMoveSound = true
+                   })
+               }
+               
                self.movesRemaining = self.movesRemaining - 1
               
                if(self.movesRemaining != 0) {
@@ -100,12 +109,7 @@ class BoardScene: SKScene {
        let nextSpace:String = String(firstCharacter) + String(nextNumber)
 
        if(nextNumber == 40) {
-           currentPlayer.getPaid(amount: Const.GO_PASS_AMOUNT)
-           playMoveSound = false
-           playSound(soundName: Const.GO_PASS_SOUND)
-           gameViewController.showBigLottieAnimation(mode: .scaleAspectFill ,json: AnimationJson.Star, completion: {
-               playMoveSound = true
-           })
+          
            return (currentPlayer,"A0")
        }else {
            return (currentPlayer,nextSpace)
@@ -207,6 +211,7 @@ class BoardScene: SKScene {
     
     func handelPosition(space:PlayerSpace,player:Player) {
     
+       
         print(space)
         
         
@@ -272,7 +277,7 @@ class BoardScene: SKScene {
        else  if(space == .FREE_PARKING ) {
             print("Parking")
             vc.showLottieAnimation(json: AnimationJson.Parking, completion: {
-                
+                enableTouch(view:  vc.view)
             })
             playSound(soundName: AnimationJson.Parking)
         }
@@ -282,7 +287,7 @@ class BoardScene: SKScene {
         }
         
         
-        enableTouch(view:  vc.view)
+        
     }
     
    func setNextPlayerActive() {

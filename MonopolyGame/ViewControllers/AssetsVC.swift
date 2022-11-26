@@ -4,6 +4,7 @@ import Lottie
 
 class AssetsVC : UIViewController, CellDelegate{
     
+    @IBOutlet weak var moneyAvailable: UILabel!
     var player:Player!
     var spndingAmount = 0
     @IBOutlet weak var tableView: UITableView!
@@ -20,7 +21,12 @@ class AssetsVC : UIViewController, CellDelegate{
        self.playLottie()
        self.tableView.reloadData()
        self.successLottieView.isHidden = true
+        self.setMoney()
    }
+    
+    func setMoney() {
+        self.moneyAvailable.text = "Available Balance - $" + player.getTotalMoneyString()
+    }
    
     func showSuccessLottieAnimation() {
         successLottieView.animation = LottieAnimation.named(AnimationJson.Success)
@@ -53,7 +59,7 @@ extension AssetsVC : UITableViewDelegate,UITableViewDataSource {
         if(mustSpend) {
             
             if(self.spndingAmount > self.player.totalMoney) {
-                showAlertAnyWhere(message: "You Need to Sell More Assets.")
+                showAlertAnyWhere(message: "You Need to Sell more Assets for pay the required amount $\(spndingAmount).")
             }else {
                 self.dismiss(animated: true)
                 if let completionHandler = completionHandler{
@@ -118,7 +124,7 @@ extension AssetsVC : UITableViewDelegate,UITableViewDataSource {
         }else if(assetName == Assets.LandsText) {
             let asset = player.assets.lands[indexPath.row]
             cell.cardName.text = asset.name
-            cell.sellAmount.text = "$" + asset.getSellValue().description
+            cell.sellAmount.text = "\(Const.StringSell) $ "  + asset.getSellValue().description
         }
 //        else if(assetName == Assets.HouseText) {
 //            let asset = player.assets.houses[indexPath.row]
@@ -146,6 +152,7 @@ extension AssetsVC {
                 self.player.assets.removeAsset(player: self.player, assetName: assetName, index: row)
                 self.showSuccessLottieAnimation()
                 playSound(soundName: AnimationJson.Success)
+                self.setMoney()
                 self.tableView.reloadData()
             }
         }

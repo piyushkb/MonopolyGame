@@ -680,6 +680,12 @@
                                     <action selector="onClose:" destination="RNB-ZT-vfS" eventType="touchUpInside" id="x1a-V9-bJ2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Money - $0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQx-iq-PTg">
+                                <rect key="frame" x="120" y="30" width="149.5" height="24"/>
+                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="57u-ja-Ulv"/>
                         <color key="backgroundColor" red="0.28880783920000003" green="0.60195750000000003" blue="0.86629563570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -691,6 +697,8 @@
                             <constraint firstAttribute="bottom" secondItem="aeY-dS-Zm7" secondAttribute="bottom" id="IjU-st-VOx"/>
                             <constraint firstItem="aeD-W6-eNq" firstAttribute="centerX" secondItem="8yf-Ro-OJN" secondAttribute="centerX" id="Kcz-sr-Y3x"/>
                             <constraint firstItem="n8U-jz-fHS" firstAttribute="leading" secondItem="8yf-Ro-OJN" secondAttribute="leading" constant="50" id="OuT-zH-qPs"/>
+                            <constraint firstItem="wQx-iq-PTg" firstAttribute="centerX" secondItem="eXe-r5-yts" secondAttribute="centerX" id="Qrn-U7-R5a"/>
+                            <constraint firstItem="wQx-iq-PTg" firstAttribute="top" secondItem="8yf-Ro-OJN" secondAttribute="top" constant="30" id="YHN-mi-Kiu"/>
                             <constraint firstItem="n8U-jz-fHS" firstAttribute="top" secondItem="8yf-Ro-OJN" secondAttribute="top" constant="50" id="aQz-32-5xj"/>
                             <constraint firstItem="aeY-dS-Zm7" firstAttribute="width" secondItem="Wcm-SL-isa" secondAttribute="width" id="gBp-Dh-0bE"/>
                             <constraint firstItem="zn2-B5-oQH" firstAttribute="top" secondItem="8yf-Ro-OJN" secondAttribute="top" constant="30" id="iaS-2W-IW9"/>
@@ -701,6 +709,7 @@
                     <size key="freeformSize" width="812" height="375"/>
                     <connections>
                         <outlet property="lottieAnimationView" destination="Y5b-TA-ycf" id="uXI-jp-QLM"/>
+                        <outlet property="moneyAvailable" destination="wQx-iq-PTg" id="yv3-ia-Qb4"/>
                         <outlet property="successLottieView" destination="aeD-W6-eNq" id="2bY-RC-LMP"/>
                         <outlet property="tableView" destination="Wcm-SL-isa" id="XRL-mz-ZaQ"/>
                         <outlet property="userLabel" destination="eXe-r5-yts" id="caD-ZR-h5r"/>
