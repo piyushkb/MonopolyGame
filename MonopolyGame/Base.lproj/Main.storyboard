@@ -76,7 +76,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mmd-LN-8kJ">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mmd-LN-8kJ">
                                 <rect key="frame" x="541" y="213.5" width="51" height="31"/>
                             </switch>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minimumValue="500" maximumValue="4500" stepValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="FIE-EH-PHl">
@@ -165,7 +165,7 @@
                                     <constraint firstAttribute="width" constant="220" id="FGI-F0-CMM"/>
                                 </constraints>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWL-ql-HD6">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWL-ql-HD6">
                                 <rect key="frame" x="592" y="335" width="220" height="40"/>
                                 <color key="backgroundColor" red="0.60331791639999999" green="0.1060050055" blue="0.1118782386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
