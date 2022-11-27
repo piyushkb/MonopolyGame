@@ -14,8 +14,8 @@
             filePath = "MonopolyGame/Models/Player.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "sendToJail()"
             landmarkType = "7">
          </BreakpointContent>

@@ -177,6 +177,8 @@ struct AnimationJson {
     static let Assets =  "assets"
     static let Success = "success"
     static let Property = "property"
+    static let Splash = "splash"
+    static let LetsGo = "letsGo"
     
     
 }

@@ -42,7 +42,9 @@ class Assets {
             player.getPaid(amount: RailRoadCard.sellValue)
         }else if(assetName == Assets.LandsText) {
             player.getPaid(amount: lands[index].getSellValue())
+            boardScene.removeFlag(space: lands[index].space)
             lands.remove(at: index)
+           
         }
     }
     

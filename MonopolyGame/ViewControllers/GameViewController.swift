@@ -247,19 +247,18 @@ extension GameViewController {
     
     @IBAction func onExit(_ sender: Any) {
         
-//        showConfirmationAlertGlobal(message: "Are you sure want to exit?") { value in
-//            
-//            if(value){
-//                self.players.removeAll()
-//                landingVc.players.removeAll()
-//                
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                    self.dismiss(animated: true)
-//                    SoundAndHapticController.stopMusic()
-//                }
-//               
-//            }
-//        }
+        showConfirmationAlertGlobal(message: "Are you sure want to exit?") { value in
+            
+            if(value){
+               
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    SoundAndHapticController.stopMusic()
+                    self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                  
+                }
+               
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

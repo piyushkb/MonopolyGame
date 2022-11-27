@@ -1,6 +1,6 @@
 
 import UIKit
-
+import SpriteKit
 
 extension BoardScene {
     
@@ -9,10 +9,10 @@ extension BoardScene {
         
         enableTouch(view:  vc.view)
         
-       if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
-           
+        if(space == .CHANCE || space == .CHANCE2  || space == .CHANCE3 ) {
+            
             let chanceCard = Chances.getChanceCard()
-        
+            
             switch chanceCard.type {
                 
             case ChancesType.SPEEDING_FINE:
@@ -30,7 +30,7 @@ extension BoardScene {
                 gameViewController.showChanceOrChestCard(title: "CHANCE", description: des, image: ConstImages.MAN, chanceIsGood: true) {
                     player.getPaid(amount: chanceCard.amount)
                 }
-            break
+                break
                 
             case .GO_TO_JAIL:
                 
@@ -39,14 +39,14 @@ extension BoardScene {
                     player.sendToJail()
                 }
                 break
-               
+                
             }
         }
         
-       else if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
+        else if(space == .COMMUNITY_CHEST || space == .COMMUNITY_CHEST2  || space == .COMMUNITY_CHEST3 ) {
             
             let chestCard = CommunityChest.getCommunityChestCard()
-           
+            
             switch chestCard.type {
                 
             case .DOCTORS_FEE:
@@ -58,7 +58,7 @@ extension BoardScene {
                 }
                 
                 break
-               
+                
             case .SCHOOL_FEE:
                 
                 let des = "\(chestCard.title)\n\(chestCard.desc)"
@@ -90,23 +90,23 @@ extension BoardScene {
             
         }
         
-       else if(space == .GO_TO_JAIL) {
+        else if(space == .GO_TO_JAIL) {
             player.sendToJail()
         }
         
         else if(space == .JAIL_VISITING) {
-             
+            
         }
         
         else if(space == .FREE_PARKING) {
-             
+            
         }
         else if(space == .GO) {
             
         }
         
-       else if(space == .ELECTRICITY){
-             
+        else if(space == .ELECTRICITY){
+            
             if player.assets.utilities.contains(.ELECTRICITY) {
                 // do nothing
                 return
@@ -117,7 +117,7 @@ extension BoardScene {
                 let des = "\(e.desc)\n\n\(Const.StringSell) $\(e.sellValue)"
                 
                 gameViewController.showUtilityCard(title: e.title, description: des, lottieJsonName: AnimationJson.Light) {
-                     
+                    
                     for (index,item) in self.players.enumerated() {
                         if(item.assets.utilities.contains(.ELECTRICITY)){
                             if(item.assets.utilities.contains(.WATER_WORKS)){
@@ -142,11 +142,11 @@ extension BoardScene {
                 }
                 
             }
-              
+            
         }
         
-       else if(space == .WATER_WORKS){
-             
+        else if(space == .WATER_WORKS){
+            
             if player.assets.utilities.contains(.WATER_WORKS) {
                 // do nothing
                 return
@@ -184,8 +184,8 @@ extension BoardScene {
             }
         }
         
-       else if(space == .INCOME_TAX){
-           player.spend(moneyToSpend: TaxCharges.INCOME_TAX, type: "Other", space: space)
+        else if(space == .INCOME_TAX){
+            player.spend(moneyToSpend: TaxCharges.INCOME_TAX, type: "Other", space: space)
         }
         
         else if(space == .LUXARY_TAX){
@@ -195,7 +195,7 @@ extension BoardScene {
         else if(space == .READING_RAILROAD){
             
             gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "READING RAILROAD", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .READING_RAILROAD )) {
-                 
+                
                 if player.assets.railRoads.contains(.READING_RAILROAD) {
                     // do nothing
                     return
@@ -211,10 +211,10 @@ extension BoardScene {
             }
             
         }
-       else if(space == .SHORT_LINE){
+        else if(space == .SHORT_LINE){
             
             gameViewController.showRailRoadCard(player: player, amount: RailRoadCard.amount,title: "SHORT LINE", description: RailRoadCard.des, alreadyOwned: getAlreadyOwned(railRoad: .SHORT_LINE )) {
-           
+                
                 if player.assets.railRoads.contains(.SHORT_LINE) {
                     // do nothing
                     return
@@ -227,7 +227,7 @@ extension BoardScene {
                     }
                 }
             }
-           
+            
         }
         else if(space == .PENNSYLVANIA_RAILROAD){
             
@@ -269,7 +269,7 @@ extension BoardScene {
         else {
             if(player.assets.isOwnedByMe(space:space)) {
                 // do nothing
-                 return
+                return
             }else {
                 gameViewController.showPropertyCard(player: player, space: space) { value in
                     
@@ -277,7 +277,7 @@ extension BoardScene {
                         // do nothing
                         return
                     }
-                   
+                    
                     if(value == "Buy") {
                         player.buyLand(space: space)
                     }else {
@@ -289,7 +289,7 @@ extension BoardScene {
                     }
                 }
             }
-           
+            
             
         }
         
@@ -335,3 +335,31 @@ extension BoardScene {
 }
 
 
+
+extension BoardScene {
+    
+    
+    func removeFlag(space:PlayerSpace) {
+        
+        let node = getSkNodeOptional(name: space.rawValue + "Flag")
+        node?.removeFromParent()
+        
+    }
+    
+    func addFlag(space:PlayerSpace,player:Player) {
+        
+        let node = getSkNode(name:space.rawValue)
+        
+        let flag = SKSpriteNode(color: UIColor.red, size: CGSize(width: 60, height: 25)) //
+        flag.anchorPoint = CGPoint(x: 0,y: 0)
+        flag.position.x =  node.position.x
+        flag.position.y =  node.position.y
+        flag.zPosition = 2
+        flag.texture = SKTexture(imageNamed: (player.playerImage) + "Flag")
+        flag.name = space.rawValue + "Flag"
+        self.addChild(flag)
+        
+    }
+    
+    
+}

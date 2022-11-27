@@ -147,9 +147,18 @@ class Player {
                 break
             }
         }
+        removePlacedFlags( player: gameViewController.players[playerIndex])
         gameViewController.players.remove(at: playerIndex)
         reloadTable()
         self.checkWin()
+    }
+    
+    func removePlacedFlags(player:Player) {
+        
+        for land in player.assets.lands {
+            boardScene.removeFlag(space: land.space)
+        }
+       
     }
     
     func checkWin() {
@@ -249,6 +258,10 @@ extension  Player
         return UIImage(named: self.playerImage)!
     }
      
+    func getAvrageColorImage() -> UIColor
+    {
+        return UIImage(named: self.playerImage)!.averageColor ?? UIColor.green
+    }
     
 }
 
@@ -317,6 +330,7 @@ extension Player {
     
         let property = getPropertyCard(space: space)
         self.assets.addLand(prpertyCard: property)
+        boardScene.addFlag(space:space, player: self)
         self.spend(moneyToSpend: property.getPriceInt(), type: "Buy", space: space)
     }
     

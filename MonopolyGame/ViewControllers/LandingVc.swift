@@ -32,9 +32,9 @@ class LandingVc: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "", playerPosition: .GO))
+        players.append(Player(isActive: true, playerImage: images[0], playerId: 1.description, totalMoney: 0, playerName: "player1", playerPosition: .GO))
         
-        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "", playerPosition: .GO))
+        players.append(Player(isActive: false, playerImage: images[1], playerId: 2.description, totalMoney: 0, playerName: "player2", playerPosition: .GO))
     }
     
     
@@ -149,6 +149,10 @@ extension LandingVc {
             for player in players {
                 player.setTotalMoney(totalMoney: Int(moneyStepper.value))
             }
+            
+//            players.first?.assets.addLand(prpertyCard: getPropertyCard(space: .ORIENTAL_AVENUE))
+//            players.first?.assets.addLand(prpertyCard: getPropertyCard(space: .VERMONT_AVENUE))
+//            
             
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
             vc.modalPresentationStyle = .fullScreen

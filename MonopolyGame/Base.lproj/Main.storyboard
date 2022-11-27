@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TtJ-QW-cqs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Esu-gS-Q7E">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -130,6 +130,7 @@
                             <constraint firstAttribute="bottom" secondItem="SPb-Gz-96Q" secondAttribute="bottom" constant="40" id="zG3-Gv-RIl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="q5v-6R-FQa"/>
                     <size key="freeformSize" width="812" height="375"/>
                     <connections>
                         <outlet property="money" destination="b3U-Mt-7qv" id="s7f-z5-zDv"/>
@@ -165,7 +166,7 @@
                                     <constraint firstAttribute="width" constant="220" id="FGI-F0-CMM"/>
                                 </constraints>
                             </tableView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWL-ql-HD6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWL-ql-HD6">
                                 <rect key="frame" x="592" y="335" width="220" height="40"/>
                                 <color key="backgroundColor" red="0.60331791639999999" green="0.1060050055" blue="0.1118782386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -577,7 +578,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wk-pZ-gm9">
                                 <rect key="frame" x="100" y="20" width="712" height="335"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piyush Kumar Won" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-By-mVe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-By-mVe">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="335"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -635,7 +636,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FpO-xK-FzO">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="305"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piyush Kumar's All Assets" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-r5-yts">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-r5-yts">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="152.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -828,6 +829,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivb-AU-OhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3500" y="-9"/>
+        </scene>
+        <!--WelcomeVC-->
+        <scene sceneID="raq-oU-Wo8">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Esu-gS-Q7E" customClass="WelcomeVC" customModule="MonopolyGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tnS-nf-9qp">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ii3-qA-KSM" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="355"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-nu-8fz" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="286" y="277" width="240" height="68"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="eXQ-np-vWc"/>
+                                    <constraint firstAttribute="width" constant="240" id="iUE-Bf-Rsa"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftt-aa-icv" userLabel="Roll Button">
+                                <rect key="frame" x="286" y="277" width="240" height="68"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title=" ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPlay:" destination="TtJ-QW-cqs" eventType="touchUpInside" id="C7a-mc-imp"/>
+                                    <segue destination="TtJ-QW-cqs" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="nUG-2k-8Up"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="owE-X0-V4B"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ftt-aa-icv" firstAttribute="width" secondItem="h9W-nu-8fz" secondAttribute="width" id="1V4-do-BeP"/>
+                            <constraint firstItem="Ftt-aa-icv" firstAttribute="centerY" secondItem="h9W-nu-8fz" secondAttribute="centerY" id="Gh6-oY-FN3"/>
+                            <constraint firstItem="Ii3-qA-KSM" firstAttribute="leading" secondItem="tnS-nf-9qp" secondAttribute="leading" id="Q4T-vx-a2o"/>
+                            <constraint firstAttribute="bottom" secondItem="h9W-nu-8fz" secondAttribute="bottom" constant="30" id="RZr-zJ-OXZ"/>
+                            <constraint firstItem="Ftt-aa-icv" firstAttribute="height" secondItem="h9W-nu-8fz" secondAttribute="height" id="Tan-Kr-ymD"/>
+                            <constraint firstItem="Ii3-qA-KSM" firstAttribute="top" secondItem="tnS-nf-9qp" secondAttribute="top" id="pZI-hQ-lDl"/>
+                            <constraint firstItem="Ii3-qA-KSM" firstAttribute="trailing" secondItem="tnS-nf-9qp" secondAttribute="trailing" id="rjy-1T-gGi"/>
+                            <constraint firstItem="Ftt-aa-icv" firstAttribute="centerX" secondItem="h9W-nu-8fz" secondAttribute="centerX" id="vC6-Ai-Cdl"/>
+                            <constraint firstItem="h9W-nu-8fz" firstAttribute="centerX" secondItem="Ii3-qA-KSM" secondAttribute="centerX" id="wqJ-ec-MgD"/>
+                            <constraint firstAttribute="bottom" secondItem="Ii3-qA-KSM" secondAttribute="bottom" constant="20" id="z3v-kN-zth"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="812" height="375"/>
+                    <connections>
+                        <outlet property="animationButton" destination="h9W-nu-8fz" id="5Qh-va-8f4"/>
+                        <outlet property="animationView" destination="Ii3-qA-KSM" id="rd7-wU-pxh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YC0-kY-QIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2162.3188405797105" y="-13.058035714285714"/>
         </scene>
     </scenes>
     <resources>

@@ -3,7 +3,7 @@ import AVFoundation
 var player: AVAudioPlayer?
 
  
-func playSound(soundName:String) {
+func playSound(soundName:String,repat:Int = 0) {
 
 
     guard let url = Bundle.main.url(forResource: soundName, withExtension: "mp3") else {
@@ -17,6 +17,7 @@ func playSound(soundName:String) {
 
               player = try AVAudioPlayer(contentsOf: url)
 
+            player?.numberOfLoops = repat
             player!.play()
 
         } catch let error {

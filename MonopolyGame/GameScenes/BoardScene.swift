@@ -367,6 +367,10 @@ extension BoardScene {
        return self.childNode(withName: name)!
    }
    
+    func getSkNodeOptional(name:String) ->SKNode? {
+        return self.childNode(withName: name) ?? nil
+    }
+    
    func getSkSpriteNode(name:String) ->SKSpriteNode {
        return self.childNode(withName: name) as! SKSpriteNode
    }

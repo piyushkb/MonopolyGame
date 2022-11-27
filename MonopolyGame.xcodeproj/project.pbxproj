@@ -106,6 +106,10 @@
 		00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6D2922ABAA0042F5C2 /* chest.json */; };
 		00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00C6FF6F2922ACC10042F5C2 /* chest.mp3 */; };
 		00D6EB1629226712006D4BEA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 00D6EB1529226712006D4BEA /* Lottie */; };
+		00F1C1762933B81700AF9624 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1C1752933B81700AF9624 /* WelcomeVC.swift */; };
+		00F1C1782933BDBD00AF9624 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F1C1772933BDBD00AF9624 /* splash.json */; };
+		00F1C17C2933C1E700AF9624 /* splash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00F1C17B2933C1E700AF9624 /* splash.mp3 */; };
+		00F1C17E2933C32D00AF9624 /* letsGo.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F1C17D2933C32D00AF9624 /* letsGo.json */; };
 		4546E2F629274F9000F5CFCB /* Chances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546E2F529274F9000F5CFCB /* Chances.swift */; };
 		4546E2F829275AD100F5CFCB /* List+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546E2F729275AD100F5CFCB /* List+Extension.swift */; };
 		4546E2FA2927612E00F5CFCB /* CommunityChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4546E2F92927612E00F5CFCB /* CommunityChest.swift */; };
@@ -215,6 +219,10 @@
 		00B5167829301721005A40CE /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 		00C6FF6D2922ABAA0042F5C2 /* chest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chest.json; sourceTree = "<group>"; };
 		00C6FF6F2922ACC10042F5C2 /* chest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chest.mp3; sourceTree = "<group>"; };
+		00F1C1752933B81700AF9624 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		00F1C1772933BDBD00AF9624 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		00F1C17B2933C1E700AF9624 /* splash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = splash.mp3; sourceTree = "<group>"; };
+		00F1C17D2933C32D00AF9624 /* letsGo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = letsGo.json; sourceTree = "<group>"; };
 		4546E2F529274F9000F5CFCB /* Chances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chances.swift; sourceTree = "<group>"; };
 		4546E2F729275AD100F5CFCB /* List+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+Extension.swift"; sourceTree = "<group>"; };
 		4546E2F92927612E00F5CFCB /* CommunityChest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityChest.swift; sourceTree = "<group>"; };
@@ -306,6 +314,7 @@
 				00A0BED7292F50FF0058A19B /* RailRoadVC.swift */,
 				00B51661292FC402005A40CE /* WinnerVC.swift */,
 				00B5166D292FEC5D005A40CE /* AssetsVC.swift */,
+				00F1C1752933B81700AF9624 /* WelcomeVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -474,6 +483,7 @@
 				008F5649292EC7320085BD51 /* sad.mp3 */,
 				008F564D292EC9DC0085BD51 /* credit.mp3 */,
 				0056EA5E2922A2B50090EC72 /* chance.mp3 */,
+				00F1C17B2933C1E700AF9624 /* splash.mp3 */,
 				001D088E292406FD0072FC77 /* parking.mp3 */,
 				006255432932229000ED9ABE /* property.mp3 */,
 				00B5165F292FA03C005A40CE /* goPass.mp3 */,
@@ -506,7 +516,9 @@
 				001D089A2924259D0072FC77 /* star.json */,
 				008F5645292EB5E90085BD51 /* sad.json */,
 				00625545293224D300ED9ABE /* property.json */,
+				00F1C1772933BDBD00AF9624 /* splash.json */,
 				00B51676293016E0005A40CE /* success.json */,
+				00F1C17D2933C32D00AF9624 /* letsGo.json */,
 				001D088C2924060F0072FC77 /* parking.json */,
 				001D08902924091A0072FC77 /* water.json */,
 				001D087E2923FC680072FC77 /* tax.json */,
@@ -607,9 +619,11 @@
 				001D08812923FDB00072FC77 /* tax.mp3 in Resources */,
 				001D089529240C0C0072FC77 /* water.mp3 in Resources */,
 				0056EA5D29229C740090EC72 /* chance.json in Resources */,
+				00F1C1782933BDBD00AF9624 /* splash.json in Resources */,
 				00B51675292FFC67005A40CE /* AssetCell.xib in Resources */,
 				00B51668292FCA4C005A40CE /* winner.mp3 in Resources */,
 				0056EA5F2922A2B50090EC72 /* chance.mp3 in Resources */,
+				00F1C17C2933C1E700AF9624 /* splash.mp3 in Resources */,
 				00C6FF702922ACC10042F5C2 /* chest.mp3 in Resources */,
 				001D0889292405190072FC77 /* light.json in Resources */,
 				00C6FF6E2922ABAA0042F5C2 /* chest.json in Resources */,
@@ -619,6 +633,7 @@
 				001D08852924022F0072FC77 /* rail.json in Resources */,
 				00B51660292FA03C005A40CE /* goPass.mp3 in Resources */,
 				00B5167929301721005A40CE /* success.mp3 in Resources */,
+				00F1C17E2933C32D00AF9624 /* letsGo.json in Resources */,
 				00B51664292FC63A005A40CE /* winner.json in Resources */,
 				00625546293224D300ED9ABE /* property.json in Resources */,
 				001D087F2923FC680072FC77 /* tax.json in Resources */,
@@ -661,6 +676,7 @@
 				002D99D02921AABA00ED80CE /* IQUITextFieldView+Additions.swift in Sources */,
 				4546E2FA2927612E00F5CFCB /* CommunityChest.swift in Sources */,
 				001D089929241E8D0072FC77 /* BoardScene+Action.swift in Sources */,
+				00F1C1762933B81700AF9624 /* WelcomeVC.swift in Sources */,
 				002D99CF2921AABA00ED80CE /* IQUIViewController+Additions.swift in Sources */,
 				00A0BED8292F50FF0058A19B /* RailRoadVC.swift in Sources */,
 				002D99D32921AABA00ED80CE /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
