@@ -95,7 +95,6 @@
 		00B51662292FC402005A40CE /* WinnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B51661292FC402005A40CE /* WinnerVC.swift */; };
 		00B51664292FC63A005A40CE /* winner.json in Resources */ = {isa = PBXBuildFile; fileRef = 00B51663292FC63A005A40CE /* winner.json */; };
 		00B51668292FCA4C005A40CE /* winner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00B51667292FCA4C005A40CE /* winner.mp3 */; };
-		00B5166A292FE116005A40CE /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B51669292FE116005A40CE /* Banner.swift */; };
 		00B5166C292FE2C1005A40CE /* LogicsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5166B292FE2C1005A40CE /* LogicsHandler.swift */; };
 		00B5166E292FEC5D005A40CE /* AssetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5166D292FEC5D005A40CE /* AssetsVC.swift */; };
 		00B51670292FF2FE005A40CE /* assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 00B5166F292FF2FE005A40CE /* assets.json */; };
@@ -209,7 +208,6 @@
 		00B51661292FC402005A40CE /* WinnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerVC.swift; sourceTree = "<group>"; };
 		00B51663292FC63A005A40CE /* winner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winner.json; sourceTree = "<group>"; };
 		00B51667292FCA4C005A40CE /* winner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winner.mp3; sourceTree = "<group>"; };
-		00B51669292FE116005A40CE /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		00B5166B292FE2C1005A40CE /* LogicsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicsHandler.swift; sourceTree = "<group>"; };
 		00B5166D292FEC5D005A40CE /* AssetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsVC.swift; sourceTree = "<group>"; };
 		00B5166F292FF2FE005A40CE /* assets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = assets.json; sourceTree = "<group>"; };
@@ -358,7 +356,6 @@
 		002D999E29216D3400ED80CE /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				00B51669292FE116005A40CE /* Banner.swift */,
 				003A26C92919F4B200821AAA /* Actions.sks */,
 			);
 			path = Others;
@@ -706,7 +703,6 @@
 				0006FC8D291F88D20023DBAE /* Player.swift in Sources */,
 				0006FC9F291FC0830023DBAE /* All.swift in Sources */,
 				001D089729241ABE0072FC77 /* ChanceVC.swift in Sources */,
-				00B5166A292FE116005A40CE /* Banner.swift in Sources */,
 				00B51662292FC402005A40CE /* WinnerVC.swift in Sources */,
 				002D99CA2921AABA00ED80CE /* IQKeyboardManager.swift in Sources */,
 				0000BA7029203B8900B99039 /* BoardScene.swift in Sources */,
@@ -869,9 +865,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -897,9 +893,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
